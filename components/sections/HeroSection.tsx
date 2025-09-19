@@ -8,8 +8,22 @@ import { useLanguageStore } from "@/hooks/useLanguageStore"
 export default function HeroSection() {
   const { t } = useLanguageStore()
 
+  // Smooth scroll function
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId)
+    if (element) {
+      const headerHeight = 80 // Approximate header height
+      const elementPosition = element.offsetTop - headerHeight
+      
+      window.scrollTo({
+        top: elementPosition,
+        behavior: 'smooth'
+      })
+    }
+  }
+
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-[100vh] sm:min-h-[90vh] flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 z-0">
         {/* Background Video */}
         <video
@@ -33,26 +47,34 @@ export default function HeroSection() {
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/60 to-black/70" />
       </div>
       
-      <div className="relative z-10 max-w-7xl mx-auto px-6 text-center text-white">
-        <div className="max-w-4xl mx-auto space-y-12">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 text-center text-white">
+        <div className="max-w-4xl mx-auto space-y-8 sm:space-y-12">
           {/* Main Headline */}
-          <h1 className="text-5xl md:text-7xl font-bold text-balance leading-tight font-lexend text-white">
+          <h1 className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-balance leading-tight font-lexend text-white">
             {t('hero.title')}
           </h1>
           
           {/* Subheadline */}
-          <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto text-pretty">
+          <p className="text-lg sm:text-xl md:text-2xl text-white/90 max-w-4xl mx-auto text-pretty px-4">
             {t('hero.subtitle')}
           </p>
           
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-6">
-            <Button size="lg" className="bg-coastal-teal/20 hover:bg-coastal-teal/30 hover:scale-105 backdrop-blur-sm text-white text-lg px-8 py-4 transition-all duration-300 cursor-pointer">
-              <Phone className="w-5 h-5 mr-2" />
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center pt-4 sm:pt-6 px-4">
+            <Button 
+              size="lg" 
+              className="w-auto bg-coastal-teal/20 hover:bg-coastal-teal/30 hover:scale-105 backdrop-blur-sm text-white text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 transition-all duration-300 cursor-pointer"
+              onClick={() => scrollToSection('contact')}
+            >
+              <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
               {t('hero.schedule_call')}
             </Button>
-            <Button size="lg" className="bg-coastal-sage/20 hover:bg-coastal-sage/30 hover:scale-105 backdrop-blur-sm text-white text-lg px-8 py-4 transition-all duration-300 cursor-pointer">
-              <TrendingUp className="w-5 h-5 mr-2" />
+            <Button 
+              size="lg" 
+              className="w-auto bg-coastal-sage/20 hover:bg-coastal-sage/30 hover:scale-105 backdrop-blur-sm text-white text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 transition-all duration-300 cursor-pointer"
+              onClick={() => scrollToSection('properties')}
+            >
+              <TrendingUp className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
               {t('hero.investment_options')}
             </Button>
           </div>

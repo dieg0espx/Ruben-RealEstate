@@ -3,7 +3,8 @@
 import { useState, useEffect } from "react"
 import Image from "next/image"
 import dynamic from "next/dynamic"
-import { ChevronLeft, ChevronRight } from "lucide-react"
+import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react"
+import { Button } from "@/components/ui/button"
 import { useLanguageStore } from "@/hooks/useLanguageStore"
 
 // Dynamically import the map component to avoid SSR issues
@@ -59,25 +60,25 @@ export default function ServiceAreasMapSection() {
 
 
   return (
-    <section className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center space-y-4 mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground font-lexend">
+    <section className="py-16 sm:py-20 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="text-center space-y-4 mb-12 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground font-lexend">
             {t('service_areas.title')}
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto px-4">
             {t('service_areas.subtitle')}
           </p>
         </div>
         
         {/* Side-by-side layout: Map on left, Slideshow on right */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 items-start">
           {/* Left Column - Interactive Map */}
-          <div className="relative">
-            <p className="text-center text-coastal-sage font-medium mb-4">
+          <div className="relative order-1 lg:order-1">
+            <p className="text-center text-coastal-sage font-medium mb-4 text-sm sm:text-base">
               {t('service_areas.map_instruction')}
             </p>
-            <div className="h-[28rem] rounded-2xl overflow-hidden bg-coastal-cream">
+            <div className="h-[20rem] sm:h-[24rem] lg:h-[28rem] rounded-2xl overflow-hidden bg-coastal-cream">
               <MapComponent 
                 currentAreaIndex={currentAreaIndex}
                 setCurrentAreaIndex={setCurrentAreaIndex}
@@ -101,9 +102,9 @@ export default function ServiceAreasMapSection() {
           </div>
 
           {/* Right Column - Slideshow */}
-          <div className="space-y-6">
-            <div className="mb-10"></div>
-            <div className="relative h-[28rem] rounded-xl overflow-hidden shadow-2xl">
+          <div className="space-y-6 order-2 lg:order-2">
+            <div className="mb-6 sm:mb-10"></div>
+            <div className="relative h-[20rem] sm:h-[24rem] lg:h-[28rem] rounded-xl overflow-hidden shadow-2xl">
               <div className="relative h-full">
                 <Image
                   src={areas[currentAreaIndex].image}
@@ -116,31 +117,48 @@ export default function ServiceAreasMapSection() {
                 {/* Navigation Arrows */}
                 <button
                   onClick={goToPrevious}
-                  className="absolute left-4 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center text-white transition-all duration-300 hover:scale-110"
+                  className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center text-white transition-all duration-300 hover:scale-110"
                   aria-label="Previous area"
                 >
-                  <ChevronLeft className="w-6 h-6" />
+                  <ChevronLeft className="w-4 h-4 sm:w-6 sm:h-6" />
                 </button>
                 
                 <button
                   onClick={goToNext}
-                  className="absolute right-4 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center text-white transition-all duration-300 hover:scale-110"
+                  className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center text-white transition-all duration-300 hover:scale-110"
                   aria-label="Next area"
                 >
-                  <ChevronRight className="w-6 h-6" />
+                  <ChevronRight className="w-4 h-4 sm:w-6 sm:h-6" />
                 </button>
                 
                 <div className="absolute bottom-4 left-4 right-4">
-                  <h3 className="text-2xl font-bold text-white mb-2">
+                  <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">
                     {areas[currentAreaIndex].name}
                   </h3>
-                  <p className="text-white/90 text-base leading-relaxed">
+                  <p className="text-white/90 text-sm sm:text-base leading-relaxed">
                     {t(areas[currentAreaIndex].translationKey)}
                   </p>
                 </div>
               </div>
             </div>
           </div>
+        </div>
+        
+        {/* CTA Button */}
+        <div className="text-center mt-8 sm:mt-12">
+          <Button 
+            size="lg" 
+            className="bg-coastal-teal hover:opacity-90 text-coastal-cream text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4"
+            onClick={() => {
+              const contactSection = document.getElementById('contact')
+              if (contactSection) {
+                contactSection.scrollIntoView({ behavior: 'smooth' })
+              }
+            }}
+          >
+            {t('service_areas.button')}
+            <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2" />
+          </Button>
         </div>
       </div>
     </section>

@@ -34,8 +34,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${poppins.variable} font-sans`} suppressHydrationWarning>
-        {children}
+      <body className={`${poppins.variable} font-sans antialiased`} suppressHydrationWarning>
+        <div className="min-h-screen flex flex-col">
+          {children}
+        </div>
         <Analytics />
       </body>
     </html>

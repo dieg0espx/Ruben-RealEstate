@@ -12,90 +12,90 @@ export default function ContactSection() {
   const { t } = useLanguageStore()
 
   return (
-    <section id="contact" className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-12">
-          <div className="space-y-8">
+    <section id="contact" className="py-16 sm:py-20 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12">
+          <div className="space-y-6 sm:space-y-8">
             <div className="space-y-4">
               <Badge className="bg-coastal-cream/20 text-coastal-slate border-coastal-cream">
                 <Phone className="w-4 h-4 mr-2" />
                 {t('contact.badge')}
               </Badge>
-              <h2 className="text-4xl md:text-5xl font-bold text-foreground font-lexend">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground font-lexend">
                 {t('contact.title')}
               </h2>
-              <p className="text-xl text-muted-foreground">
+              <p className="text-lg sm:text-xl text-muted-foreground">
                 {t('contact.subtitle')}
               </p>
             </div>
             
-            <div className="space-y-6">
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-coastal-gradient rounded-full flex items-center justify-center">
-                  <Phone className="w-6 h-6 text-coastal-cream" />
+            <div className="space-y-4 sm:space-y-6">
+              <div className="flex items-center gap-3 sm:gap-4">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-coastal-gradient rounded-full flex items-center justify-center flex-shrink-0">
+                  <Phone className="w-5 h-5 sm:w-6 sm:h-6 text-coastal-cream" />
                 </div>
-                <div>
-                  <div className="font-semibold text-foreground">{t('contact.phone')}</div>
-                  <div className="text-muted-foreground">(541) 602-1026</div>
-                </div>
-              </div>
-              
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-coastal-steel rounded-full flex items-center justify-center">
-                  <Mail className="w-6 h-6 text-coastal-cream" />
-                </div>
-                <div>
-                  <div className="font-semibold text-foreground">{t('contact.email')}</div>
-                  <div className="text-muted-foreground">ruben.o.banuelos@gmail.com</div>
+                <div className="min-w-0">
+                  <div className="font-semibold text-foreground text-sm sm:text-base">{t('contact.phone')}</div>
+                  <div className="text-muted-foreground text-sm sm:text-base">(541) 602-1026</div>
                 </div>
               </div>
               
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-coastal-sage rounded-full flex items-center justify-center">
-                  <MapPin className="w-6 h-6 text-coastal-cream" />
+              <div className="flex items-center gap-3 sm:gap-4">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-coastal-steel rounded-full flex items-center justify-center flex-shrink-0">
+                  <Mail className="w-5 h-5 sm:w-6 sm:h-6 text-coastal-cream" />
                 </div>
-                <div>
-                  <div className="font-semibold text-foreground">{t('contact.areas')}</div>
-                  <div className="text-muted-foreground">{t('contact.areas.description')}</div>
+                <div className="min-w-0">
+                  <div className="font-semibold text-foreground text-sm sm:text-base">{t('contact.email')}</div>
+                  <div className="text-muted-foreground text-sm sm:text-base break-all">ruben.o.banuelos@gmail.com</div>
+                </div>
+              </div>
+              
+              <div className="flex items-center gap-3 sm:gap-4">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-coastal-sage rounded-full flex items-center justify-center flex-shrink-0">
+                  <MapPin className="w-5 h-5 sm:w-6 sm:h-6 text-coastal-cream" />
+                </div>
+                <div className="min-w-0">
+                  <div className="font-semibold text-foreground text-sm sm:text-base">{t('contact.areas')}</div>
+                  <div className="text-muted-foreground text-sm sm:text-base">{t('contact.areas.description')}</div>
                 </div>
               </div>
             </div>
 
             <div className="pt-4">
-              <Button size="lg" className="bg-coastal-gradient hover:opacity-90 text-coastal-cream text-lg px-8 py-4">
-                <Phone className="w-5 h-5 mr-2" />
+              <Button size="lg" className="bg-coastal-gradient hover:opacity-90 text-coastal-cream text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4">
+                <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
                 {t('contact.schedule_button')}
               </Button>
             </div>
           </div>
           
-          <div className="bg-white rounded-2xl p-8 border shadow-lg">
-            <h3 className="text-2xl font-bold text-foreground mb-6">{t('contact.form.title')}</h3>
-            <form className="space-y-6">
-              <div className="grid grid-cols-2 gap-4">
-                <div>
-                  <Label htmlFor="firstName">{t('contact.form.first_name')}</Label>
-                  <Input id="firstName" placeholder={t('contact.form.first_name_placeholder')} />
+          <div className="bg-white rounded-2xl p-6 sm:p-8 border shadow-lg">
+            <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-4 sm:mb-6">{t('contact.form.title')}</h3>
+            <form className="space-y-4 sm:space-y-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="space-y-2">
+                  <Label htmlFor="firstName" className="text-sm sm:text-base">{t('contact.form.first_name')}</Label>
+                  <Input id="firstName" placeholder={t('contact.form.first_name_placeholder')} className="text-sm sm:text-base" />
                 </div>
-                <div>
-                  <Label htmlFor="lastName">{t('contact.form.last_name')}</Label>
-                  <Input id="lastName" placeholder={t('contact.form.last_name_placeholder')} />
+                <div className="space-y-2">
+                  <Label htmlFor="lastName" className="text-sm sm:text-base">{t('contact.form.last_name')}</Label>
+                  <Input id="lastName" placeholder={t('contact.form.last_name_placeholder')} className="text-sm sm:text-base" />
                 </div>
               </div>
               
-              <div>
-                <Label htmlFor="email">{t('contact.form.email')}</Label>
-                <Input id="email" type="email" placeholder={t('contact.form.email_placeholder')} />
+              <div className="space-y-2">
+                <Label htmlFor="email" className="text-sm sm:text-base">{t('contact.form.email')}</Label>
+                <Input id="email" type="email" placeholder={t('contact.form.email_placeholder')} className="text-sm sm:text-base" />
               </div>
               
-              <div>
-                <Label htmlFor="phone">{t('contact.form.phone')}</Label>
-                <Input id="phone" type="tel" placeholder={t('contact.form.phone_placeholder')} />
+              <div className="space-y-2">
+                <Label htmlFor="phone" className="text-sm sm:text-base">{t('contact.form.phone')}</Label>
+                <Input id="phone" type="tel" placeholder={t('contact.form.phone_placeholder')} className="text-sm sm:text-base" />
               </div>
               
-              <div>
-                <Label htmlFor="clientType">{t('contact.form.client_type')}</Label>
-                <select id="clientType" className="w-full px-3 py-2 border border-input rounded-md bg-background">
+              <div className="space-y-2">
+                <Label htmlFor="clientType" className="text-sm sm:text-base">{t('contact.form.client_type')}</Label>
+                <select id="clientType" className="w-full px-3 py-2 border border-input rounded-md bg-white text-foreground text-sm sm:text-base">
                   <option>{t('contact.form.option1')}</option>
                   <option>{t('contact.form.option2')}</option>
                   <option>{t('contact.form.option3')}</option>
@@ -104,14 +104,16 @@ export default function ContactSection() {
                 </select>
               </div>
               
-              <div>
-                <Label htmlFor="message">{t('contact.form.message')}</Label>
-                <Textarea id="message" placeholder={t('contact.form.message_placeholder')} rows={4} />
+              <div className="space-y-2">
+                <Label htmlFor="message" className="text-sm sm:text-base">{t('contact.form.message')}</Label>
+                <Textarea id="message" placeholder={t('contact.form.message_placeholder')} rows={4} className="text-sm sm:text-base" />
               </div>
               
-              <Button type="submit" className="w-full bg-coastal-gradient hover:opacity-90 text-coastal-cream">
-                {t('contact.form.submit')}
-              </Button>
+              <div className="pt-4">
+                <Button type="submit" className="w-full bg-coastal-gradient hover:opacity-90 text-coastal-cream text-sm sm:text-base py-3">
+                  {t('contact.form.submit')}
+                </Button>
+              </div>
             </form>
           </div>
         </div>
