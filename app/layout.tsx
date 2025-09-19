@@ -61,7 +61,7 @@ export default function RootLayout({
         <meta name="theme-color" content="#ffffff" />
       </head>
       <body className={`${poppins.variable} font-sans antialiased`} suppressHydrationWarning>
-        <div className="min-h-screen flex flex-col">
+        <div className="min-h-screen flex flex-col max-w-screen overflow-x-hidden">
           {children}
         </div>
         <Analytics />
