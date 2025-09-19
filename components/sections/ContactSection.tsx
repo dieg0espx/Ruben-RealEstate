@@ -7,29 +7,31 @@ import { Label } from "@/components/ui/label"
 import { Badge } from "@/components/ui/badge"
 import { Phone, Mail, MapPin } from "lucide-react"
 import { useLanguageStore } from "@/hooks/useLanguageStore"
+import { useScrollAnimation } from "@/hooks/useScrollAnimation"
 
 export default function ContactSection() {
   const { t } = useLanguageStore()
+  const { ref, isVisible } = useScrollAnimation()
 
   return (
-    <section id="contact" className="py-16 sm:py-20 bg-white">
+    <section ref={ref} id="contact" className="py-16 sm:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="grid lg:grid-cols-2 gap-8 sm:gap-12">
           <div className="space-y-6 sm:space-y-8">
             <div className="space-y-4">
-              <Badge className="bg-coastal-cream/20 text-coastal-slate border-coastal-cream">
+              <Badge className={`bg-coastal-cream/20 text-coastal-slate border-coastal-cream transition-all duration-800 ${isVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-8'}`}>
                 <Phone className="w-4 h-4 mr-2" />
                 {t('contact.badge')}
               </Badge>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground font-lexend">
+              <h2 className={`text-3xl sm:text-4xl md:text-5xl font-bold text-foreground font-lexend transition-all duration-800 delay-200 ${isVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-8'}`}>
                 {t('contact.title')}
               </h2>
-              <p className="text-lg sm:text-xl text-muted-foreground">
+              <p className={`text-lg sm:text-xl text-muted-foreground transition-all duration-800 delay-400 ${isVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-8'}`}>
                 {t('contact.subtitle')}
               </p>
             </div>
             
-            <div className="space-y-4 sm:space-y-6">
+            <div className={`space-y-4 sm:space-y-6 transition-all duration-800 delay-600 ${isVisible ? 'animate-fade-in-left' : 'opacity-0 -translate-x-8'}`}>
               <div className="flex items-center gap-3 sm:gap-4">
                 <div className="w-10 h-10 sm:w-12 sm:h-12 bg-coastal-gradient rounded-full flex items-center justify-center flex-shrink-0">
                   <Phone className="w-5 h-5 sm:w-6 sm:h-6 text-coastal-cream" />
@@ -62,14 +64,14 @@ export default function ContactSection() {
             </div>
 
             <div className="pt-4">
-              <Button size="lg" className="bg-coastal-gradient hover:opacity-90 text-coastal-cream text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4">
+              <Button size="lg" className="bg-coastal-gradient hover:bg-[#5F7D6D] hover:text-white text-coastal-cream text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 transition-all duration-300">
                 <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
                 {t('contact.schedule_button')}
               </Button>
             </div>
           </div>
           
-          <div className="bg-white rounded-2xl p-6 sm:p-8 border shadow-lg">
+          <div className={`bg-white rounded-2xl p-6 sm:p-8 border shadow-lg transition-all duration-800 delay-600 ${isVisible ? 'animate-fade-in-right' : 'opacity-0 translate-x-8'}`}>
             <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-4 sm:mb-6">{t('contact.form.title')}</h3>
             <form className="space-y-4 sm:space-y-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -110,7 +112,7 @@ export default function ContactSection() {
               </div>
               
               <div className="pt-4">
-                <Button type="submit" className="w-full bg-coastal-gradient hover:opacity-90 text-coastal-cream text-sm sm:text-base py-3">
+                <Button type="submit" className="w-full bg-coastal-gradient hover:bg-[#5F7D6D] hover:text-white text-coastal-cream text-sm sm:text-base py-3 transition-all duration-300">
                   {t('contact.form.submit')}
                 </Button>
               </div>

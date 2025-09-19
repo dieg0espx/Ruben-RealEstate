@@ -15,15 +15,36 @@ export const metadata: Metadata = {
   keywords: 'San Diego real estate, veteran real estate, investment properties, first time home buyers, property management, Ruben Banuelos',
   authors: [{ name: 'Ruben Banuelos' }],
   icons: {
-    icon: '/favicon.png',
-    shortcut: '/favicon.png',
-    apple: '/favicon.png',
+    icon: [
+      { url: '/logo/favicon.ico', sizes: 'any' },
+      { url: '/logo/favicon.svg', type: 'image/svg+xml' },
+      { url: '/logo/favicon-96x96.png', sizes: '96x96', type: 'image/png' },
+    ],
+    shortcut: '/logo/favicon.ico',
+    apple: '/logo/apple-touch-icon.png',
   },
   openGraph: {
     title: 'Ruben Real Estate | San Diego Real Estate Expert',
     description: 'Expert real estate services in San Diego County. Specializing in Veterans, Investors, and Growing Families.',
     type: 'website',
     locale: 'en_US',
+    url: 'https://rubenrealestate.com',
+    siteName: 'Ruben Real Estate',
+    images: [
+      {
+        url: '/logo/openGraphs.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Ruben Real Estate - San Diego Real Estate Expert',
+        type: 'image/jpeg',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Ruben Real Estate | San Diego Real Estate Expert',
+    description: 'Expert real estate services in San Diego County. Specializing in Veterans, Investors, and Growing Families.',
+    images: ['/logo/openGraphs.jpg'],
   },
 }
 
