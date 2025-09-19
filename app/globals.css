@@ -1,6 +1,8 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "bootstrap-icons/font/bootstrap-icons.css";
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -219,7 +221,27 @@
   }
 }
 
+/* Testimonials carousel dots styling */
+.testimonials-carousel .slick-dots {
+  bottom: -50px;
+}
+
+.testimonials-carousel .slick-dots li button:before {
+  color: #577586;
+  font-size: 12px;
+}
+
+.testimonials-carousel .slick-dots li.slick-active button:before {
+  color: #577586;
+  opacity: 1;
+}
+
 /* Slick Carousel Custom Styles */
+.testimonials-carousel {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
 .testimonials-carousel .slick-slider {
   position: relative;
   display: block;
@@ -334,5 +356,23 @@
   
   .testimonials-carousel .slick-next:before {
     border-width: 6px 0 6px 10px;
+  }
+  
+  /* Mobile carousel adjustments */
+  .testimonials-carousel .slick-slide {
+    padding: 0 8px;
+  }
+  
+  /* Force single slide on mobile */
+  .testimonials-carousel .slick-slide {
+    width: 100% !important;
+  }
+  
+  .testimonials-carousel .slick-track {
+    width: 100% !important;
+  }
+  
+  .testimonials-carousel .slick-list {
+    width: 100% !important;
   }
 }
