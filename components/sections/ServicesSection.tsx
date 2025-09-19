@@ -105,7 +105,7 @@ export default function ServicesSection() {
                 className="w-full h-full object-cover"
                 controls
                 preload="metadata"
-                poster="/placeholder.jpg"
+                poster="/images/1-web-or-mls-royal (6 of 47).JPG"
                 muted
                 loop
               >

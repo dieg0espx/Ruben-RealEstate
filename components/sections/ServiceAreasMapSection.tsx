@@ -40,7 +40,7 @@ const areas = [
   },
   {
     name: "Oceanside",
-    image: "/images/1-web-or-mls-Riviera_drone (7 of 12).JPG",
+    image: "/images/62-web-or-mls-Riviera_drone (8 of 12).JPG",
     description: "Beach community with character",
     translationKey: "service_areas.oceanside.description"
   }

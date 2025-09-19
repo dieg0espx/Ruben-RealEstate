@@ -141,7 +141,7 @@ export default function TestimonialsSection() {
         {/* Mobile Testimonials Carousel */}
         <div className="block md:hidden">
           <div className="relative">
-            <Card className="group hover:shadow-2xl transition-all duration-500 h-full border-0 bg-white/80 backdrop-blur-sm hover:bg-white/90 hover:scale-[1.02]">
+            <Card className="group hover:shadow-2xl transition-all duration-500 h-[600px] border-0 bg-white/80 backdrop-blur-sm hover:bg-white/90 hover:scale-[1.02]">
               <CardContent className="p-6 h-full flex flex-col relative">
                 {/* Enhanced Stars */}
                 <div className="flex justify-center space-x-1 mb-4">
@@ -192,7 +192,7 @@ export default function TestimonialsSection() {
         <div className={`hidden md:block transition-all duration-800 delay-600 ${isVisible ? 'animate-slide-up' : 'opacity-0 translate-y-12'}`}>
           <div className="grid md:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 items-stretch">
             {getVisibleTestimonials().map((testimonial, index) => (
-              <Card key={testimonial.id} className="group hover:shadow-2xl transition-all duration-500 h-full border-0 bg-white/80 backdrop-blur-sm hover:bg-white/90 hover:scale-[1.02] flex flex-col">
+              <Card key={testimonial.id} className="group hover:shadow-2xl transition-all duration-500 h-[650px] border-0 bg-white/80 backdrop-blur-sm hover:bg-white/90 hover:scale-[1.02] flex flex-col">
                 <CardContent className="p-6 sm:p-8 h-full flex flex-col relative flex-1">
                   {/* Enhanced Stars */}
                   <div className="flex justify-center space-x-1 mb-4 sm:mb-6">
