@@ -34,13 +34,13 @@ const areas = [
   },
   {
     name: "Carlsbad",
-    image: "/images/1-web-or-mls-royal (6 of 47).JPG",
+    image: "/images/2-web-or-mls-royal (22 of 47).JPG",
     description: "Coastal living at its finest",
     translationKey: "service_areas.carlsbad.description"
   },
   {
     name: "Oceanside",
-    image: "/images/1-web-or-mls-Venice (20 of 53).JPG",
+    image: "/images/1-web-or-mls-Riviera_drone (7 of 12).JPG",
     description: "Beach community with character",
     translationKey: "service_areas.oceanside.description"
   }
