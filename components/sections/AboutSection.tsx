@@ -1,8 +1,13 @@
+'use client'
+
 import { Badge } from "@/components/ui/badge"
 import { Users, GraduationCap, Heart, Home, TrendingUp } from "lucide-react"
 import Image from "next/image"
+import { useLanguageStore } from "@/hooks/useLanguageStore"
 
 export default function AboutSection() {
+  const { t } = useLanguageStore()
+
   return (
     <section id="about" className="py-20">
       <div className="max-w-7xl mx-auto px-6">
@@ -44,13 +49,13 @@ export default function AboutSection() {
               <div className="space-y-4">
                 <Badge className="bg-coastal-cream/20 text-coastal-slate border-coastal-cream">
                   <Users className="w-4 h-4 mr-2" />
-                  About Ruben
+                  {t('about.badge')}
                 </Badge>
                 <h2 className="text-4xl md:text-5xl font-bold text-foreground font-lexend">
-                  My Journey: Healthcare to Real Estate
+                  {t('about.title')}
                 </h2>
                 <p className="text-lg text-muted-foreground">
-                  A story of discipline, empathy, and commitment to helping families build their future
+                  {t('about.subtitle')}
                 </p>
               </div>
               
@@ -71,11 +76,9 @@ export default function AboutSection() {
                 </div>
                 <div className="flex-1">
                   <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6  shadow-lg">
-                    <h4 className="text-xl font-bold text-foreground mb-3">Doctor of Physical Therapy</h4>
+                    <h4 className="text-xl font-bold text-foreground mb-3">{t('about.step1.title')}</h4>
                     <p className="text-muted-foreground leading-relaxed">
-                      Built a foundation in healthcare, learning the value of discipline, empathy, and service. 
-                      Developed skills in patient care, problem-solving, and building trust with families during 
-                      challenging times.
+                      {t('about.step1.description')}
                     </p>
                   </div>
                 </div>
@@ -90,11 +93,9 @@ export default function AboutSection() {
                 </div>
                 <div className="flex-1">
                   <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6  shadow-lg">
-                    <h4 className="text-xl font-bold text-foreground mb-3">Building for Family & Community</h4>
+                    <h4 className="text-xl font-bold text-foreground mb-3">{t('about.step2.title')}</h4>
                     <p className="text-muted-foreground leading-relaxed">
-                      Driven by the desire to help families achieve financial independence and create lasting 
-                      legacies. Committed to serving the community that raised him, with a special focus on 
-                      veterans, first-time buyers, and long-term investors.
+                      {t('about.step2.description')}
                     </p>
                   </div>
                 </div>
@@ -109,11 +110,9 @@ export default function AboutSection() {
                 </div>
                 <div className="flex-1">
                   <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6  shadow-lg">
-                    <h4 className="text-xl font-bold text-foreground mb-3">Real Estate Transition</h4>
+                    <h4 className="text-xl font-bold text-foreground mb-3">{t('about.step3.title')}</h4>
                     <p className="text-muted-foreground leading-relaxed">
-                      Leveraged healthcare expertise to become a licensed real estate broker and property manager. 
-                      Applied the same principles of patient care to client relationships: listening, understanding 
-                      needs, and providing expert guidance through complex processes.
+                      {t('about.step3.description')}
                     </p>
                   </div>
                 </div>
@@ -128,11 +127,9 @@ export default function AboutSection() {
                 </div>
                 <div className="flex-1">
                   <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6  shadow-lg">
-                    <h4 className="text-xl font-bold text-foreground mb-3">Rising Star Recognition</h4>
+                    <h4 className="text-xl font-bold text-foreground mb-3">{t('about.step4.title')}</h4>
                     <p className="text-muted-foreground leading-relaxed">
-                      Recognized as a 2024 "Rising Star" at Team Fearless, with expertise in VA loans, 
-                      house hacking, and investment properties. NARPM certified and deeply connected to 
-                      the North County community, serving veterans, families, and investors with integrity.
+                      {t('about.step4.description')}
                     </p>
                   </div>
                 </div>

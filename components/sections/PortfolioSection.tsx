@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge"
 import { Camera } from "lucide-react"
 import Image from "next/image"
 import { useState } from "react"
+import { useLanguageStore } from "@/hooks/useLanguageStore"
 
 const portfolioItems = [
   {
@@ -81,6 +82,7 @@ const portfolioItems = [
 ]
 
 export default function PortfolioSection() {
+  const { t } = useLanguageStore()
   const [selectedImage, setSelectedImage] = useState<number | null>(null)
 
   const openLightbox = (index: number) => {
@@ -108,13 +110,13 @@ export default function PortfolioSection() {
           <div className="text-center space-y-4 mb-16">
             <Badge className="bg-coastal-sage/20 text-coastal-slate border-coastal-sage">
               <Camera className="w-4 h-4 mr-2" />
-              Portfolio
+              {t('portfolio.badge')}
             </Badge>
             <h2 className="text-4xl md:text-5xl font-bold text-foreground font-lexend">
-              Project Gallery
+              {t('portfolio.title')}
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Showcasing successful real estate projects across North County San Diego
+              {t('portfolio.subtitle')}
             </p>
           </div>
 

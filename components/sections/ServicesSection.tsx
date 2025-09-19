@@ -1,23 +1,28 @@
+'use client'
+
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Shield, TrendingUp, Heart, CheckCircle } from "lucide-react"
 import Image from "next/image"
+import { useLanguageStore } from "@/hooks/useLanguageStore"
 
 export default function ServicesSection() {
+  const { t } = useLanguageStore()
+
   return (
     <section id="services" className="py-20">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center space-y-4 mb-16">
           <Badge className="bg-coastal-teal/20 text-coastal-slate border-coastal-teal">
             <Shield className="w-4 h-4 mr-2" />
-            Specialized Services
+            {t('services.badge')}
           </Badge>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground font-lexend">
-            Who I Serve
+            {t('services.title')}
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            I focus on three key client types, bringing specialized expertise to each relationship.
+            {t('services.subtitle')}
           </p>
         </div>
         
@@ -34,28 +39,28 @@ export default function ServicesSection() {
               <div className="absolute inset-0 bg-coastal-gradient/20"></div>
             </div>
             <CardHeader className="text-center pb-4 px-6 pt-6">
-              <CardTitle className="text-3xl text-foreground font-lexend">Veterans</CardTitle>
+              <CardTitle className="text-3xl text-foreground font-lexend">{t('services.veterans.title')}</CardTitle>
               <CardDescription className="text-lg">
-                Maximizing VA loan benefits and housing allowances
+                {t('services.veterans.description')}
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4 px-6 pb-6 flex flex-col flex-1">
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
                   <CheckCircle className="w-5 h-5 text-coastal-teal mt-0.5 flex-shrink-0" />
-                  <span className="text-muted-foreground">VA Loan Expertise</span>
+                  <span className="text-muted-foreground">{t('services.veterans.feature1')}</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle className="w-5 h-5 text-coastal-teal mt-0.5 flex-shrink-0" />
-                  <span className="text-muted-foreground">Military Housing Knowledge</span>
+                  <span className="text-muted-foreground">{t('services.veterans.feature2')}</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle className="w-5 h-5 text-coastal-teal mt-0.5 flex-shrink-0" />
-                  <span className="text-muted-foreground">Camp Pendleton, Miramar & Coronado Focus</span>
+                  <span className="text-muted-foreground">{t('services.veterans.feature3')}</span>
                 </li>
               </ul>
               <Button className="w-full bg-coastal-gradient hover:opacity-90 text-coastal-cream mt-auto">
-                Get Veteran Guide
+                {t('services.veterans.button')}
               </Button>
             </CardContent>
           </Card>
@@ -72,28 +77,28 @@ export default function ServicesSection() {
               <div className="absolute inset-0 bg-coastal-steel/20"></div>
             </div>
             <CardHeader className="text-center pb-4 px-6 pt-6">
-              <CardTitle className="text-3xl text-foreground font-lexend">Investors</CardTitle>
+              <CardTitle className="text-3xl text-foreground font-lexend">{t('services.investors.title')}</CardTitle>
               <CardDescription className="text-lg">
-                House hacking, ADUs, and portfolio building
+                {t('services.investors.description')}
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4 px-6 pb-6 flex flex-col flex-1">
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
                   <CheckCircle className="w-5 h-5 text-coastal-teal mt-0.5 flex-shrink-0" />
-                  <span className="text-muted-foreground">ADU Development</span>
+                  <span className="text-muted-foreground">{t('services.investors.feature1')}</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle className="w-5 h-5 text-coastal-teal mt-0.5 flex-shrink-0" />
-                  <span className="text-muted-foreground">Cap Rate Analysis</span>
+                  <span className="text-muted-foreground">{t('services.investors.feature2')}</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle className="w-5 h-5 text-coastal-teal mt-0.5 flex-shrink-0" />
-                  <span className="text-muted-foreground">Property Management</span>
+                  <span className="text-muted-foreground">{t('services.investors.feature3')}</span>
                 </li>
               </ul>
               <Button className="w-full bg-coastal-steel hover:opacity-90 text-coastal-cream mt-auto">
-                Request Analysis
+                {t('services.investors.button')}
               </Button>
             </CardContent>
           </Card>
@@ -110,28 +115,28 @@ export default function ServicesSection() {
               <div className="absolute inset-0 bg-coastal-sage/20"></div>
             </div>
             <CardHeader className="text-center pb-4 px-6 pt-6">
-              <CardTitle className="text-3xl text-foreground font-lexend">Growing Families</CardTitle>
+              <CardTitle className="text-3xl text-foreground font-lexend">{t('services.families.title')}</CardTitle>
               <CardDescription className="text-lg">
-                First-time buyers and move-up opportunities
+                {t('services.families.description')}
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4 px-6 pb-6 flex flex-col flex-1">
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
                   <CheckCircle className="w-5 h-5 text-coastal-teal mt-0.5 flex-shrink-0" />
-                  <span className="text-muted-foreground">First-Time Buyer Support</span>
+                  <span className="text-muted-foreground">{t('services.families.feature1')}</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle className="w-5 h-5 text-coastal-teal mt-0.5 flex-shrink-0" />
-                  <span className="text-muted-foreground">Move-Up Strategies</span>
+                  <span className="text-muted-foreground">{t('services.families.feature2')}</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle className="w-5 h-5 text-coastal-teal mt-0.5 flex-shrink-0" />
-                  <span className="text-muted-foreground">Community Knowledge</span>
+                  <span className="text-muted-foreground">{t('services.families.feature3')}</span>
                 </li>
               </ul>
               <Button className="w-full bg-coastal-sage hover:opacity-90 text-coastal-cream mt-auto">
-                Start Your Journey
+                {t('services.families.button')}
               </Button>
             </CardContent>
           </Card>

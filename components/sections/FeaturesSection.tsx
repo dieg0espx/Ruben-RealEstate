@@ -1,38 +1,52 @@
-import { Home, Shield, TrendingUp } from "lucide-react"
+import Image from "next/image"
 
 export default function FeaturesSection() {
   return (
     <section className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid md:grid-cols-3 gap-8 text-center">
-          {/* Broker + Property Manager */}
-          <div className="space-y-4">
-            <div className="w-20 h-20 bg-coastal-sage rounded-full flex items-center justify-center mx-auto shadow-lg">
-              <Home className="w-10 h-10 text-coastal-charcoal" />
-            </div>
-            <h3 className="text-xl font-semibold text-coastal-charcoal">
-              Broker + Property Manager
-            </h3>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-items-center">
+          {/* BiggerPockets Logo */}
+          <div className="flex items-center justify-center p-4">
+            <Image
+              src="/biggerPockets_logo.png"
+              alt="BiggerPockets"
+              width={120}
+              height={60}
+              className="max-w-full h-auto object-contain"
+            />
           </div>
 
-          {/* Veteran Focused */}
-          <div className="space-y-4">
-            <div className="w-20 h-20 bg-coastal-slate rounded-full flex items-center justify-center mx-auto shadow-lg">
-              <Shield className="w-10 h-10 text-coastal-charcoal" />
-            </div>
-            <h3 className="text-xl font-semibold text-coastal-charcoal">
-              Veteran Focused
-            </h3>
+          {/* NARPM Logo */}
+          <div className="flex items-center justify-center p-4">
+            <Image
+              src="/narpm_logo - Editado.png"
+              alt="NARPM"
+              width={120}
+              height={60}
+              className="max-w-full h-auto object-contain"
+            />
           </div>
 
-          {/* Investor Ready */}
-          <div className="space-y-4">
-            <div className="w-20 h-20 bg-coastal-steel rounded-full flex items-center justify-center mx-auto shadow-lg">
-              <TrendingUp className="w-10 h-10 text-coastal-charcoal" />
-            </div>
-            <h3 className="text-xl font-semibold text-coastal-charcoal">
-              Investor Ready
-            </h3>
+          {/* Rising Star Logo */}
+          <div className="flex items-center justify-center p-4">
+            <Image
+              src="/risingStar_logo.png"
+              alt="Rising Star"
+              width={120}
+              height={60}
+              className="max-w-full h-auto object-contain"
+            />
+          </div>
+
+          {/* ROA Logo */}
+          <div className="flex items-center justify-center p-4">
+            <Image
+              src="/roa_logo.png"
+              alt="ROA"
+              width={120}
+              height={60}
+              className="max-w-full h-auto object-contain"
+            />
           </div>
         </div>
       </div>

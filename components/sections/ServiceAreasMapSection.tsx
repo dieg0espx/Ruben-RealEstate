@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import Image from "next/image"
 import dynamic from "next/dynamic"
 import { ChevronLeft, ChevronRight } from "lucide-react"
+import { useLanguageStore } from "@/hooks/useLanguageStore"
 
 // Dynamically import the map component to avoid SSR issues
 const MapComponent = dynamic(() => import("./MapComponent"), {
@@ -16,35 +17,36 @@ const areas = [
     name: "San Marcos",
     image: "/images/1-web-or-mls-royal (6 of 47).JPG",
     description: "Growing community with excellent schools",
-    detailedDescription: "San Marcos is the hometown hub of North County. Known for its strong schools, family-friendly neighborhoods, and expanding business scene, it's a prime location for both first-time buyers and seasoned investors."
+    translationKey: "service_areas.san_marcos.description"
   },
   {
     name: "Escondido", 
     image: "/images/1-web-or-mls-Venice (20 of 53).JPG",
     description: "Historic charm meets modern amenities",
-    detailedDescription: "Escondido is a vibrant community in North County San Diego, offering excellent opportunities for both residents and investors. With its strategic location and growing amenities, it represents one of the most promising areas in the region."
+    translationKey: "service_areas.escondido.description"
   },
   {
     name: "Vista",
     image: "/images/1-web-or-mls-Riviera_drone (9 of 12).JPG", 
     description: "Family-friendly with great parks",
-    detailedDescription: "Vista blends affordability with opportunity, making it attractive for house hackers and families alike. With its mix of suburban comfort and new development, Vista continues to draw those looking for long-term growth."
+    translationKey: "service_areas.vista.description"
   },
   {
     name: "Carlsbad",
     image: "/images/1-web-or-mls-royal (6 of 47).JPG",
     description: "Coastal living at its finest",
-    detailedDescription: "Carlsbad is coastal living at its best. Families love its beaches and top-ranked schools, while investors see strong rental demand and appreciation potential. It's the perfect balance of lifestyle and return."
+    translationKey: "service_areas.carlsbad.description"
   },
   {
     name: "Oceanside",
     image: "/images/1-web-or-mls-Venice (20 of 53).JPG",
     description: "Beach community with character",
-    detailedDescription: "Oceanside combines a relaxed beach vibe with a revitalized downtown and military presence. From VA loan opportunities to waterfront investments, it offers something unique for veterans, families, and investors."
+    translationKey: "service_areas.oceanside.description"
   }
 ]
 
 export default function ServiceAreasMapSection() {
+  const { t } = useLanguageStore()
   const [currentAreaIndex, setCurrentAreaIndex] = useState(0)
 
   const goToPrevious = () => {
@@ -61,10 +63,10 @@ export default function ServiceAreasMapSection() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center space-y-4 mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground font-lexend">
-            Local Expertise Where It Matters Most
+            {t('service_areas.title')}
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Knowledge of schools, commutes and neighborhood markets.
+            {t('service_areas.subtitle')}
           </p>
         </div>
         
@@ -73,7 +75,7 @@ export default function ServiceAreasMapSection() {
           {/* Left Column - Interactive Map */}
           <div className="relative">
             <p className="text-center text-coastal-sage font-medium mb-4">
-              Click on the locations to explore each area
+              {t('service_areas.map_instruction')}
             </p>
             <div className="h-[28rem] rounded-2xl overflow-hidden bg-coastal-cream">
               <MapComponent 
@@ -133,7 +135,7 @@ export default function ServiceAreasMapSection() {
                     {areas[currentAreaIndex].name}
                   </h3>
                   <p className="text-white/90 text-base leading-relaxed">
-                    {areas[currentAreaIndex].detailedDescription}
+                    {t(areas[currentAreaIndex].translationKey)}
                   </p>
                 </div>
               </div>

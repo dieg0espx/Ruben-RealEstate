@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
 import { Star, Quote } from "lucide-react"
 import { useState } from "react"
+import { useLanguageStore } from "@/hooks/useLanguageStore"
 
 const testimonials = [
   {
@@ -11,74 +12,75 @@ const testimonials = [
     name: "Photogenic SD",
     rating: 5,
     date: "3 months ago",
-    text: "I am a real estate photographer and I work with a lot of realtors in San Diego. I know a great agent when I arrive to do the photos and the clients have the home 100% picture ready. Ruben does an excellent job setting the expectations for the seller's so his listings always stand out and they are setup for success from the start. Ruben is great guy, super knowledgeable, I would highly recommend him for real estate transactions or property management!"
+    translationKey: "testimonials.1"
   },
   {
     id: 2,
     name: "Ella Durbin",
     rating: 5,
     date: "7 months ago",
-    text: "Ruben was incredibly helpful for us when we were looking for a tenant for our home. He is knowledgeable, responsive, kind, and understanding. He was able to learn with us and took all our feedback seriously. Couldn't recommend him enough. We will definitely be working with Ruben in the future for any placement or property manager needs."
+    translationKey: "testimonials.2"
   },
   {
     id: 3,
     name: "Jackson W",
     rating: 5,
     date: "8 months ago",
-    text: "Ruben is awesome! If there were a way to give him 6 stars I would. He is super responsive, and really stays on top of things well. It was very comforting to know we had someone who we could really trust throughout the process. He made everything very smooth and seamless, answered all of our questions and had excellent insight. If you're looking for a real estate agent, Ruben will exceed your expectations."
+    translationKey: "testimonials.3"
   },
   {
     id: 4,
     name: "Juan Ramirez",
     rating: 5,
     date: "1 year ago",
-    text: "Ruben is exceptional at his craft and does an incredible job at guiding his clients every step of the way in a real estate transaction. He has deep knowledge of the market, great attention to detail, and always puts his clients interest first. You can expect great results when working with Ruben."
+    translationKey: "testimonials.4"
   },
   {
     id: 5,
     name: "Hayley Shams",
     rating: 5,
     date: "10 months ago",
-    text: "I have had the pleasure of working alongside Ruben on multiple transactions. His passion to serve and educate his clients along the way is truly remarkable. Ruben is hard working, diligent with the details, and gets the job done! Highly recommend him for not only real estate but also property management as well!"
+    translationKey: "testimonials.5"
   },
   {
     id: 6,
     name: "Male Beatie",
     rating: 5,
     date: "1 year ago",
-    text: "Ruben is very knowledgeable in the home buying and selling process. He educated his clients. He explains everything clearly. Always answers his phone. He makes the home buying/selling process smooth. He is patient and an has a lot of insight and expertise in the RE industry. Ruben listens to his clients needs."
+    translationKey: "testimonials.6"
   },
   {
     id: 7,
     name: "Melanie Callaway",
     rating: 5,
     date: "1 year ago",
-    text: "Working with Ruben has been an absolute pleasure from start to finish. Not only is he an incredibly skilled real estate agent, but he goes above and beyond by offering invaluable mentorship along the way. As a first-time homebuyer, I was nervous about the entire process, but Ruben's guidance and expertise put me at ease right away. What sets Ruben apart is his genuine commitment to his clients' success. He took the time to understand my needs and patiently answered all my questions, ensuring I felt confident at every step."
+    translationKey: "testimonials.7"
   },
   {
     id: 8,
     name: "Olivia Guinn",
     rating: 5,
     date: "1 year ago",
-    text: "If you are looking for the best home buying experience, you have to work with Ruben. Ruben has every quality to not only make your homeownership dreams come true but also make the journey an enjoyable experience. He takes on every hurdle that may come along with professionalism and a great attitude. I am proud to say he is my realtor partner."
+    translationKey: "testimonials.8"
   },
   {
     id: 9,
     name: "C.J. Penkert",
     rating: 5,
     date: "1 year ago",
-    text: "Ruben and his team went above and beyond expectations for us. He represented our interests very well as a buyer agent. Not only from a standpoint of typical broker work, but also his contact list of professional services. He has a stellar network of people that impressed us throughout the process. Thanks Ruben!"
+    translationKey: "testimonials.9"
   },
   {
     id: 10,
     name: "Irene Dolan",
     rating: 5,
     date: "1 year ago",
-    text: "We were referred to Ruben by a friend who raved of his knowledge. We enjoyed his enthusiasm and his expertise in his field. He enlightened us to some things we would not have thought of, was very informative and eager to answer any and all questions, and was easy to work with. We want to thank him for his time, energy and effort in assisting us and always being available for our 100 questions. Ruben is definitely are go to guy going forward!"
+    translationKey: "testimonials.10"
   }
 ]
 
 export default function TestimonialsSection() {
+  const { t } = useLanguageStore()
   const [currentIndex, setCurrentIndex] = useState(0)
 
   const nextTestimonials = () => {
@@ -128,13 +130,13 @@ export default function TestimonialsSection() {
         <div className="text-center space-y-4 mb-16">
           <Badge className="bg-coastal-sage/20 text-coastal-slate border-coastal-sage">
             <Quote className="w-4 h-4 mr-2" />
-            Testimonials
+            {t('testimonials.badge')}
           </Badge>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground font-lexend">
-            What Clients Say
+            {t('testimonials.title')}
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Real feedback from satisfied clients who trusted Ruben with their real estate needs
+            {t('testimonials.subtitle')}
           </p>
         </div>
 
@@ -159,7 +161,7 @@ export default function TestimonialsSection() {
 
                     {/* Testimonial Text */}
                     <blockquote className="text-sm md:text-base text-muted-foreground leading-relaxed italic text-center">
-                      "{testimonial.text}"
+                      "{t(testimonial.translationKey)}"
                     </blockquote>
                   </div>
 

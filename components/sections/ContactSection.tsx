@@ -1,11 +1,16 @@
+'use client'
+
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
 import { Badge } from "@/components/ui/badge"
 import { Phone, Mail, MapPin } from "lucide-react"
+import { useLanguageStore } from "@/hooks/useLanguageStore"
 
 export default function ContactSection() {
+  const { t } = useLanguageStore()
+
   return (
     <section id="contact" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-6">
@@ -14,13 +19,13 @@ export default function ContactSection() {
             <div className="space-y-4">
               <Badge className="bg-coastal-cream/20 text-coastal-slate border-coastal-cream">
                 <Phone className="w-4 h-4 mr-2" />
-                Get In Touch
+                {t('contact.badge')}
               </Badge>
               <h2 className="text-4xl md:text-5xl font-bold text-foreground font-lexend">
-                Ready to Start Your Journey?
+                {t('contact.title')}
               </h2>
               <p className="text-xl text-muted-foreground">
-                Let's discuss your real estate goals and create a strategy that works for you.
+                {t('contact.subtitle')}
               </p>
             </div>
             
@@ -30,7 +35,7 @@ export default function ContactSection() {
                   <Phone className="w-6 h-6 text-coastal-cream" />
                 </div>
                 <div>
-                  <div className="font-semibold text-foreground">Phone</div>
+                  <div className="font-semibold text-foreground">{t('contact.phone')}</div>
                   <div className="text-muted-foreground">(541) 602-1026</div>
                 </div>
               </div>
@@ -40,7 +45,7 @@ export default function ContactSection() {
                   <Mail className="w-6 h-6 text-coastal-cream" />
                 </div>
                 <div>
-                  <div className="font-semibold text-foreground">Email</div>
+                  <div className="font-semibold text-foreground">{t('contact.email')}</div>
                   <div className="text-muted-foreground">ruben.o.banuelos@gmail.com</div>
                 </div>
               </div>
@@ -50,8 +55,8 @@ export default function ContactSection() {
                   <MapPin className="w-6 h-6 text-coastal-cream" />
                 </div>
                 <div>
-                  <div className="font-semibold text-foreground">Service Areas</div>
-                  <div className="text-muted-foreground">North County San Diego</div>
+                  <div className="font-semibold text-foreground">{t('contact.areas')}</div>
+                  <div className="text-muted-foreground">{t('contact.areas.description')}</div>
                 </div>
               </div>
             </div>
@@ -59,53 +64,53 @@ export default function ContactSection() {
             <div className="pt-4">
               <Button size="lg" className="bg-coastal-gradient hover:opacity-90 text-coastal-cream text-lg px-8 py-4">
                 <Phone className="w-5 h-5 mr-2" />
-                Schedule Strategy Call
+                {t('contact.schedule_button')}
               </Button>
             </div>
           </div>
           
           <div className="bg-white rounded-2xl p-8 border shadow-lg">
-            <h3 className="text-2xl font-bold text-foreground mb-6">Send a Message</h3>
+            <h3 className="text-2xl font-bold text-foreground mb-6">{t('contact.form.title')}</h3>
             <form className="space-y-6">
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <Label htmlFor="firstName">First Name</Label>
-                  <Input id="firstName" placeholder="Your first name" />
+                  <Label htmlFor="firstName">{t('contact.form.first_name')}</Label>
+                  <Input id="firstName" placeholder={t('contact.form.first_name_placeholder')} />
                 </div>
                 <div>
-                  <Label htmlFor="lastName">Last Name</Label>
-                  <Input id="lastName" placeholder="Your last name" />
+                  <Label htmlFor="lastName">{t('contact.form.last_name')}</Label>
+                  <Input id="lastName" placeholder={t('contact.form.last_name_placeholder')} />
                 </div>
               </div>
               
               <div>
-                <Label htmlFor="email">Email</Label>
-                <Input id="email" type="email" placeholder="your.email@example.com" />
+                <Label htmlFor="email">{t('contact.form.email')}</Label>
+                <Input id="email" type="email" placeholder={t('contact.form.email_placeholder')} />
               </div>
               
               <div>
-                <Label htmlFor="phone">Phone</Label>
-                <Input id="phone" type="tel" placeholder="(555) 123-4567" />
+                <Label htmlFor="phone">{t('contact.form.phone')}</Label>
+                <Input id="phone" type="tel" placeholder={t('contact.form.phone_placeholder')} />
               </div>
               
               <div>
-                <Label htmlFor="clientType">I'm interested in:</Label>
+                <Label htmlFor="clientType">{t('contact.form.client_type')}</Label>
                 <select id="clientType" className="w-full px-3 py-2 border border-input rounded-md bg-background">
-                  <option>Veteran Services (Camp Pendleton, Miramar, Coronado)</option>
-                  <option>Investment Opportunities</option>
-                  <option>First-Time Home Buying</option>
-                  <option>Property Management</option>
-                  <option>General Consultation</option>
+                  <option>{t('contact.form.option1')}</option>
+                  <option>{t('contact.form.option2')}</option>
+                  <option>{t('contact.form.option3')}</option>
+                  <option>{t('contact.form.option4')}</option>
+                  <option>{t('contact.form.option5')}</option>
                 </select>
               </div>
               
               <div>
-                <Label htmlFor="message">Message</Label>
-                <Textarea id="message" placeholder="Tell me about your real estate goals..." rows={4} />
+                <Label htmlFor="message">{t('contact.form.message')}</Label>
+                <Textarea id="message" placeholder={t('contact.form.message_placeholder')} rows={4} />
               </div>
               
               <Button type="submit" className="w-full bg-coastal-gradient hover:opacity-90 text-coastal-cream">
-                Send Message
+                {t('contact.form.submit')}
               </Button>
             </form>
           </div>
