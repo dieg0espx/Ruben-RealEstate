@@ -26,6 +26,15 @@ export default function Header() {
     setIsMobileMenuOpen(false)
   }
 
+  // Scroll to top function
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    })
+    setIsMobileMenuOpen(false)
+  }
+
   // Track active section on scroll
   useEffect(() => {
     const handleScroll = () => {
@@ -57,19 +66,19 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-white backdrop-blur supports-[backdrop-filter]:bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-2 sm:py-3">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-1 sm:py-2">
         <nav className="flex items-center justify-between w-full">
           {/* Desktop Navigation - Full Width Distribution */}
           <div className="hidden lg:flex items-center justify-between w-full">
             {/* Logo */}
             <div className="flex items-center space-x-2 sm:space-x-3">
-              <button onClick={() => scrollToSection('about')} className="focus:outline-none">
+              <button onClick={scrollToTop} className="focus:outline-none">
                 <Image
                   src="/logo/ruben real estate_Horizontal.png"
                   alt="Ruben Real Estate Logo"
                   width={240}
                   height={60}
-                  className="h-10 sm:h-12 md:h-16 w-auto"
+                  className="h-12 sm:h-14 md:h-16 w-auto"
                   priority
                 />
               </button>
@@ -120,13 +129,13 @@ export default function Header() {
           <div className="lg:hidden flex items-center justify-between w-full">
             {/* Logo */}
             <div className="flex items-center space-x-2 sm:space-x-3">
-              <button onClick={() => scrollToSection('about')} className="focus:outline-none">
+              <button onClick={scrollToTop} className="focus:outline-none">
                 <Image
                   src="/logo/ruben real estate_Horizontal.png"
                   alt="Ruben Real Estate Logo"
                   width={240}
                   height={60}
-                  className="h-10 sm:h-12 md:h-16 w-auto"
+                  className="h-12 sm:h-14 md:h-16 w-auto"
                   priority
                 />
               </button>
