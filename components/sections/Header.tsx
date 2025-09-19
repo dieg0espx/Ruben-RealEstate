@@ -56,8 +56,8 @@ export default function Header() {
   ]
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4">
+    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-white backdrop-blur supports-[backdrop-filter]:bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-2 sm:py-3">
         <nav className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center space-x-2 sm:space-x-3">
@@ -94,14 +94,14 @@ export default function Header() {
               variant="outline" 
               size="sm" 
               onClick={toggleLanguage}
-              className="border-coastal-slate text-coastal-slate hover:bg-coastal-cream/10 text-xs xl:text-sm"
+              className="border-coastal-slate text-coastal-slate hover:bg-black hover:text-white text-xs xl:text-sm transition-all duration-300"
             >
               <Globe className="w-3 h-3 xl:w-4 xl:h-4 mr-1 xl:mr-2" />
               {language === 'en' ? 'ES' : 'EN'}
             </Button>
             
             <Button 
-              className="bg-coastal-gradient hover:opacity-90 text-coastal-cream text-xs xl:text-sm"
+              className="bg-coastal-gradient hover:bg-[#5F7D6D] hover:text-white text-coastal-cream text-xs xl:text-sm transition-all duration-300"
               onClick={() => window.open('tel:+15416021026', '_self')}
             >
               <Phone className="w-3 h-3 xl:w-4 xl:h-4 mr-1 xl:mr-2" />
@@ -116,13 +116,13 @@ export default function Header() {
               variant="outline" 
               size="sm" 
               onClick={toggleLanguage}
-              className="border-coastal-slate text-coastal-slate hover:bg-coastal-cream/10 text-xs"
+              className="border-coastal-slate text-coastal-slate hover:bg-black hover:text-white text-xs transition-all duration-300"
             >
               <Globe className="w-3 h-3 mr-1" />
               {language === 'en' ? 'ES' : 'EN'}
             </Button>
             <Button 
-              className="bg-coastal-gradient hover:opacity-90 text-coastal-cream text-xs"
+              className="bg-coastal-gradient hover:bg-[#5F7D6D] hover:text-white text-coastal-cream text-xs transition-all duration-300"
               onClick={() => window.open('tel:+15416021026', '_self')}
             >
               <Phone className="w-3 h-3 mr-1" />
@@ -136,7 +136,7 @@ export default function Header() {
               variant="outline" 
               size="sm" 
               onClick={toggleLanguage}
-              className="border-coastal-slate text-coastal-slate hover:bg-coastal-cream/10 text-xs"
+              className="border-coastal-slate text-coastal-slate hover:bg-black hover:text-white text-xs transition-all duration-300"
             >
               <Globe className="w-3 h-3 mr-1" />
               {language === 'en' ? 'ES' : 'EN'}
@@ -145,7 +145,7 @@ export default function Header() {
               variant="outline" 
               size="sm" 
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="border-coastal-slate text-coastal-slate hover:bg-coastal-cream/10"
+              className="border-coastal-slate text-coastal-slate hover:bg-black hover:text-white transition-all duration-300"
             >
               {isMobileMenuOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
             </Button>
@@ -171,7 +171,7 @@ export default function Header() {
               ))}
               <div className="pt-4">
                 <Button 
-                  className="w-full bg-coastal-gradient hover:opacity-90 text-coastal-cream text-base py-3"
+                  className="w-full bg-coastal-gradient hover:bg-[#5F7D6D] hover:text-white text-coastal-cream text-base py-3 transition-all duration-300"
                   onClick={() => window.open('tel:+15416021026', '_self')}
                 >
                   <Phone className="w-4 h-4 mr-2" />

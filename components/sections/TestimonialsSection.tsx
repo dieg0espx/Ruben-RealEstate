@@ -5,6 +5,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Star } from "lucide-react"
 import { useState } from "react"
 import { useLanguageStore } from "@/hooks/useLanguageStore"
+import { useScrollAnimation } from "@/hooks/useScrollAnimation"
 
 const testimonials = [
   {
@@ -74,6 +75,7 @@ const testimonials = [
 
 export default function TestimonialsSection() {
   const { t } = useLanguageStore()
+  const { ref, isVisible } = useScrollAnimation()
   const [currentIndex, setCurrentIndex] = useState(0)
 
   const goToTestimonials = (index: number) => {
@@ -114,7 +116,7 @@ export default function TestimonialsSection() {
   }
 
   return (
-    <section id="testimonials" className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-coastal-cream/40 via-white to-coastal-sage/30 relative overflow-hidden">
+    <section ref={ref} id="testimonials" className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-coastal-cream/40 via-white to-coastal-sage/30 relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-20 right-20 w-40 h-40 bg-coastal-teal rounded-full blur-3xl"></div>
@@ -125,13 +127,13 @@ export default function TestimonialsSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         {/* Enhanced Header */}
         <div className="text-center space-y-4 sm:space-y-6 mb-12 sm:mb-16 lg:mb-20">
-          <Badge className="bg-coastal-teal/20 text-coastal-slate border-coastal-teal px-4 sm:px-6 py-2 text-sm font-medium">
+          <Badge className={`bg-coastal-teal/20 text-coastal-slate border-coastal-teal px-4 sm:px-6 py-2 text-sm font-medium transition-all duration-800 ${isVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-8'}`}>
             {t('testimonials.badge')}
           </Badge>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground font-lexend">
+          <h2 className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground font-lexend transition-all duration-800 delay-200 ${isVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-8'}`}>
             {t('testimonials.title')}
           </h2>
-          <p className="text-lg sm:text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed px-4">
+          <p className={`text-lg sm:text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed px-4 transition-all duration-800 delay-400 ${isVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-8'}`}>
             {t('testimonials.subtitle')}
           </p>
         </div>
@@ -187,11 +189,11 @@ export default function TestimonialsSection() {
         </div>
 
         {/* Desktop Testimonials Grid */}
-        <div className="hidden md:block">
-          <div className="grid md:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
+        <div className={`hidden md:block transition-all duration-800 delay-600 ${isVisible ? 'animate-slide-up' : 'opacity-0 translate-y-12'}`}>
+          <div className="grid md:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 items-stretch">
             {getVisibleTestimonials().map((testimonial, index) => (
-              <Card key={testimonial.id} className="group hover:shadow-2xl transition-all duration-500 h-full border-0 bg-white/80 backdrop-blur-sm hover:bg-white/90 hover:scale-[1.02]">
-                <CardContent className="p-6 sm:p-8 h-full flex flex-col relative">
+              <Card key={testimonial.id} className="group hover:shadow-2xl transition-all duration-500 h-full border-0 bg-white/80 backdrop-blur-sm hover:bg-white/90 hover:scale-[1.02] flex flex-col">
+                <CardContent className="p-6 sm:p-8 h-full flex flex-col relative flex-1">
                   {/* Enhanced Stars */}
                   <div className="flex justify-center space-x-1 mb-4 sm:mb-6">
                     {renderStars(testimonial.rating)}

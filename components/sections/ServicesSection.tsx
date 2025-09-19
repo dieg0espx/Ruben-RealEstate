@@ -5,6 +5,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Shield, TrendingUp, Heart, CheckCircle, Play } from "lucide-react"
 import { useLanguageStore } from "@/hooks/useLanguageStore"
+import { useScrollAnimation } from "@/hooks/useScrollAnimation"
 import { useEffect, useRef } from "react"
 
 const serviceData = [
@@ -48,6 +49,7 @@ const serviceData = [
 
 export default function ServicesSection() {
   const { t } = useLanguageStore()
+  const { ref, isVisible } = useScrollAnimation()
   const videoRef = useRef<HTMLVideoElement>(null)
 
   useEffect(() => {
@@ -79,24 +81,24 @@ export default function ServicesSection() {
   }, [])
 
   return (
-    <section id="services" className="py-16 sm:py-20 bg-gradient-to-br from-coastal-cream/20 to-coastal-sage/10">
+    <section ref={ref} id="services" className="py-16 sm:py-20 bg-gradient-to-br from-coastal-cream/20 to-coastal-sage/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="text-center space-y-4 mb-12 sm:mb-16">
-          <Badge className="bg-coastal-teal/20 text-coastal-slate border-coastal-teal">
+          <Badge className={`bg-coastal-teal/20 text-coastal-slate border-coastal-teal transition-all duration-800 ${isVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-8'}`}>
             <Shield className="w-4 h-4 mr-2" />
             {t('services.badge')}
           </Badge>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground font-lexend">
+          <h2 className={`text-3xl sm:text-4xl md:text-5xl font-bold text-foreground font-lexend transition-all duration-800 delay-200 ${isVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-8'}`}>
             {t('services.title')}
           </h2>
-          <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto px-4">
+          <p className={`text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto px-4 transition-all duration-800 delay-400 ${isVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-8'}`}>
             {t('services.subtitle')}
           </p>
         </div>
         
         <div className="grid lg:grid-cols-5 gap-6 sm:gap-8 items-start">
           {/* Left Side - Video */}
-          <div className="relative lg:col-span-3 order-2 lg:order-1">
+          <div className={`relative lg:col-span-3 order-2 lg:order-1 transition-all duration-800 delay-600 ${isVisible ? 'animate-fade-in-left' : 'opacity-0 -translate-x-8'}`}>
             <div className="relative h-[400px] sm:h-[500px] lg:h-[650px] rounded-2xl overflow-hidden shadow-2xl">
               <video
                 ref={videoRef}
@@ -117,7 +119,7 @@ export default function ServicesSection() {
           </div>
 
           {/* Right Side - Service Cards */}
-          <div className="space-y-4 lg:col-span-2 order-1 lg:order-2">
+          <div className={`space-y-4 lg:col-span-2 order-1 lg:order-2 transition-all duration-800 delay-800 ${isVisible ? 'animate-fade-in-right' : 'opacity-0 translate-x-8'}`}>
             {serviceData.map((service) => {
               const IconComponent = service.icon
               

@@ -108,20 +108,20 @@ export default function PortfolioSection() {
       <section id="properties" className="py-16 sm:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center space-y-4 mb-12 sm:mb-16">
-            <Badge className="bg-coastal-sage/20 text-coastal-slate border-coastal-sage">
+            <Badge className="bg-coastal-sage/20 text-coastal-slate border-coastal-sage animate-fade-in-up">
               <Camera className="w-4 h-4 mr-2" />
               {t('portfolio.badge')}
             </Badge>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground font-lexend">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground font-lexend animate-fade-in-up animation-delay-200">
               {t('portfolio.title')}
             </h2>
-            <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto px-4">
+            <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto px-4 animate-fade-in-up animation-delay-400">
               {t('portfolio.subtitle')}
             </p>
           </div>
 
           {/* Mobile Layout: Main photo + thumbnails */}
-          <div className="block sm:hidden">
+          <div className="block sm:hidden animate-slide-up">
             <div className="space-y-4">
               {/* Main Featured Image */}
               <div
@@ -177,7 +177,8 @@ export default function PortfolioSection() {
             {portfolioItems.map((item, index) => (
               <div
                 key={item.id}
-                className="group relative overflow-hidden rounded-xl cursor-pointer hover:shadow-xl transition-all duration-300"
+                className="group relative overflow-hidden rounded-xl cursor-pointer hover:shadow-xl transition-all duration-300 animate-scale-in"
+                style={{ animationDelay: `${index * 0.1}s` }}
                 onClick={() => openLightbox(index)}
               >
                 <div className="relative aspect-square">

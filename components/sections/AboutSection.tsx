@@ -4,16 +4,18 @@ import { Badge } from "@/components/ui/badge"
 import { Users, GraduationCap, Heart, Home, TrendingUp } from "lucide-react"
 import Image from "next/image"
 import { useLanguageStore } from "@/hooks/useLanguageStore"
+import { useScrollAnimation } from "@/hooks/useScrollAnimation"
 
 export default function AboutSection() {
   const { t } = useLanguageStore()
+  const { ref, isVisible } = useScrollAnimation()
 
   return (
-    <section id="about" className="py-16 sm:py-20">
+    <section ref={ref} id="about" className="py-16 sm:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-start">
             {/* Left Column - Image with Badges */}
-            <div className="relative h-full">
+            <div className={`relative h-full transition-all duration-800 ${isVisible ? 'animate-fade-in-left' : 'opacity-0 -translate-x-8'}`}>
               <div className="relative w-full h-[400px] sm:h-[500px] lg:h-full rounded-2xl overflow-hidden">
                 <Image
                   src="/Fearless Headshot.jpg"
@@ -47,14 +49,14 @@ export default function AboutSection() {
             <div className="space-y-6">
               {/* Timeline Title and Subtitle */}
               <div className="space-y-4">
-                <Badge className="bg-coastal-cream/20 text-coastal-slate border-coastal-cream">
+                <Badge className={`bg-coastal-cream/20 text-coastal-slate border-coastal-cream transition-all duration-800 delay-200 ${isVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-8'}`}>
                   <Users className="w-4 h-4 mr-2" />
                   {t('about.badge')}
                 </Badge>
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground font-lexend">
+                <h2 className={`text-3xl sm:text-4xl md:text-5xl font-bold text-foreground font-lexend transition-all duration-800 delay-400 ${isVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-8'}`}>
                   {t('about.title')}
                 </h2>
-                <p className="text-base sm:text-lg text-muted-foreground">
+                <p className={`text-base sm:text-lg text-muted-foreground transition-all duration-800 delay-600 ${isVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-8'}`}>
                   {t('about.subtitle')}
                 </p>
               </div>
@@ -68,7 +70,7 @@ export default function AboutSection() {
                 
                 <div className="space-y-6 sm:space-y-8">
               {/* Step 1: Healthcare Foundation */}
-              <div className="flex items-start gap-4 sm:gap-6">
+              <div className={`flex items-start gap-4 sm:gap-6 transition-all duration-800 delay-800 ${isVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-8'}`}>
                 <div className="flex-shrink-0">
                   <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full flex items-center justify-center shadow-lg relative z-20" style={{backgroundColor: '#5F7D6D'}}>
                     <GraduationCap className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
@@ -85,7 +87,7 @@ export default function AboutSection() {
               </div>
 
               {/* Step 2: Family Motivation */}
-              <div className="flex items-start gap-4 sm:gap-6">
+              <div className={`flex items-start gap-4 sm:gap-6 transition-all duration-800 delay-1000 ${isVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-8'}`}>
                 <div className="flex-shrink-0">
                   <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full flex items-center justify-center shadow-lg relative z-20" style={{backgroundColor: '#5F7D6D'}}>
                     <Heart className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
@@ -102,7 +104,7 @@ export default function AboutSection() {
               </div>
 
               {/* Step 3: Real Estate Transition */}
-              <div className="flex items-start gap-4 sm:gap-6">
+              <div className={`flex items-start gap-4 sm:gap-6 transition-all duration-800 delay-1200 ${isVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-8'}`}>
                 <div className="flex-shrink-0">
                   <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full flex items-center justify-center shadow-lg relative z-20" style={{backgroundColor: '#5F7D6D'}}>
                     <Home className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
@@ -119,7 +121,7 @@ export default function AboutSection() {
               </div>
 
               {/* Step 4: Rising Star */}
-              <div className="flex items-start gap-4 sm:gap-6">
+              <div className={`flex items-start gap-4 sm:gap-6 transition-all duration-800 delay-1400 ${isVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-8'}`}>
                 <div className="flex-shrink-0">
                   <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full flex items-center justify-center shadow-lg relative z-20" style={{backgroundColor: '#5F7D6D'}}>
                     <TrendingUp className="w-6 h-6 sm:w-8 sm:h-8 text-white" />

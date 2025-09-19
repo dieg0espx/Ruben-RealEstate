@@ -63,10 +63,10 @@ export default function ServiceAreasMapSection() {
     <section className="py-16 sm:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="text-center space-y-4 mb-12 sm:mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground font-lexend">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground font-lexend animate-fade-in-up">
             {t('service_areas.title')}
           </h2>
-          <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto px-4">
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto px-4 animate-fade-in-up animation-delay-200">
             {t('service_areas.subtitle')}
           </p>
         </div>
@@ -74,7 +74,7 @@ export default function ServiceAreasMapSection() {
         {/* Side-by-side layout: Map on left, Slideshow on right */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 items-start">
           {/* Left Column - Interactive Map */}
-          <div className="relative order-1 lg:order-1">
+          <div className="relative order-1 lg:order-1 animate-fade-in-left">
             <p className="text-center text-coastal-sage font-medium mb-4 text-sm sm:text-base">
               {t('service_areas.map_instruction')}
             </p>
@@ -102,7 +102,7 @@ export default function ServiceAreasMapSection() {
           </div>
 
           {/* Right Column - Slideshow */}
-          <div className="space-y-6 order-2 lg:order-2">
+          <div className="space-y-6 order-2 lg:order-2 animate-fade-in-right">
             <div className="mb-6 sm:mb-10"></div>
             <div className="relative h-[20rem] sm:h-[24rem] lg:h-[28rem] rounded-xl overflow-hidden shadow-2xl">
               <div className="relative h-full">
@@ -148,7 +148,7 @@ export default function ServiceAreasMapSection() {
         <div className="text-center mt-8 sm:mt-12">
           <Button 
             size="lg" 
-            className="bg-coastal-teal hover:opacity-90 text-coastal-cream text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4"
+            className="bg-coastal-teal hover:bg-[#5F7D6D] hover:text-white text-coastal-cream text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 transition-all duration-300"
             onClick={() => {
               const contactSection = document.getElementById('contact')
               if (contactSection) {
