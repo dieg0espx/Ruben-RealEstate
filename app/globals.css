@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@import "bootstrap-icons/font/bootstrap-icons.css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -215,5 +216,123 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* Slick Carousel Custom Styles */
+.testimonials-carousel .slick-slider {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  user-select: none;
+  touch-action: pan-y;
+  -webkit-touch-callout: none;
+  -khtml-user-select: none;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.testimonials-carousel .slick-list {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.testimonials-carousel .slick-track {
+  position: relative;
+  top: 0;
+  left: 0;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.testimonials-carousel .slick-slide {
+  display: none;
+  float: left;
+  height: 100%;
+  min-height: 1px;
+}
+
+.testimonials-carousel .slick-slide.slick-active {
+  display: block;
+}
+
+.testimonials-carousel .slick-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  font-size: 0;
+  line-height: 0;
+}
+
+.testimonials-carousel .slick-arrow:hover {
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.testimonials-carousel .slick-arrow:before {
+  content: '';
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+.testimonials-carousel .slick-prev {
+  left: -25px;
+}
+
+.testimonials-carousel .slick-prev:before {
+  border-width: 8px 12px 8px 0;
+  border-color: transparent #577586 transparent transparent;
+}
+
+.testimonials-carousel .slick-next {
+  right: -25px;
+}
+
+.testimonials-carousel .slick-next:before {
+  border-width: 8px 0 8px 12px;
+  border-color: transparent transparent transparent #577586;
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .testimonials-carousel .slick-arrow {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .testimonials-carousel .slick-prev {
+    left: -20px;
+  }
+  
+  .testimonials-carousel .slick-next {
+    right: -20px;
+  }
+  
+  .testimonials-carousel .slick-arrow:before {
+    border-width: 6px 10px 6px 0;
+  }
+  
+  .testimonials-carousel .slick-next:before {
+    border-width: 6px 0 6px 10px;
   }
 }

@@ -126,6 +126,7 @@ export const useLanguageStore = () => {
       'footer.service4': 'Property Management',
       'footer.areas_title': 'Areas',
       'footer.contact_title': 'Contact',
+      'footer.slogan': 'Your North County Home Starts Here',
       'footer.copyright': '© 2025 Ruben Real Estate. All rights reserved. | Realty of America (ROA)',
     },
     es: {
@@ -233,6 +234,7 @@ export const useLanguageStore = () => {
       'footer.service4': 'Administración de Propiedades',
       'footer.areas_title': 'Áreas',
       'footer.contact_title': 'Contacto',
+      'footer.slogan': 'Tu Hogar en North County Comienza Aquí',
       'footer.copyright': '© 2025 Ruben Real Estate. Todos los derechos reservados. | Realty of America (ROA)',
     }
   }

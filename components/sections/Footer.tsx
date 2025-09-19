@@ -20,6 +20,47 @@ export default function Footer() {
                 className="h-12 sm:h-16 w-auto brightness-0 invert"
               />
             </div>
+            <p className="text-white/90 text-sm sm:text-base font-medium max-w-xs">
+              {t('footer.slogan')}
+            </p>
+            <div className="flex space-x-4 pt-2">
+              <a 
+                href="https://www.facebook.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-white/70 hover:text-white transition-colors"
+                aria-label="Facebook"
+              >
+                <i className="bi bi-facebook text-xl"></i>
+              </a>
+              <a 
+                href="https://www.instagram.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-white/70 hover:text-white transition-colors"
+                aria-label="Instagram"
+              >
+                <i className="bi bi-instagram text-xl"></i>
+              </a>
+              <a 
+                href="https://www.linkedin.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-white/70 hover:text-white transition-colors"
+                aria-label="LinkedIn"
+              >
+                <i className="bi bi-linkedin text-xl"></i>
+              </a>
+              <a 
+                href="https://www.youtube.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-white/70 hover:text-white transition-colors"
+                aria-label="YouTube"
+              >
+                <i className="bi bi-youtube text-xl"></i>
+              </a>
+            </div>
           </div>
           
           <div className="space-y-4">
