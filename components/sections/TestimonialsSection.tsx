@@ -2,7 +2,7 @@
 
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
-import { Star, Quote } from "lucide-react"
+import { Star } from "lucide-react"
 import { useState } from "react"
 import { useLanguageStore } from "@/hooks/useLanguageStore"
 
@@ -58,10 +58,10 @@ const testimonials = [
   },
   {
     id: 8,
-    name: "Olivia Guinn",
+    name: "Irene Dolan",
     rating: 5,
     date: "1 year ago",
-    translationKey: "testimonials.8"
+    translationKey: "testimonials.10"
   },
   {
     id: 9,
@@ -69,13 +69,6 @@ const testimonials = [
     rating: 5,
     date: "1 year ago",
     translationKey: "testimonials.9"
-  },
-  {
-    id: 10,
-    name: "Irene Dolan",
-    rating: 5,
-    date: "1 year ago",
-    translationKey: "testimonials.10"
   }
 ]
 
@@ -83,16 +76,9 @@ export default function TestimonialsSection() {
   const { t } = useLanguageStore()
   const [currentIndex, setCurrentIndex] = useState(0)
 
-  const nextTestimonials = () => {
-    setCurrentIndex((prev) => (prev + 3) % testimonials.length)
-  }
-
-  const prevTestimonials = () => {
-    setCurrentIndex((prev) => (prev - 3 + testimonials.length) % testimonials.length)
-  }
-
   const goToTestimonials = (index: number) => {
-    setCurrentIndex(index)
+    const maxIndex = testimonials.length - 3
+    setCurrentIndex(Math.min(index, maxIndex))
   }
 
 
@@ -110,13 +96,16 @@ export default function TestimonialsSection() {
   const getVisibleTestimonials = () => {
     const visible = []
     for (let i = 0; i < 3; i++) {
-      const index = (currentIndex + i) % testimonials.length
-      visible.push(testimonials[index])
+      const index = currentIndex + i
+      if (index < testimonials.length) {
+        visible.push(testimonials[index])
+      }
     }
     return visible
   }
 
   const getTotalPages = () => {
+    // We have 9 testimonials and show 3 per page, so we have 3 pages
     return Math.ceil(testimonials.length / 3)
   }
 
@@ -125,52 +114,100 @@ export default function TestimonialsSection() {
   }
 
   return (
-    <section id="testimonials" className="py-20 bg-gradient-to-br from-coastal-cream/30 to-coastal-sage/20">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center space-y-4 mb-16">
-          <Badge className="bg-coastal-sage/20 text-coastal-slate border-coastal-sage">
-            <Quote className="w-4 h-4 mr-2" />
+    <section id="testimonials" className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-coastal-cream/40 via-white to-coastal-sage/30 relative overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-20 right-20 w-40 h-40 bg-coastal-teal rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 left-20 w-32 h-32 bg-coastal-sage rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 left-1/3 w-24 h-24 bg-coastal-steel rounded-full blur-3xl"></div>
+      </div>
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+        {/* Enhanced Header */}
+        <div className="text-center space-y-4 sm:space-y-6 mb-12 sm:mb-16 lg:mb-20">
+          <Badge className="bg-coastal-teal/20 text-coastal-slate border-coastal-teal px-4 sm:px-6 py-2 text-sm font-medium">
             {t('testimonials.badge')}
           </Badge>
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground font-lexend">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground font-lexend">
             {t('testimonials.title')}
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed px-4">
             {t('testimonials.subtitle')}
           </p>
         </div>
 
-        {/* Testimonials Carousel */}
-        <div className="relative">
-          <div className="grid md:grid-cols-3 gap-8">
+        {/* Mobile Testimonials Carousel */}
+        <div className="block md:hidden">
+          <div className="relative">
+            <Card className="group hover:shadow-2xl transition-all duration-500 h-full border-0 bg-white/80 backdrop-blur-sm hover:bg-white/90 hover:scale-[1.02]">
+              <CardContent className="p-6 h-full flex flex-col relative">
+                {/* Enhanced Stars */}
+                <div className="flex justify-center space-x-1 mb-4">
+                  {renderStars(testimonials[currentIndex].rating)}
+                </div>
+
+                {/* Enhanced Testimonial Text */}
+                <blockquote className="text-base text-muted-foreground leading-relaxed text-center flex-1 italic">
+                  "{t(testimonials[currentIndex].translationKey)}"
+                </blockquote>
+
+                {/* Enhanced Client Info */}
+                <div className="text-center space-y-2 mt-6">
+                  <h3 className="text-lg font-bold text-foreground group-hover:text-coastal-teal transition-colors duration-300">
+                    {testimonials[currentIndex].name}
+                  </h3>
+                  <p className="text-sm text-coastal-sage font-medium">
+                    {testimonials[currentIndex].date}
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Mobile Navigation Arrows */}
+            <button
+              onClick={() => setCurrentIndex((prevIndex) => (prevIndex - 1 + testimonials.length) % testimonials.length)}
+              className="absolute left-2 top-1/2 transform -translate-y-1/2 w-10 h-10 flex items-center justify-center text-black transition-all duration-300 hover:scale-110"
+              aria-label="Previous testimonial"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+            
+            <button
+              onClick={() => setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length)}
+              className="absolute right-2 top-1/2 transform -translate-y-1/2 w-10 h-10 flex items-center justify-center text-black transition-all duration-300 hover:scale-110"
+              aria-label="Next testimonial"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        {/* Desktop Testimonials Grid */}
+        <div className="hidden md:block">
+          <div className="grid md:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
             {getVisibleTestimonials().map((testimonial, index) => (
-              <Card key={testimonial.id} className="group hover:shadow-xl transition-all duration-300  h-full">
-                <CardContent className="p-6 h-full flex flex-col">
-                  <div className="space-y-4 flex-1">
-                    {/* Quote Icon */}
-                    <div className="flex justify-center">
-                      <div className="p-2 rounded-full bg-coastal-sage/10">
-                        <Quote className="w-6 h-6 text-coastal-sage" />
-                      </div>
-                    </div>
-
-                    {/* Stars */}
-                    <div className="flex justify-center space-x-1">
-                      {renderStars(testimonial.rating)}
-                    </div>
-
-                    {/* Testimonial Text */}
-                    <blockquote className="text-sm md:text-base text-muted-foreground leading-relaxed italic text-center">
-                      "{t(testimonial.translationKey)}"
-                    </blockquote>
+              <Card key={testimonial.id} className="group hover:shadow-2xl transition-all duration-500 h-full border-0 bg-white/80 backdrop-blur-sm hover:bg-white/90 hover:scale-[1.02]">
+                <CardContent className="p-6 sm:p-8 h-full flex flex-col relative">
+                  {/* Enhanced Stars */}
+                  <div className="flex justify-center space-x-1 mb-4 sm:mb-6">
+                    {renderStars(testimonial.rating)}
                   </div>
 
-                  {/* Client Info */}
-                  <div className="text-center space-y-1 mt-4">
-                    <h3 className="text-lg font-semibold text-foreground">
+                  {/* Enhanced Testimonial Text */}
+                  <blockquote className="text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed text-center flex-1 italic">
+                    "{t(testimonial.translationKey)}"
+                  </blockquote>
+
+                  {/* Enhanced Client Info */}
+                  <div className="text-center space-y-2 mt-6 sm:mt-8">
+                    <h3 className="text-lg sm:text-xl font-bold text-foreground group-hover:text-coastal-teal transition-colors duration-300">
                       {testimonial.name}
                     </h3>
-                    <p className="text-xs text-muted-foreground">
+                    <p className="text-xs sm:text-sm text-coastal-sage font-medium">
                       {testimonial.date}
                     </p>
                   </div>
@@ -178,42 +215,38 @@ export default function TestimonialsSection() {
               </Card>
             ))}
           </div>
-
-          {/* Navigation Arrows */}
-          <button
-            onClick={prevTestimonials}
-            className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white shadow-lg rounded-full p-3 transition-all duration-300 hover:scale-110"
-          >
-            <svg className="w-6 h-6 text-coastal-sage" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-            </svg>
-          </button>
-          <button
-            onClick={nextTestimonials}
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white shadow-lg rounded-full p-3 transition-all duration-300 hover:scale-110"
-          >
-            <svg className="w-6 h-6 text-coastal-sage" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
         </div>
 
-        {/* Dots Indicator */}
-        <div className="flex justify-center space-x-2 mt-8">
-          {Array.from({ length: getTotalPages() }, (_, index) => (
+        {/* Mobile Dots Indicator */}
+        <div className="flex justify-center space-x-3 mt-6 md:hidden">
+          {testimonials.map((_, index) => (
             <button
               key={index}
-              onClick={() => goToTestimonials(index * 3)}
+              onClick={() => setCurrentIndex(index)}
               className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                index === getCurrentPage()
-                  ? 'bg-coastal-sage scale-125'
-                  : 'bg-coastal-sage/30 hover:bg-coastal-sage/50'
+                index === currentIndex
+                  ? 'bg-coastal-sage scale-125 shadow-lg'
+                  : 'bg-coastal-sage/30 hover:bg-coastal-sage/60 hover:scale-110'
               }`}
             />
           ))}
         </div>
 
-        {/* Auto-play Toggle */}
+        {/* Desktop Dots Indicator */}
+        <div className="hidden md:flex justify-center space-x-3 mt-8 sm:mt-12">
+          {Array.from({ length: getTotalPages() }, (_, index) => (
+            <button
+              key={index}
+              onClick={() => goToTestimonials(index * 3)}
+              className={`w-3 h-3 sm:w-4 sm:h-4 rounded-full transition-all duration-300 ${
+                index === getCurrentPage()
+                  ? 'bg-black scale-125 shadow-lg'
+                  : 'bg-black/30 hover:bg-black/60 hover:scale-110'
+              }`}
+            />
+          ))}
+        </div>
+
       </div>
     </section>
   )

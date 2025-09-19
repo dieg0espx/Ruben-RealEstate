@@ -11,7 +11,7 @@ import Footer from "@/components/sections/Footer"
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-background">
+    <main className="flex-1 bg-background">
       <Header />
       <HeroSection />
       <FeaturesSection />
@@ -22,6 +22,6 @@ export default function HomePage() {
       <TestimonialsSection />
       <ContactSection />
       <Footer />
-    </div>
+    </main>
   )
 }

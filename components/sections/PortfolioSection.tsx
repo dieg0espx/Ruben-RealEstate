@@ -105,23 +105,75 @@ export default function PortfolioSection() {
 
   return (
     <>
-      <section id="portfolio" className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center space-y-4 mb-16">
+      <section id="properties" className="py-16 sm:py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="text-center space-y-4 mb-12 sm:mb-16">
             <Badge className="bg-coastal-sage/20 text-coastal-slate border-coastal-sage">
               <Camera className="w-4 h-4 mr-2" />
               {t('portfolio.badge')}
             </Badge>
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground font-lexend">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground font-lexend">
               {t('portfolio.title')}
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto px-4">
               {t('portfolio.subtitle')}
             </p>
           </div>
 
-          {/* Grid Gallery */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          {/* Mobile Layout: Main photo + thumbnails */}
+          <div className="block sm:hidden">
+            <div className="space-y-4">
+              {/* Main Featured Image */}
+              <div
+                className="group relative overflow-hidden rounded-xl cursor-pointer hover:shadow-xl transition-all duration-300"
+                onClick={() => openLightbox(0)}
+              >
+                <div className="relative aspect-square">
+                  <Image
+                    src={portfolioItems[0].src}
+                    alt={portfolioItems[0].caption}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300"></div>
+                </div>
+              </div>
+              
+              {/* Thumbnail Grid */}
+              <div className="grid grid-cols-4 gap-2">
+                {portfolioItems.slice(1, 9).map((item, index) => (
+                  <div
+                    key={item.id}
+                    className="group relative overflow-hidden rounded-lg cursor-pointer hover:shadow-lg transition-all duration-300"
+                    onClick={() => openLightbox(index + 1)}
+                  >
+                    <div className="relative aspect-square">
+                      <Image
+                        src={item.src}
+                        alt={item.caption}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300"></div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              
+              {/* "Click to see more" text */}
+              <div className="text-center">
+                <button
+                  onClick={() => openLightbox(0)}
+                  className="text-coastal-teal hover:text-coastal-sage font-medium text-sm underline transition-colors duration-300"
+                >
+                  Click to see more photos
+                </button>
+              </div>
+            </div>
+          </div>
+
+          {/* Desktop Layout: Original Grid */}
+          <div className="hidden sm:grid sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-4 md:gap-6">
             {portfolioItems.map((item, index) => (
               <div
                 key={item.id}
@@ -145,14 +197,14 @@ export default function PortfolioSection() {
 
       {/* Lightbox Modal */}
       {selectedImage !== null && (
-        <div className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4">
+        <div className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-2 sm:p-4">
           <div className="relative w-full max-w-6xl max-h-[90vh]">
             {/* Close Button */}
             <button
               onClick={closeLightbox}
-              className="absolute top-4 right-4 z-10 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full p-2 text-white transition-colors"
+              className="absolute top-2 right-2 sm:top-4 sm:right-4 z-10 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full p-2 text-white transition-colors"
             >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
@@ -160,17 +212,17 @@ export default function PortfolioSection() {
             {/* Navigation Buttons */}
             <button
               onClick={() => navigateImage('prev')}
-              className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full p-3 text-white transition-colors"
+              className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 z-10 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full p-2 sm:p-3 text-white transition-colors"
             >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
               </svg>
             </button>
             <button
               onClick={() => navigateImage('next')}
-              className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full p-3 text-white transition-colors"
+              className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 z-10 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full p-2 sm:p-3 text-white transition-colors"
             >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
             </button>
@@ -186,9 +238,8 @@ export default function PortfolioSection() {
               />
             </div>
 
-
             {/* Image Counter */}
-            <div className="absolute top-4 left-4 bg-white/20 backdrop-blur-sm rounded-full px-3 py-1 text-white text-sm font-medium">
+            <div className="absolute top-2 left-2 sm:top-4 sm:left-4 bg-white/20 backdrop-blur-sm rounded-full px-2 py-1 sm:px-3 sm:py-1 text-white text-xs sm:text-sm font-medium">
               {selectedImage + 1} / {portfolioItems.length}
             </div>
           </div>
