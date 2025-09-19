@@ -5,6 +5,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Shield, TrendingUp, Heart, CheckCircle, Play } from "lucide-react"
 import { useLanguageStore } from "@/hooks/useLanguageStore"
+import { useEffect, useRef } from "react"
 
 const serviceData = [
   {
@@ -47,6 +48,35 @@ const serviceData = [
 
 export default function ServicesSection() {
   const { t } = useLanguageStore()
+  const videoRef = useRef<HTMLVideoElement>(null)
+
+  useEffect(() => {
+    const video = videoRef.current
+    if (!video) return
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            video.play().catch((error) => {
+              console.log('Video autoplay failed:', error)
+            })
+          } else {
+            video.pause()
+          }
+        })
+      },
+      {
+        threshold: 0.5 // Play when 50% of the video is visible
+      }
+    )
+
+    observer.observe(video)
+
+    return () => {
+      observer.unobserve(video)
+    }
+  }, [])
 
   return (
     <section id="services" className="py-16 sm:py-20 bg-gradient-to-br from-coastal-cream/20 to-coastal-sage/10">
@@ -65,21 +95,24 @@ export default function ServicesSection() {
         </div>
         
         <div className="grid lg:grid-cols-5 gap-6 sm:gap-8 items-start">
-          {/* Left Side - Video Placeholder */}
+          {/* Left Side - Video */}
           <div className="relative lg:col-span-3 order-2 lg:order-1">
-            <div className="relative h-[400px] sm:h-[500px] lg:h-[650px] rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-coastal-teal/20 to-coastal-sage/20 border-2 border-dashed border-coastal-teal/30">
-              {/* Video Placeholder Content */}
-              <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-4 sm:p-8">
-                <div className="w-16 h-16 sm:w-20 sm:h-20 bg-coastal-teal/20 rounded-full flex items-center justify-center mb-4 sm:mb-6">
-                  <Play className="w-6 h-6 sm:w-8 sm:h-8 text-coastal-teal" />
-                </div>
-                <h3 className="text-xl sm:text-2xl font-bold font-lexend text-coastal-slate mb-2 sm:mb-3">
-                  Video Coming Soon
-                </h3>
-                <p className="text-coastal-slate/70 text-base sm:text-lg leading-relaxed max-w-sm px-4">
-                  Watch Ruben explain his specialized services and how he helps veterans, investors, and families achieve their real estate goals.
-                </p>
-              </div>
+            <div className="relative h-[400px] sm:h-[500px] lg:h-[650px] rounded-2xl overflow-hidden shadow-2xl">
+              <video
+                ref={videoRef}
+                className="w-full h-full object-cover"
+                controls
+                preload="metadata"
+                poster="/placeholder.jpg"
+                muted
+                loop
+              >
+                <source 
+                  src="https://res.cloudinary.com/dku1gnuat/video/upload/v1758300266/branded_rskkq0.mp4" 
+                  type="video/mp4" 
+                />
+                Your browser does not support the video tag.
+              </video>
             </div>
           </div>
 
