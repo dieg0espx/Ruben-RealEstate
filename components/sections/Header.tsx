@@ -58,97 +58,120 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-white backdrop-blur supports-[backdrop-filter]:bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-2 sm:py-3">
-        <nav className="flex items-center justify-between">
-          {/* Logo */}
-          <div className="flex items-center space-x-2 sm:space-x-3">
-            <button onClick={() => scrollToSection('about')} className="focus:outline-none">
-              <Image
-                src="/logo/ruben real estate_Horizontal.png"
-                alt="Ruben Real Estate Logo"
-                width={240}
-                height={60}
-                className="h-10 sm:h-12 md:h-16 w-auto"
-                priority
-              />
-            </button>
+        <nav className="flex items-center justify-between w-full">
+          {/* Desktop Navigation - Full Width Distribution */}
+          <div className="hidden lg:flex items-center justify-between w-full">
+            {/* Logo */}
+            <div className="flex items-center space-x-2 sm:space-x-3">
+              <button onClick={() => scrollToSection('about')} className="focus:outline-none">
+                <Image
+                  src="/logo/ruben real estate_Horizontal.png"
+                  alt="Ruben Real Estate Logo"
+                  width={240}
+                  height={60}
+                  className="h-10 sm:h-12 md:h-16 w-auto"
+                  priority
+                />
+              </button>
+            </div>
+
+            {/* Navigation Items - Centered */}
+            <div className="flex items-center gap-6 xl:gap-8">
+              {navItems.map((item) => (
+                <button
+                  key={item.id}
+                  onClick={() => scrollToSection(item.id)}
+                  className={`transition-colors text-sm xl:text-base ${
+                    activeSection === item.id
+                      ? 'text-coastal-teal font-semibold'
+                      : 'text-muted-foreground hover:text-foreground'
+                  }`}
+                >
+                  {item.label}
+                </button>
+              ))}
+            </div>
+            
+            {/* Right Side Buttons */}
+            <div className="flex items-center gap-3">
+              {/* Language Toggle */}
+              <Button 
+                variant="outline" 
+                size="sm" 
+                onClick={toggleLanguage}
+                className="border-coastal-slate text-coastal-slate hover:bg-black hover:text-white text-xs xl:text-sm transition-all duration-300"
+              >
+                <Globe className="w-3 h-3 xl:w-4 xl:h-4 mr-1 xl:mr-2" />
+                {language === 'en' ? 'ES' : 'EN'}
+              </Button>
+              
+              <Button 
+                className="bg-coastal-gradient hover:bg-[#5F7D6D] hover:text-white text-coastal-cream text-xs xl:text-sm transition-all duration-300"
+                onClick={() => window.open('tel:+15416021026', '_self')}
+              >
+                <Phone className="w-3 h-3 xl:w-4 xl:h-4 mr-1 xl:mr-2" />
+                <span className="hidden xl:inline">(541) 602-1026</span>
+                <span className="xl:hidden">Call</span>
+              </Button>
+            </div>
           </div>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-6 xl:gap-8">
-            {navItems.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => scrollToSection(item.id)}
-                className={`transition-colors text-sm xl:text-base ${
-                  activeSection === item.id
-                    ? 'text-coastal-teal font-semibold'
-                    : 'text-muted-foreground hover:text-foreground'
-                }`}
-              >
-                {item.label}
+          {/* Mobile/Tablet Layout */}
+          <div className="lg:hidden flex items-center justify-between w-full">
+            {/* Logo */}
+            <div className="flex items-center space-x-2 sm:space-x-3">
+              <button onClick={() => scrollToSection('about')} className="focus:outline-none">
+                <Image
+                  src="/logo/ruben real estate_Horizontal.png"
+                  alt="Ruben Real Estate Logo"
+                  width={240}
+                  height={60}
+                  className="h-10 sm:h-12 md:h-16 w-auto"
+                  priority
+                />
               </button>
-            ))}
+            </div>
             
-            {/* Language Toggle */}
-            <Button 
-              variant="outline" 
-              size="sm" 
-              onClick={toggleLanguage}
-              className="border-coastal-slate text-coastal-slate hover:bg-black hover:text-white text-xs xl:text-sm transition-all duration-300"
-            >
-              <Globe className="w-3 h-3 xl:w-4 xl:h-4 mr-1 xl:mr-2" />
-              {language === 'en' ? 'ES' : 'EN'}
-            </Button>
+            {/* Tablet Navigation */}
+            <div className="hidden md:flex lg:hidden items-center gap-3">
+              <Button 
+                variant="outline" 
+                size="sm" 
+                onClick={toggleLanguage}
+                className="border-coastal-slate text-coastal-slate hover:bg-black hover:text-white text-xs transition-all duration-300"
+              >
+                <Globe className="w-3 h-3 mr-1" />
+                {language === 'en' ? 'ES' : 'EN'}
+              </Button>
+              <Button 
+                className="bg-coastal-gradient hover:bg-[#5F7D6D] hover:text-white text-coastal-cream text-xs transition-all duration-300"
+                onClick={() => window.open('tel:+15416021026', '_self')}
+              >
+                <Phone className="w-3 h-3 mr-1" />
+                Call
+              </Button>
+            </div>
             
-            <Button 
-              className="bg-coastal-gradient hover:bg-[#5F7D6D] hover:text-white text-coastal-cream text-xs xl:text-sm transition-all duration-300"
-              onClick={() => window.open('tel:+15416021026', '_self')}
-            >
-              <Phone className="w-3 h-3 xl:w-4 xl:h-4 mr-1 xl:mr-2" />
-              <span className="hidden xl:inline">(541) 602-1026</span>
-              <span className="xl:hidden">Call</span>
-            </Button>
-          </div>
-          
-          {/* Tablet Navigation */}
-          <div className="hidden md:flex lg:hidden items-center gap-3">
-            <Button 
-              variant="outline" 
-              size="sm" 
-              onClick={toggleLanguage}
-              className="border-coastal-slate text-coastal-slate hover:bg-black hover:text-white text-xs transition-all duration-300"
-            >
-              <Globe className="w-3 h-3 mr-1" />
-              {language === 'en' ? 'ES' : 'EN'}
-            </Button>
-            <Button 
-              className="bg-coastal-gradient hover:bg-[#5F7D6D] hover:text-white text-coastal-cream text-xs transition-all duration-300"
-              onClick={() => window.open('tel:+15416021026', '_self')}
-            >
-              <Phone className="w-3 h-3 mr-1" />
-              Call
-            </Button>
-          </div>
-          
-          {/* Mobile menu button */}
-          <div className="md:hidden flex items-center gap-2">
-            <Button 
-              variant="outline" 
-              size="sm" 
-              onClick={toggleLanguage}
-              className="border-coastal-slate text-coastal-slate hover:bg-black hover:text-white text-xs transition-all duration-300"
-            >
-              <Globe className="w-3 h-3 mr-1" />
-              {language === 'en' ? 'ES' : 'EN'}
-            </Button>
-            <Button 
-              variant="outline" 
-              size="sm" 
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="border-coastal-slate text-coastal-slate hover:bg-black hover:text-white transition-all duration-300"
-            >
-              {isMobileMenuOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
-            </Button>
+            {/* Mobile menu button */}
+            <div className="md:hidden flex items-center gap-2">
+              <Button 
+                variant="outline" 
+                size="sm" 
+                onClick={toggleLanguage}
+                className="border-coastal-slate text-coastal-slate hover:bg-black hover:text-white text-xs transition-all duration-300"
+              >
+                <Globe className="w-3 h-3 mr-1" />
+                {language === 'en' ? 'ES' : 'EN'}
+              </Button>
+              <Button 
+                variant="outline" 
+                size="sm" 
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                className="border-coastal-slate text-coastal-slate hover:bg-black hover:text-white transition-all duration-300"
+              >
+                {isMobileMenuOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
+              </Button>
+            </div>
           </div>
         </nav>
 
