@@ -14,6 +14,7 @@ export const metadata: Metadata = {
   description: 'Expert real estate services in San Diego County. Specializing in Veterans, Investors, and Growing Families. From healthcare to real estate - your trusted partner for home buying, selling, and investment opportunities.',
   keywords: 'San Diego real estate, veteran real estate, investment properties, first time home buyers, property management, Ruben Banuelos',
   authors: [{ name: 'Ruben Banuelos' }],
+  themeColor: '#ffffff',
   icons: {
     icon: [
       { url: '/logo/favicon.ico', sizes: 'any' },
