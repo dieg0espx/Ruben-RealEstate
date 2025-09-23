@@ -6,6 +6,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
 import { Badge } from "@/components/ui/badge"
 import { Phone, Mail, MapPin } from "lucide-react"
+import Link from "next/link"
 import { useLanguageStore } from "@/hooks/useLanguageStore"
 import { useScrollAnimation } from "@/hooks/useScrollAnimation"
 
@@ -109,6 +110,19 @@ export default function ContactSection() {
               <div className="space-y-2">
                 <Label htmlFor="message" className="text-sm sm:text-base">{t('contact.form.message')}</Label>
                 <Textarea id="message" placeholder={t('contact.form.message_placeholder')} rows={4} className="text-sm sm:text-base" />
+              </div>
+
+              <div className="space-y-3">
+                <div className="flex items-start gap-3">
+                  <input id="marketingConsent" name="marketingConsent" type="checkbox" required className="mt-1 h-4 w-4 border-input rounded" />
+                  <label htmlFor="marketingConsent" className="text-xs sm:text-sm text-muted-foreground">
+                    {t('contact.form.opt_in')} <Link href="/privacy" className="underline">{t('legal.link.privacy')}</Link> {" "}
+                    {t('legal.and')} <Link href="/terms" className="underline">{t('legal.link.terms')}</Link>.
+                  </label>
+                </div>
+                <p className="text-[11px] sm:text-xs text-muted-foreground">
+                  {t('legal.no_sale_share')}
+                </p>
               </div>
               
               <div className="pt-4">
