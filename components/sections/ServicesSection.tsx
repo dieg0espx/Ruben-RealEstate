@@ -88,7 +88,7 @@ export default function ServicesSection() {
             <Shield className="w-4 h-4 mr-2" />
             {t('services.badge')}
           </Badge>
-          <h2 className={`text-3xl sm:text-4xl md:text-5xl font-bold text-foreground font-lexend transition-all duration-800 delay-200 ${isVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-8'}`}>
+          <h2 className={`text-3xl sm:text-4xl md:text-5xl font-bold text-coastal-sage font-lexend transition-all duration-800 delay-200 ${isVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-8'}`}>
             {t('services.title')}
           </h2>
           <p className={`text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto px-4 transition-all duration-800 delay-400 ${isVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-8'}`}>
@@ -137,10 +137,10 @@ export default function ServicesSection() {
                       
                       {/* Content */}
                       <div className="flex-1 min-w-0">
-                        <h3 className="text-lg sm:text-xl font-bold font-lexend mb-2 text-foreground">
+                        <h3 className="text-lg sm:text-xl font-bold font-lexend mb-2 text-coastal-sage">
                           {t(service.title)}
                         </h3>
-                        <p className="text-sm sm:text-base text-muted-foreground mb-3 leading-relaxed">
+                        <p className="text-sm sm:text-base text-coastal-teal mb-3 leading-relaxed">
                           {t(service.description)}
                         </p>
                         
