@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react'
 
-export function useScrollAnimation() {
+export default function useScrollAnimation() {
   const [isVisible, setIsVisible] = useState(false)
   const ref = useRef<HTMLElement>(null)
 

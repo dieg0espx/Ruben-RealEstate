@@ -1,7 +1,7 @@
 'use client'
 
 import Image from "next/image"
-import { useScrollAnimation } from "@/hooks/useScrollAnimation"
+import useScrollAnimation from "@/hooks/useScrollAnimation"
 
 export default function FeaturesSection() {
   const { ref, isVisible } = useScrollAnimation()

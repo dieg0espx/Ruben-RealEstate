@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { useLanguageStore } from '@/hooks/useLanguageStore'
+import useLanguageStore from '@/hooks/useLanguageStore'
 
 export default function PrivacyPolicyPage() {
   const { t } = useLanguageStore()

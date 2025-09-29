@@ -4,7 +4,7 @@ import { Badge } from "@/components/ui/badge"
 import { Camera } from "lucide-react"
 import Image from "next/image"
 import { useState } from "react"
-import { useLanguageStore } from "@/hooks/useLanguageStore"
+import useLanguageStore from "@/hooks/useLanguageStore"
 
 const portfolioItems = [
   {
@@ -105,14 +105,14 @@ export default function PortfolioSection() {
 
   return (
     <>
-      <section id="properties" className="py-16 sm:py-20 bg-white">
+      <section id="properties" className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-coastal-cream/40 via-white to-coastal-sage/30 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center space-y-4 mb-12 sm:mb-16">
             <Badge className="bg-coastal-sage/20 text-coastal-slate border-coastal-sage animate-fade-in-up">
               <Camera className="w-4 h-4 mr-2" />
               {t('portfolio.badge')}
             </Badge>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground font-lexend animate-fade-in-up animation-delay-200">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground font-lexend animate-fade-in-up animation-delay-200">
               {t('portfolio.title')}
             </h2>
             <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto px-4 animate-fade-in-up animation-delay-400">

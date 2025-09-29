@@ -1,6 +1,6 @@
 "use client"
 
-import { useScrollAnimation } from "@/hooks/useScrollAnimation"
+import useScrollAnimation from "@/hooks/useScrollAnimation"
 import { GraduationCap, Award, Home, Users, Star, Heart } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 
@@ -15,31 +15,31 @@ const timelineData: TimelineItem[] = [
   {
     title: "Doctor of Physical Therapy",
     description: "Earned my Doctor of Physical Therapy degree, developing deep expertise in patient care, listening skills, and understanding individual needs. This foundation taught me the importance of personalized service and attention to detail.",
-    icon: <GraduationCap className="w-6 h-6" />,
+    icon: <GraduationCap className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 xl:w-9 xl:h-9" />,
     color: "text-coastal-sage"
   },
   {
     title: "Healthcare Career",
     description: "Practiced as a Doctor of Physical Therapy, helping patients recover and improve their quality of life. This experience reinforced my commitment to service excellence and understanding that every person has unique needs and goals.",
-    icon: <Heart className="w-6 h-6" />,
+    icon: <Heart className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 xl:w-9 xl:h-9" />,
     color: "text-coastal-sage"
   },
   {
     title: "Real Estate Transition",
     description: "Recognized that finding the right home is just as important to someone's well-being as physical therapy is to recovery. Decided to transition my patient-centered approach to real estate, bringing the same care and attention to detail.",
-    icon: <Home className="w-6 h-6" />,
+    icon: <Home className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 xl:w-9 xl:h-9" />,
     color: "text-coastal-sage"
   },
   {
     title: "NARPM Certification",
     description: "Earned National Association of Residential Property Managers certification, expanding my expertise to serve investors and property management clients with the same level of professional excellence.",
-    icon: <Users className="w-6 h-6" />,
+    icon: <Users className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 xl:w-9 xl:h-9" />,
     color: "text-coastal-sage"
   },
   {
     title: "Rising Star Award",
     description: "Received the Rising Star Award for exceptional performance and rapid growth in real estate. This recognition reflects my commitment to combining healthcare empathy with real estate expertise to serve Veterans, Investors, and Growing Families.",
-    icon: <Star className="w-6 h-6" />,
+    icon: <Star className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 xl:w-9 xl:h-9" />,
     color: "text-coastal-sage"
   }
 ]
@@ -63,7 +63,7 @@ export default function TimelineSection() {
           {/* Timeline - Left Column */}
           <div className="relative">
             {/* Timeline line */}
-            <div className="absolute left-8 top-0 bottom-0 w-0.5 opacity-60 z-0 hidden md:block" style={{
+            <div className="absolute left-5 sm:left-6 md:left-7 lg:left-8 xl:left-9 top-0 bottom-0 w-0.5 opacity-60 z-0 hidden md:block" style={{
               background: 'linear-gradient(to bottom, #5F7D6D 0%, #5F7D6D 70%, transparent 100%)'
             }}></div>
             
@@ -78,9 +78,11 @@ export default function TimelineSection() {
                 >
                   {/* Timeline dot */}
                   <div className="relative z-20 flex-shrink-0">
-                    <div className="w-16 h-16 bg-secondary rounded-full flex items-center justify-center shadow-lg">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 xl:w-18 xl:h-18 bg-secondary rounded-full flex items-center justify-center shadow-lg">
                       <div className="text-white">
-                        {item.icon}
+                        <div className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 xl:w-9 xl:h-9">
+                          {item.icon}
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -88,11 +90,11 @@ export default function TimelineSection() {
                   {/* Content card */}
                   <div className="flex-1 min-w-0">
                     <Card className="group hover:shadow-xl transition-all duration-300 border-0 bg-white/80 backdrop-blur-sm hover:bg-white/90">
-                      <CardContent className="pt-1 px-6 pb-2">
-                        <div className="mb-2">
-                          <span className="font-semibold text-lg text-coastal-sage">{item.title}</span>
+                      <CardContent className="pt-1 px-3 sm:px-4 md:px-5 lg:px-6 pb-2">
+                        <div className="mb-1 sm:mb-2">
+                          <span className="font-semibold text-sm sm:text-base md:text-lg text-coastal-sage leading-tight">{item.title}</span>
                         </div>
-                        <p className="text-muted-foreground leading-relaxed">
+                        <p className="text-xs sm:text-sm md:text-base text-muted-foreground leading-relaxed">
                           {item.description}
                         </p>
                       </CardContent>

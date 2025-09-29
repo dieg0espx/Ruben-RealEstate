@@ -5,7 +5,7 @@ import Image from "next/image"
 import dynamic from "next/dynamic"
 import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { useLanguageStore } from "@/hooks/useLanguageStore"
+import useLanguageStore from "@/hooks/useLanguageStore"
 
 // Dynamically import the map component to avoid SSR issues
 const MapComponent = dynamic(() => import("./MapComponent"), {

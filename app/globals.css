@@ -80,7 +80,7 @@
   --sidebar-ring: oklch(0.439 0 0);
 }
 
-@theme inline {
+@theme {
   --font-sans: 'Poppins', system-ui, sans-serif;
   --font-serif: 'Poppins', system-ui, sans-serif;
   --font-lexend: 'Poppins', system-ui, sans-serif;
@@ -135,9 +135,74 @@
   h1, h2, h3, h4, h5, h6, p, span, div, a, button, input, textarea, select, label {
     font-family: 'Poppins', system-ui, -apple-system, sans-serif;
   }
+  
+  /* Ensure fixed navbar works properly on all devices */
+  header {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 100 !important;
+    width: 100% !important;
+    transform: translateZ(0) !important; /* Force hardware acceleration */
+    will-change: transform !important; /* Optimize for animations */
+  }
+  
+  /* Ensure content doesn't hide behind fixed navbar */
+  main {
+    padding-top: 5rem !important; /* 80px equivalent to pt-20 */
+  }
+  
+  /* All pages with hero sections should start from top */
+  main:has(section.hero-section) {
+    padding-top: 0 !important;
+  }
+  
+  /* Mobile-specific adjustments */
+  @media (max-width: 768px) {
+    main {
+      padding-top: 4.5rem !important; /* Slightly less on mobile */
+    }
+    
+    /* All pages with hero sections should start from top on mobile too */
+    main:has(section.hero-section) {
+      padding-top: 0 !important;
+    }
+  }
+  
+  /* Prevent navbar from hiding during scroll on iOS */
+  @supports (-webkit-touch-callout: none) {
+    header {
+      position: -webkit-sticky !important;
+      position: sticky !important;
+    }
+  }
+  
+  /* Ensure navbar stays visible during momentum scrolling */
+  @media (max-width: 1024px) {
+    header {
+      -webkit-transform: translateZ(0) !important;
+      transform: translateZ(0) !important;
+    }
+  }
 }
 
 @layer utilities {
+  /* Line clamp utilities */
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .line-clamp-none {
+    display: block;
+    -webkit-line-clamp: none;
+    -webkit-box-orient: horizontal;
+    overflow: visible;
+  }
+  
   /* Animation classes */
   .animate-fade-in-up {
     animation: fadeInUp 0.8s ease-out forwards;

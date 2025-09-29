@@ -4,8 +4,8 @@ import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Download, FileText, Video, BookOpen, CheckCircle, ArrowRight, ExternalLink } from "lucide-react"
-import { useLanguageStore } from "@/hooks/useLanguageStore"
-import { useScrollAnimation } from "@/hooks/useScrollAnimation"
+import useLanguageStore from "@/hooks/useLanguageStore"
+import useScrollAnimation from "@/hooks/useScrollAnimation"
 
 export default function ResourcesPage() {
   const { t } = useLanguageStore()

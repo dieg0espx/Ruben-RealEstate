@@ -4,8 +4,8 @@ import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
 import { Star } from "lucide-react"
 import { useState } from "react"
-import { useLanguageStore } from "@/hooks/useLanguageStore"
-import { useScrollAnimation } from "@/hooks/useScrollAnimation"
+import useLanguageStore from "@/hooks/useLanguageStore"
+import useScrollAnimation from "@/hooks/useScrollAnimation"
 
 const testimonials = [
   {

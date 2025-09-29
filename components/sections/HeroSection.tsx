@@ -3,8 +3,8 @@
 import { Button } from "@/components/ui/button"
 import { Phone, TrendingUp, Home } from "lucide-react"
 import Image from "next/image"
-import { useLanguageStore } from "@/hooks/useLanguageStore"
-import { useScrollAnimation } from "@/hooks/useScrollAnimation"
+import useLanguageStore from "@/hooks/useLanguageStore"
+import useScrollAnimation from "@/hooks/useScrollAnimation"
 
 export default function HeroSection() {
   const { t } = useLanguageStore()

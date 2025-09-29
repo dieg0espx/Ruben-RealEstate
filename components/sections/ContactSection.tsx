@@ -7,8 +7,8 @@ import { Label } from "@/components/ui/label"
 import { Badge } from "@/components/ui/badge"
 import { Phone, Mail, MapPin } from "lucide-react"
 import Link from "next/link"
-import { useLanguageStore } from "@/hooks/useLanguageStore"
-import { useScrollAnimation } from "@/hooks/useScrollAnimation"
+import useLanguageStore from "@/hooks/useLanguageStore"
+import useScrollAnimation from "@/hooks/useScrollAnimation"
 
 export default function ContactSection() {
   const { t } = useLanguageStore()
