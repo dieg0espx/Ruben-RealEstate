@@ -11,7 +11,12 @@ import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Phone, Mail, MapPin, Clock, MessageCircle, Calendar } from "lucide-react"
 import { useEffect, useState } from "react"
+import useLanguageStore from "@/hooks/useLanguageStore"
+import type { contactTranslations } from "@/translations/contact/en"
+
 export default function ContactPage() {
+  const { getPage } = useLanguageStore()
+  const pageT = getPage('contact') as typeof contactTranslations
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -116,35 +121,31 @@ export default function ContactPage() {
   const contactMethods = [
     {
       icon: <Phone className="w-8 h-8 text-coastal-teal" />,
-      title: "Phone",
-      details: "(541) 602-1026",
-      description: "Call anytime for immediate assistance",
-      action: "Call Now",
+      title: pageT.contactMethods.phone.title,
+      details: pageT.contactMethods.phone.details,
+      description: pageT.contactMethods.phone.description,
+      action: pageT.contactMethods.phone.action,
       href: "tel:+15416021026"
     },
     {
       icon: <Mail className="w-8 h-8 text-coastal-sage" />,
-      title: "Email",
-      details: "ruben.o.banuelos@gmail.com",
-      description: "Send detailed questions or documents",
-      action: "Send Email",
+      title: pageT.contactMethods.email.title,
+      details: pageT.contactMethods.email.details,
+      description: pageT.contactMethods.email.description,
+      action: pageT.contactMethods.email.action,
       href: "mailto:ruben.o.banuelos@gmail.com"
     },
     {
       icon: <Calendar className="w-8 h-8 text-coastal-teal" />,
-      title: "Schedule Meeting",
-      details: "Online or In-Person",
-      description: "Book a consultation at your convenience",
-      action: "Schedule",
+      title: pageT.contactMethods.schedule.title,
+      details: pageT.contactMethods.schedule.details,
+      description: pageT.contactMethods.schedule.description,
+      action: pageT.contactMethods.schedule.action,
       href: "#consultation-form"
     }
   ]
 
-  const officeHours = [
-    { day: "Monday - Friday", hours: "8:00 AM - 7:00 PM" },
-    { day: "Saturday", hours: "9:00 AM - 5:00 PM" },
-    { day: "Sunday", hours: "10:00 AM - 4:00 PM" }
-  ]
+  const officeHours = pageT.officeHours.schedule
 
   return (
     <>
@@ -166,11 +167,10 @@ export default function ContactPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
           <div className="text-center space-y-8">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white font-lexend drop-shadow-lg">
-              Let's Start Your Journey
+              {pageT.hero.title}
             </h1>
             <p className="text-xl sm:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed drop-shadow-md">
-              Ready to buy, sell, or invest? I'm here to help you achieve your real estate goals 
-              with personalized service and expert guidance.
+              {pageT.hero.subtitle}
             </p>
           </div>
         </div>
@@ -181,10 +181,10 @@ export default function ContactPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-4 mb-8 sm:mb-12">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground font-lexend leading-tight">
-              How Would You Like to Connect?
+              {pageT.contactMethods.title}
             </h2>
             <p className="text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto px-4">
-              Choose the communication method that works best for you
+              {pageT.contactMethods.subtitle}
             </p>
           </div>
           
@@ -236,10 +236,10 @@ export default function ContactPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center space-y-4 mb-8 sm:mb-12">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white font-lexend drop-shadow-lg leading-tight">
-              Tell Me About Your Goals
+              {pageT.form.title}
             </h2>
             <p className="text-base sm:text-lg text-white/90 max-w-3xl mx-auto drop-shadow-md px-4">
-              Fill out this form and I'll get back to you within 24 hours with a personalized response
+              {pageT.form.subtitle}
             </p>
           </div>
           
@@ -248,39 +248,39 @@ export default function ContactPage() {
               <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
                 {submitStatus === 'success' && (
                   <div className="p-4 bg-green-50 border border-green-200 rounded-lg">
-                    <p className="text-green-800 text-sm">Thank you! Your message has been sent successfully. I'll get back to you within 24 hours.</p>
+                    <p className="text-green-800 text-sm">{pageT.form.successMessage}</p>
                   </div>
                 )}
                 
                 {submitStatus === 'error' && (
                   <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
                     <p className="text-red-800 text-sm">
-                      {errorMessage || 'Sorry, there was an error sending your message. Please try again or contact me directly.'}
+                      {errorMessage || pageT.form.errorMessage}
                     </p>
                   </div>
                 )}
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                   <div className="space-y-2">
-                    <Label htmlFor="firstName" className="text-sm font-medium">First Name *</Label>
+                    <Label htmlFor="firstName" className="text-sm font-medium">{pageT.form.firstName}</Label>
                     <Input 
                       id="firstName" 
                       name="firstName"
                       value={formData.firstName}
                       onChange={handleInputChange}
-                      placeholder="Enter your first name" 
+                      placeholder={pageT.form.firstNamePlaceholder} 
                       required 
                       className="h-10" 
                     />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="lastName" className="text-sm font-medium">Last Name *</Label>
+                    <Label htmlFor="lastName" className="text-sm font-medium">{pageT.form.lastName}</Label>
                     <Input 
                       id="lastName" 
                       name="lastName"
                       value={formData.lastName}
                       onChange={handleInputChange}
-                      placeholder="Enter your last name" 
+                      placeholder={pageT.form.lastNamePlaceholder} 
                       required 
                       className="h-10" 
                     />
@@ -289,56 +289,56 @@ export default function ContactPage() {
                 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                   <div className="space-y-2">
-                    <Label htmlFor="email" className="text-sm font-medium">Email *</Label>
+                    <Label htmlFor="email" className="text-sm font-medium">{pageT.form.email}</Label>
                     <Input 
                       id="email" 
                       name="email"
                       type="email" 
                       value={formData.email}
                       onChange={handleInputChange}
-                      placeholder="Enter your email" 
+                      placeholder={pageT.form.emailPlaceholder} 
                       required 
                       className="h-10" 
                     />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="phone" className="text-sm font-medium">Phone Number</Label>
+                    <Label htmlFor="phone" className="text-sm font-medium">{pageT.form.phone}</Label>
                     <Input 
                       id="phone" 
                       name="phone"
                       type="tel" 
                       value={formData.phone}
                       onChange={handleInputChange}
-                      placeholder="Enter your phone number" 
+                      placeholder={pageT.form.phonePlaceholder} 
                       className="h-10" 
                     />
                   </div>
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="clientType" className="text-sm font-medium">I am a... *</Label>
+                  <Label htmlFor="clientType" className="text-sm font-medium">{pageT.form.clientType}</Label>
                   <Select value={formData.clientType} onValueChange={handleSelectChange}>
                     <SelectTrigger className="h-10">
-                      <SelectValue placeholder="Select your type" />
+                      <SelectValue placeholder={pageT.form.clientTypePlaceholder} />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="veteran">Veteran</SelectItem>
-                      <SelectItem value="investor">Real Estate Investor</SelectItem>
-                      <SelectItem value="family">Growing Family</SelectItem>
-                      <SelectItem value="first-time">First-Time Buyer</SelectItem>
-                      <SelectItem value="other">Other</SelectItem>
+                      <SelectItem value="veteran">{pageT.form.veteran}</SelectItem>
+                      <SelectItem value="investor">{pageT.form.investor}</SelectItem>
+                      <SelectItem value="family">{pageT.form.family}</SelectItem>
+                      <SelectItem value="first-time">{pageT.form.firstTime}</SelectItem>
+                      <SelectItem value="other">{pageT.form.other}</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="message" className="text-sm font-medium">Tell me about your real estate goals...</Label>
+                  <Label htmlFor="message" className="text-sm font-medium">{pageT.form.message}</Label>
                   <Textarea 
                     id="message" 
                     name="message"
                     value={formData.message}
                     onChange={handleInputChange}
-                    placeholder="Tell me about your real estate goals..."
+                    placeholder={pageT.form.messagePlaceholder}
                     rows={4}
                     className="resize-none"
                   />
@@ -356,11 +356,11 @@ export default function ContactPage() {
                       className="mt-1 h-4 w-4 border-input rounded flex-shrink-0" 
                     />
                     <label htmlFor="marketingConsent" className="text-xs text-muted-foreground leading-relaxed">
-                      I agree to be contacted by Ruben Real Estate via call, email, and text for real estate services. To opt out, you can reply 'stop' at any time or reply 'help' for assistance. You can also click the unsubscribe link in the emails. Message and data rates may apply. Message frequency may vary. <a href="/privacy" className="underline">Privacy Policy</a> and <a href="/terms" className="underline">Terms of Use</a>.
+                      {pageT.form.marketingConsent} <a href="/privacy" className="underline">{pageT.form.privacyPolicy}</a> and <a href="/terms" className="underline">{pageT.form.termsOfUse}</a>.
                     </label>
                   </div>
                   <p className="text-xs text-muted-foreground">
-                    Data will not be sold or shared with third parties for promotional or marketing purposes.
+                    {pageT.form.dataProtection}
                   </p>
                 </div>
 
@@ -371,7 +371,7 @@ export default function ContactPage() {
                   className="w-full text-white font-semibold hover:bg-white hover:text-coastal-sage transition-all duration-300 h-12 text-base disabled:opacity-50" 
                   style={{ backgroundColor: '#5F7D6D' }}
                 >
-                  {isSubmitting ? 'Sending...' : 'Send Message'}
+                  {isSubmitting ? pageT.form.submitting : pageT.form.submit}
                 </Button>
               </form>
             </CardContent>
@@ -386,17 +386,17 @@ export default function ContactPage() {
             <div className="lg:col-span-2">
               <div className="space-y-4 sm:space-y-6">
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground font-lexend leading-tight">
-                  Office Hours & Location
+                  {pageT.officeHours.title}
                 </h2>
                 <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
-                  I'm available to meet with you at your convenience, whether in-person or virtually.
+                  {pageT.officeHours.subtitle}
                 </p>
                 
                 <div className="space-y-4 sm:space-y-6">
                   <div className="flex items-start space-x-3 sm:space-x-4">
                     <Clock className="w-5 h-5 sm:w-6 sm:h-6 text-coastal-teal flex-shrink-0 mt-1" />
                     <div className="flex-1">
-                      <h3 className="font-semibold text-foreground text-base sm:text-lg">Office Hours</h3>
+                      <h3 className="font-semibold text-foreground text-base sm:text-lg">{pageT.officeHours.hoursTitle}</h3>
                       <div className="space-y-1 text-muted-foreground text-sm sm:text-base">
                         {officeHours.map((schedule, index) => (
                           <div key={index} className="flex flex-col sm:flex-row sm:justify-between gap-1 sm:gap-4">
@@ -411,9 +411,9 @@ export default function ContactPage() {
                   <div className="flex items-start space-x-3 sm:space-x-4">
                     <MapPin className="w-5 h-5 sm:w-6 sm:h-6 text-coastal-sage flex-shrink-0 mt-1" />
                     <div className="flex-1">
-                      <h3 className="font-semibold text-foreground text-base sm:text-lg">Service Area</h3>
+                      <h3 className="font-semibold text-foreground text-base sm:text-lg">{pageT.officeHours.serviceAreaTitle}</h3>
                       <p className="text-muted-foreground text-sm sm:text-base">
-                        San Diego County and surrounding areas
+                        {pageT.officeHours.serviceAreaDescription}
                       </p>
                     </div>
                   </div>
@@ -424,7 +424,7 @@ export default function ContactPage() {
             <div className="lg:col-span-1">
               <div className="space-y-4 sm:space-y-6">
                 <h3 className="text-xl sm:text-2xl font-bold text-foreground">
-                  Why Choose Me?
+                  {pageT.whyChoose.title}
                 </h3>
                 <div className="space-y-3 sm:space-y-4">
                   <div className="flex items-start space-x-3">
@@ -432,8 +432,8 @@ export default function ContactPage() {
                       <div className="w-2 h-2 bg-coastal-teal rounded-full"></div>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-foreground text-sm sm:text-base">Healthcare Background</h4>
-                      <p className="text-muted-foreground text-xs sm:text-sm">Brings empathy and attention to detail to every transaction</p>
+                      <h4 className="font-semibold text-foreground text-sm sm:text-base">{pageT.whyChoose.healthcare.title}</h4>
+                      <p className="text-muted-foreground text-xs sm:text-sm">{pageT.whyChoose.healthcare.description}</p>
                     </div>
                   </div>
                   
@@ -442,8 +442,8 @@ export default function ContactPage() {
                       <div className="w-2 h-2 bg-coastal-sage rounded-full"></div>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-foreground text-sm sm:text-base">VA Loan Expertise</h4>
-                      <p className="text-muted-foreground text-xs sm:text-sm">Specialized knowledge to help veterans maximize their benefits</p>
+                      <h4 className="font-semibold text-foreground text-sm sm:text-base">{pageT.whyChoose.vaExpert.title}</h4>
+                      <p className="text-muted-foreground text-xs sm:text-sm">{pageT.whyChoose.vaExpert.description}</p>
                     </div>
                   </div>
                   
@@ -452,8 +452,8 @@ export default function ContactPage() {
                       <div className="w-2 h-2 bg-coastal-steel rounded-full"></div>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-foreground text-sm sm:text-base">NARPM Certified</h4>
-                      <p className="text-muted-foreground text-xs sm:text-sm">Professional property management for investors</p>
+                      <h4 className="font-semibold text-foreground text-sm sm:text-base">{pageT.whyChoose.narpm.title}</h4>
+                      <p className="text-muted-foreground text-xs sm:text-sm">{pageT.whyChoose.narpm.description}</p>
                     </div>
                   </div>
                 </div>

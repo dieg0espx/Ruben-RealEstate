@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { languageStore } from '@/lib/languageStore'
+import { getPageTranslations } from '@/lib/translations'
 
 type Language = 'en' | 'es'
 
@@ -20,10 +21,17 @@ export default function useLanguageStore() {
     languageStore.toggleLanguage()
   }
 
+  // Helper function to get page-specific translations
+  const getPage = (page: 'about' | 'contact' | 'services' | 'resources' | 'home' | 'results') => {
+    return getPageTranslations(language, page)
+  }
+
   const translations = {
     en: {
+      'nav.home': 'Home',
       'nav.about': 'About',
       'nav.services': 'Services',
+      'nav.results': 'Results',
       'nav.properties': 'Properties',
       'nav.contact': 'Contact',
       'hero.title': 'Your North County Home Starts Here',
@@ -62,6 +70,12 @@ export default function useLanguageStore() {
       'about.step3.description': 'Leveraged healthcare expertise to become a licensed real estate broker and property manager. Applied the same principles of patient care to client relationships: listening, understanding needs, and providing expert guidance through complex processes.',
       'about.step4.title': 'Rising Star Recognition',
       'about.step4.description': 'Recognized as a 2024 "Rising Star" at Team Fearless, with expertise in VA loans, house hacking, and investment properties. NARPM certified and deeply connected to the North County community, serving veterans, families, and investors with integrity.',
+      'about.imageOverlay.dreNumber': 'DRE# 02153497',
+      'about.imageOverlay.licensedBroker': 'Licensed Broker',
+      'about.imageOverlay.narpm': 'NARPM',
+      'about.imageOverlay.member': 'Member',
+      'about.imageOverlay.risingStar': '"Rising Star"',
+      'about.imageOverlay.teamFearless': '1st Year at Team Fearless 2024',
       'about.button': 'Learn More About My Story',
       'contact.badge': 'Get In Touch',
       'contact.title': 'Ready to Start Your Journey?',
@@ -179,8 +193,10 @@ export default function useLanguageStore() {
       'legal.terms.contact.body': 'For questions about these Terms, contact us at ruben.o.banuelos@gmail.com or (541) 602-1026.',
     },
     es: {
+      'nav.home': 'Inicio',
       'nav.about': 'Acerca de',
       'nav.services': 'Servicios',
+      'nav.results': 'Resultados',
       'nav.properties': 'Propiedades',
       'nav.contact': 'Contacto',
       'hero.title': 'Tu Hogar en North County Comienza Aquí',
@@ -219,6 +235,12 @@ export default function useLanguageStore() {
       'about.step3.description': 'Transformé mi experiencia en salud en una carrera como corredor de bienes raíces y administrador de propiedades. Apliqué los mismos principios del cuidado de pacientes a mis clientes: escuchar, entender sus necesidades y guiarlos con experiencia en procesos complejos.',
       'about.step4.title': 'Reconocimiento Rising Star',
       'about.step4.description': 'Fui reconocido en 2024 como "Rising Star" en Team Fearless, con especialización en préstamos VA, house hacking y propiedades de inversión. Como miembro certificado de NARPM y profundamente conectado con la comunidad de North County, sirvo a veteranos, familias e inversionistas con integridad y compromiso.',
+      'about.imageOverlay.dreNumber': 'DRE# 02153497',
+      'about.imageOverlay.licensedBroker': 'Corredor Licenciado',
+      'about.imageOverlay.narpm': 'NARPM',
+      'about.imageOverlay.member': 'Miembro',
+      'about.imageOverlay.risingStar': '"Estrella Ascendente"',
+      'about.imageOverlay.teamFearless': '1er Año en Team Fearless 2024',
       'about.button': 'Conoce Más Mi Historia',
       'contact.badge': 'Ponte en Contacto',
       'contact.title': '¿Listo para Comenzar tu Viaje?',
@@ -345,5 +367,5 @@ export default function useLanguageStore() {
     return translations[language][key as keyof typeof translations[typeof language]] || key
   }
 
-  return { language, toggleLanguage, t }
+  return { language, toggleLanguage, t, getPage }
 }

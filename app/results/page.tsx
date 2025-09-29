@@ -9,10 +9,14 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { TrendingUp, Home, Shield, Star, ArrowRight, CheckCircle, Phone, Mail, ChevronLeft, ChevronRight } from "lucide-react"
 import useScrollAnimation from "@/hooks/useScrollAnimation"
+import useLanguageStore from "@/hooks/useLanguageStore"
+import { resultsTranslations } from "@/translations/results/en"
 import { useRef, useEffect, useState } from "react"
 
 export default function ResultsPage() {
   const { ref, isVisible } = useScrollAnimation()
+  const { t, getPage } = useLanguageStore()
+  const pageT = getPage('results') as typeof resultsTranslations
   const videoRef = useRef<HTMLVideoElement>(null)
   const [currentTestimonial, setCurrentTestimonial] = useState(0)
 
@@ -81,84 +85,84 @@ export default function ResultsPage() {
   const successMetrics = [
     {
       icon: <Home className="w-6 h-6 text-coastal-teal" />,
-      title: "Homes Sold",
-      value: "50+",
-      description: "Successful transactions"
+      title: pageT.metrics.homesSold.title,
+      value: pageT.metrics.homesSold.value,
+      description: pageT.metrics.homesSold.description
     },
     {
       icon: <TrendingUp className="w-6 h-6 text-coastal-sage" />,
-      title: "Sale Price",
-      value: "$850K+",
-      description: "Above market average"
+      title: pageT.metrics.salePrice.title,
+      value: pageT.metrics.salePrice.value,
+      description: pageT.metrics.salePrice.description
     },
     {
       icon: <Shield className="w-6 h-6 text-coastal-steel" />,
-      title: "Veteran Clients",
-      value: "25+",
-      description: "VA loan expertise"
+      title: pageT.metrics.veteranClients.title,
+      value: pageT.metrics.veteranClients.value,
+      description: pageT.metrics.veteranClients.description
     },
     {
       icon: <Star className="w-6 h-6 text-coastal-teal" />,
-      title: "Rating",
-      value: "5.0",
-      description: "Perfect rating"
+      title: pageT.metrics.rating.title,
+      value: pageT.metrics.rating.value,
+      description: pageT.metrics.rating.description
     }
   ]
 
   const allTestimonials = [
     {
-      name: "Photogenic SD",
-      text: "I am a real estate photographer and I work with a lot of realtors in San Diego. I know a great agent when I arrive to do the photos and the clients have the home 100% picture ready. Ruben does an excellent job setting the expectations for the seller's so his listings always stand out and they are setup for success from the start. Ruben is great guy, super knowledgeable, I would highly recommend him for real estate transactions or property management!",
+      name: pageT.testimonials.testimonial1.name,
+      text: pageT.testimonials.testimonial1.text,
       rating: 5,
-      date: "3 months ago"
+      date: pageT.testimonials.testimonial1.date
     },
     {
-      name: "Ella Durbin",
-      text: "Ruben was incredibly helpful for us when we were looking for a tenant for our home. He is knowledgeable, responsive, kind, and understanding. He was able to learn with us and took all our feedback seriously. Couldn't recommend him enough. We will definitely be working with Ruben in the future for any placement or property manager needs.",
+      name: pageT.testimonials.testimonial2.name,
+      text: pageT.testimonials.testimonial2.text,
       rating: 5,
-      date: "7 months ago"
+      date: pageT.testimonials.testimonial2.date
     },
     {
-      name: "Jackson W", 
-      text: "Ruben is awesome! If there were a way to give him 6 stars I would. He is super responsive, and really stays on top of things well. It was very comforting to know we had someone who we could really trust throughout the process. He made everything very smooth and seamless, answered all of our questions and had excellent insight. If you're looking for a real estate agent, Ruben will exceed your expectations.",
+      name: pageT.testimonials.testimonial3.name,
+      text: pageT.testimonials.testimonial3.text,
       rating: 5,
-      date: "8 months ago"
+      date: pageT.testimonials.testimonial3.date
     },
     {
-      name: "Juan Ramirez",
-      text: "Ruben is exceptional at his craft and does an incredible job at guiding his clients every step of the way in a real estate transaction. He has deep knowledge of the market, great attention to detail, and always puts his clients interest first. You can expect great results when working with Ruben.",
+      name: pageT.testimonials.testimonial4.name,
+      text: pageT.testimonials.testimonial4.text,
       rating: 5,
-      date: "1 year ago"
+      date: pageT.testimonials.testimonial4.date
     },
     {
-      name: "Hayley Shams",
-      text: "I have had the pleasure of working alongside Ruben on multiple transactions. His passion to serve and educate his clients along the way is truly remarkable. Ruben is hard working, diligent with the details, and gets the job done! Highly recommend him for not only real estate but also property management as well!",
+      name: pageT.testimonials.testimonial5.name,
+      text: pageT.testimonials.testimonial5.text,
       rating: 5,
-      date: "10 months ago"
+      date: pageT.testimonials.testimonial5.date
     },
     {
-      name: "Male Beatie",
-      text: "Ruben is very knowledgeable in the home buying and selling process. He educated his clients. He explains everything clearly. Always answers his phone. He makes the home buying/selling process smooth. He is patient and an has a lot of insight and expertise in the RE industry. Ruben listens to his clients needs.",
+      name: pageT.testimonials.testimonial6.name,
+      text: pageT.testimonials.testimonial6.text,
       rating: 5,
-      date: "1 year ago"
+      date: pageT.testimonials.testimonial6.date
     },
     {
-      name: "Melanie Callaway",
-      text: "Working with Ruben has been an absolute pleasure from start to finish. Not only is he an incredibly skilled real estate agent, but he goes above and beyond by offering invaluable mentorship along the way. As a first-time homebuyer, I was nervous about the entire process, but Ruben's guidance and expertise put me at ease right away. What sets Ruben apart is his genuine commitment to his clients' success. He took the time to understand my needs and patiently answered all my questions, ensuring I felt confident at every step.",
+      name: pageT.testimonials.testimonial7.name,
+      text: pageT.testimonials.testimonial7.text,
       rating: 5,
-      date: "1 year ago"
+      date: pageT.testimonials.testimonial7.date
     },
     {
-      name: "Sarah Johnson",
-      text: "If you are looking for the best home buying experience, you have to work with Ruben. Ruben has every quality to not only make your homeownership dreams come true but also make the journey an enjoyable experience. He takes on every hurdle that may come along with professionalism and a great attitude. I am proud to say he is my realtor partner.",
+      name: pageT.testimonials.testimonial8.name,
+      text: pageT.testimonials.testimonial8.text,
       rating: 5,
-      date: "9 months ago"
+      date: pageT.testimonials.testimonial8.date
     },
     {
-      name: "Michael Chen",
-      text: "Ruben and his team went above and beyond expectations for us. He represented our interests very well as a buyer agent. Not only from a standpoint of typical broker work, but also his contact list of professional services. He has a stellar network of people that impressed us throughout the process. Thanks Ruben!",
+      name: pageT.testimonials.testimonial9.name,
+      text: pageT.testimonials.testimonial9.text,
       rating: 5,
-      date: "6 months ago"
+      date: pageT.testimonials.testimonial9.date
     },
   ]
 
@@ -186,11 +190,10 @@ export default function ResultsPage() {
         <div className="max-w-7xl mx-auto px-6 sm:px-8 relative z-10">
           <div className="text-center space-y-6 sm:space-y-8">
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white font-lexend leading-tight">
-              Success Stories & Results
+              {pageT.hero.title}
             </h1>
             <p className="text-xl sm:text-2xl md:text-3xl text-white/90 max-w-5xl mx-auto leading-relaxed px-4">
-              Real results from real clients. See how I've helped Veterans, Investors, 
-              and Growing Families achieve their real estate goals.
+              {pageT.hero.subtitle}
             </p>
           </div>
         </div>
@@ -201,10 +204,10 @@ export default function ResultsPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-4 mb-8 sm:mb-12">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground font-lexend leading-tight">
-              By the Numbers
+              {pageT.metrics.title}
             </h2>
             <p className="text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto px-4">
-              Measurable results that speak to my commitment to client success
+              {pageT.metrics.subtitle}
             </p>
           </div>
           
@@ -243,10 +246,10 @@ export default function ResultsPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-4 mb-8 sm:mb-12">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground font-lexend leading-tight">
-              Our Process & Approach
+              {pageT.process.title}
             </h2>
             <p className="text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto px-4">
-              See how our proven methodology delivers exceptional results for every client
+              {pageT.process.subtitle}
             </p>
           </div>
           
@@ -287,10 +290,10 @@ export default function ResultsPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center space-y-4 mb-8 sm:mb-12">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white font-lexend leading-tight">
-              Trusted by the Community
+              {pageT.testimonials.title}
             </h2>
             <p className="text-base sm:text-lg text-white/90 max-w-3xl mx-auto px-4">
-              Hear directly from the people who turned their goals into reality.
+              {pageT.testimonials.subtitle}
             </p>
           </div>
           
@@ -364,27 +367,27 @@ export default function ResultsPage() {
       <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-gradient-to-br from-coastal-cream/40 via-white to-coastal-sage/30">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6 sm:space-y-8">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground font-lexend leading-tight">
-            Ready to Work Together?
+            {pageT.cta.title}
           </h2>
           <p className="text-base sm:text-lg lg:text-xl text-muted-foreground leading-relaxed px-4">
-            Let's discuss which services best fit your needs and how I can help you achieve your goals.
+            {pageT.cta.subtitle}
           </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
             <Button asChild size="lg" className="w-full sm:w-auto bg-coastal-teal hover:bg-[#5F7D6D] hover:text-white text-coastal-cream text-sm sm:text-base lg:text-lg px-4 sm:px-6 lg:px-8 py-3 sm:py-4 transition-all duration-300">
               <a href="tel:+15416021026">
                 <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-                <span className="truncate">Call (541) 602-1026</span>
+                <span className="truncate">{pageT.cta.callButton}</span>
               </a>
             </Button>
             <Button asChild size="lg" className="w-full sm:w-auto bg-coastal-sage hover:bg-[#5F7D6D] hover:text-white text-coastal-cream text-sm sm:text-base lg:text-lg px-4 sm:px-6 lg:px-8 py-3 sm:py-4 transition-all duration-300">
               <a href="mailto:ruben.o.banuelos@gmail.com">
                 <Mail className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-                <span className="truncate">ruben.o.banuelos@gmail.com</span>
+                <span className="truncate">{pageT.cta.emailButton}</span>
               </a>
             </Button>
           </div>
           <p className="text-xs sm:text-sm text-muted-foreground px-4">
-            Start today with a free, no obligation consultation.
+            {pageT.cta.disclaimer}
           </p>
         </div>
       </section>

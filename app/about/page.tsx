@@ -10,10 +10,12 @@ import { Award, GraduationCap, Heart, Users, MapPin, Star, CheckCircle, Shield, 
 import useLanguageStore from "@/hooks/useLanguageStore"
 import useScrollAnimation from "@/hooks/useScrollAnimation"
 import { useEffect } from "react"
+import type { aboutTranslations } from "@/translations/about/en"
 
 export default function AboutPage() {
-  const { t } = useLanguageStore()
+  const { t, getPage } = useLanguageStore()
   const { ref, isVisible } = useScrollAnimation()
+  const pageT = getPage('about') as typeof aboutTranslations
 
   // Handle smooth scroll from other pages
   useEffect(() => {
@@ -49,33 +51,27 @@ export default function AboutPage() {
   const credentials = [
     {
       icon: <GraduationCap className="w-8 h-8 text-coastal-teal" />,
-      title: "Doctor of Physical\nTherapy",
-      description: "Advanced healthcare background with deep understanding of human needs and service excellence"
+      title: pageT.credentialItems.dpt.title,
+      description: pageT.credentialItems.dpt.description
     },
     {
       icon: <Award className="w-8 h-8 text-coastal-teal" />,
-      title: "Rising Star\nAward",
-      description: "Recognized for exceptional performance and rapid growth in real estate"
+      title: pageT.credentialItems.award.title,
+      description: pageT.credentialItems.award.description
     },
     {
       icon: <Users className="w-8 h-8 text-coastal-teal" />,
-      title: "NARPM\nCertified",
-      description: "National Association of Residential Property Managers certification"
+      title: pageT.credentialItems.narpm.title,
+      description: pageT.credentialItems.narpm.description
     },
     {
       icon: <Shield className="w-8 h-8 text-coastal-teal" />,
-      title: "DRE# 02153497\nLicensed Broker",
-      description: "Licensed Broker with California Department of Real Estate"
+      title: pageT.credentialItems.broker.title,
+      description: pageT.credentialItems.broker.description
     }
   ]
 
-  const values = [
-    "Family-first approach to real estate",
-    "Healthcare background brings empathy and attention to detail",
-    "Dual expertise in healthcare and real estate",
-    "Community-focused service philosophy",
-    "Veteran-friendly with VA loan expertise"
-  ]
+  const values = pageT.values.valuesList
 
   return (
     <>
@@ -93,10 +89,10 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-6 sm:px-8 relative z-10">
           <div className="text-center space-y-6 sm:space-y-8">
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white font-lexend leading-tight">
-              From Healthcare to Real Estate
+              {pageT.hero.title}
             </h1>
             <p className="text-xl sm:text-2xl md:text-3xl text-white/90 max-w-5xl mx-auto leading-relaxed px-4">
-              A Doctor of Physical Therapy who found his true calling in helping families find their perfect homes and investors build their portfolios.
+              {pageT.hero.subtitle}
             </p>
           </div>
         </div>
@@ -124,10 +120,10 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
           <div className="text-center space-y-3 sm:space-y-4 mb-8 sm:mb-12">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white font-lexend leading-tight">
-              Credentials & Recognition
+              {pageT.credentials.title}
             </h2>
             <p className="text-base sm:text-lg text-white/90 max-w-3xl mx-auto px-2">
-              My unique background combines healthcare expertise with real estate excellence
+              {pageT.credentials.subtitle}
             </p>
           </div>
           
@@ -159,11 +155,10 @@ export default function AboutPage() {
           <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-start lg:items-center">
             <div className="space-y-4 sm:space-y-5">
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-coastal-charcoal font-lexend leading-tight">
-                What Drives Me
+                {pageT.values.title}
               </h2>
               <p className="text-sm sm:text-base md:text-lg text-coastal-slate leading-relaxed">
-                My approach to real estate is shaped by my healthcare background and family values. 
-                I believe in treating every client with the same care and attention I would give my own family.
+                {pageT.values.subtitle}
               </p>
               <div className="space-y-2 sm:space-y-3">
                 {values.map((value, index) => (
@@ -179,11 +174,10 @@ export default function AboutPage() {
                 <div className="space-y-2 sm:space-y-3">
                   <div className="flex items-center space-x-2 sm:space-x-3">
                     <Heart className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-secondary flex-shrink-0" />
-                    <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-coastal-charcoal leading-tight">Family First</h3>
+                    <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-coastal-charcoal leading-tight">{pageT.values.familyFirst.title}</h3>
                   </div>
                   <p className="text-xs sm:text-sm md:text-base text-coastal-slate leading-relaxed">
-                    As a family man, I understand the importance of finding the right home. 
-                    Every decision I make is guided by what's best for your family's future.
+                    {pageT.values.familyFirst.description}
                   </p>
                 </div>
               </Card>
@@ -192,11 +186,10 @@ export default function AboutPage() {
                 <div className="space-y-2 sm:space-y-3">
                   <div className="flex items-center space-x-2 sm:space-x-3">
                     <MapPin className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-secondary flex-shrink-0" />
-                    <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-coastal-charcoal leading-tight">Community Focus</h3>
+                    <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-coastal-charcoal leading-tight">{pageT.values.communityFocus.title}</h3>
                   </div>
                   <p className="text-xs sm:text-sm md:text-base text-coastal-slate leading-relaxed">
-                    I'm deeply connected to San Diego County and understand the unique needs 
-                    of our diverse communities, from military families to growing neighborhoods.
+                    {pageT.values.communityFocus.description}
                   </p>
                 </div>
               </Card>
@@ -209,28 +202,28 @@ export default function AboutPage() {
       <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-gradient-to-br from-coastal-cream/40 via-white to-coastal-sage/30">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center space-y-6 sm:space-y-8">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground font-lexend leading-tight">
-            Ready to Work Together?
+            {pageT.cta.title}
           </h2>
           <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed px-2">
-            Let's discuss how my unique background and expertise can help you achieve your real estate goals.
+            {pageT.cta.subtitle}
           </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center max-w-2xl mx-auto">
             <Button asChild size="lg" className="bg-coastal-teal hover:bg-[#5F7D6D] hover:text-white text-coastal-cream text-sm sm:text-base md:text-lg px-4 sm:px-6 md:px-8 py-3 sm:py-4 transition-all duration-300 w-full sm:w-auto">
               <a href="tel:+15416021026">
                 <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-                Call (541) 602-1026
+                {pageT.cta.callButton}
               </a>
             </Button>
             <Button asChild size="lg" className="bg-coastal-sage hover:bg-[#5F7D6D] hover:text-white text-coastal-cream text-sm sm:text-base md:text-lg px-4 sm:px-6 md:px-8 py-3 sm:py-4 transition-all duration-300 w-full sm:w-auto">
               <a href="mailto:ruben.o.banuelos@gmail.com">
                 <Mail className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-                <span className="hidden sm:inline">ruben.o.banuelos@gmail.com</span>
-                <span className="sm:hidden">Email Me</span>
+                <span className="hidden sm:inline">{pageT.cta.emailButtonFull}</span>
+                <span className="sm:hidden">{pageT.cta.emailButton}</span>
               </a>
             </Button>
           </div>
           <p className="text-xs sm:text-sm text-muted-foreground">
-            Start today with a free, no obligation consultation.
+            {pageT.cta.disclaimer}
           </p>
         </div>
       </section>

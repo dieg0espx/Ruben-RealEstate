@@ -14,11 +14,11 @@ export default function PageNavbar() {
   const pathname = usePathname()
 
   const navItems = [
-    { href: '/home', label: 'Home' },
-    { href: '/about', label: 'About' },
-    { href: '/services', label: 'Services' },
-    { href: '/results', label: 'Results' },
-    { href: '/contact', label: 'Contact' }
+    { href: '/home', label: t('nav.home') },
+    { href: '/about', label: t('nav.about') },
+    { href: '/services', label: t('nav.services') },
+    { href: '/results', label: t('nav.results') },
+    { href: '/contact', label: t('nav.contact') }
   ]
 
   const isActive = (href: string) => {
