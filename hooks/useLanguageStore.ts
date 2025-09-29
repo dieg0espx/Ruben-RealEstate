@@ -5,7 +5,7 @@ import { languageStore } from '@/lib/languageStore'
 
 type Language = 'en' | 'es'
 
-export const useLanguageStore = () => {
+export function useLanguageStore() {
   const [language, setLanguage] = useState<Language>('en')
   const [isClient, setIsClient] = useState(false)
 
