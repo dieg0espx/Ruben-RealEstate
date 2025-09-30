@@ -92,29 +92,26 @@ export const resourcesTranslations = {
     watchNow: "Watch Now",
     readArticle: "Read Article"
   },
-  upcomingContent: {
+  upcoming: {
     title: "Coming Soon",
     subtitle: "New educational content is added regularly. Stay updated with the latest insights and guides.",
-    inDevelopment: "In development",
-    content: [
-      "San Diego Neighborhood Guide",
-      "Property Management Best Practices",
-      "Tax Benefits for Real Estate Investors",
-      "Home Staging for Maximum Value",
-      "Understanding Market Cycles"
-    ]
+    content1: "San Diego Neighborhood Guide",
+    content2: "Property Management Best Practices",
+    content3: "Tax Benefits for Real Estate Investors",
+    content4: "Home Staging for Maximum Value",
+    content5: "Understanding Market Cycles"
   },
   newsletter: {
     title: "Stay Updated",
     subtitle: "Get notified when new guides, videos, and articles are published. Be the first to access valuable real estate insights.",
     emailPlaceholder: "Enter your email",
-    subscribe: "Subscribe",
+    subscribeButton: "Subscribe",
     disclaimer: "No spam, just valuable content. Unsubscribe anytime."
   },
   cta: {
     title: "Need Personalized Guidance?",
     subtitle: "While these resources provide great general information, every real estate situation is unique. Let's discuss your specific needs and goals.",
-    scheduleConsultation: "Schedule a Consultation",
+    scheduleButton: "Schedule a Consultation",
     callButton: "Call (619) 555-0123"
   }
 }

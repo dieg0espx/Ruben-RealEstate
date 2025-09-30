@@ -92,29 +92,26 @@ export const resourcesTranslations = {
     watchNow: "Ver Ahora",
     readArticle: "Leer Artículo"
   },
-  upcomingContent: {
+  upcoming: {
     title: "Próximamente",
     subtitle: "Nuevo contenido educativo se agrega regularmente. Mantente actualizado con las últimas perspectivas y guías.",
-    inDevelopment: "En desarrollo",
-    content: [
-      "Guía de Vecindarios de San Diego",
-      "Mejores Prácticas de Administración de Propiedades",
-      "Beneficios Fiscales para Inversionistas Inmobiliarios",
-      "Puesta en Escena de Casa para Máximo Valor",
-      "Entendiendo los Ciclos del Mercado"
-    ]
+    content1: "Guía de Vecindarios de San Diego",
+    content2: "Mejores Prácticas de Administración de Propiedades",
+    content3: "Beneficios Fiscales para Inversionistas Inmobiliarios",
+    content4: "Puesta en Escena de Casa para Máximo Valor",
+    content5: "Entendiendo los Ciclos del Mercado"
   },
   newsletter: {
     title: "Mantente Actualizado",
     subtitle: "Recibe notificaciones cuando se publiquen nuevas guías, videos y artículos. Sé el primero en acceder a perspectivas valiosas de bienes raíces.",
     emailPlaceholder: "Ingresa tu correo",
-    subscribe: "Suscribirse",
+    subscribeButton: "Suscribirse",
     disclaimer: "Sin spam, solo contenido valioso. Cancela la suscripción en cualquier momento."
   },
   cta: {
     title: "¿Necesitas Guía Personalizada?",
     subtitle: "Aunque estos recursos proporcionan excelente información general, cada situación inmobiliaria es única. Hablemos de tus necesidades y objetivos específicos.",
-    scheduleConsultation: "Programar una Consulta",
+    scheduleButton: "Programar una Consulta",
     callButton: "Llamar (619) 555-0123"
   }
 }

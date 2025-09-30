@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Analytics } from '@vercel/analytics/next'
 import { Poppins } from 'next/font/google'
 import './globals.css'
@@ -10,11 +10,11 @@ const poppins = Poppins({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://rubenrealestate.com'),
   title: 'Ruben Real Estate | San Diego Real Estate Expert',
   description: 'Expert real estate services in San Diego County. Specializing in Veterans, Investors, and Growing Families. From healthcare to real estate - your trusted partner for home buying, selling, and investment opportunities.',
   keywords: 'San Diego real estate, veteran real estate, investment properties, first time home buyers, property management, Ruben Banuelos',
   authors: [{ name: 'Ruben Banuelos' }],
-  themeColor: '#ffffff',
   icons: {
     icon: [
       { url: '/logo/favicon.ico', sizes: 'any' },
@@ -47,6 +47,10 @@ export const metadata: Metadata = {
     description: 'Expert real estate services in San Diego County. Specializing in Veterans, Investors, and Growing Families.',
     images: ['/logo/openGraphs.jpg'],
   },
+}
+
+export const viewport: Viewport = {
+  themeColor: '#ffffff',
 }
 
 export default function RootLayout({

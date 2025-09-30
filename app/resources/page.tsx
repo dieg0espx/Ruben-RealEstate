@@ -1,3 +1,5 @@
+'use client'
+
 import Header from "@/components/sections/Header"
 import Footer from "@/components/sections/Footer"
 import { Badge } from "@/components/ui/badge"
@@ -12,6 +14,19 @@ export default function ResourcesPage() {
   const { t, getPage } = useLanguageStore()
   const { ref, isVisible } = useScrollAnimation()
   const pageT = getPage('resources') as typeof resourcesTranslations
+
+  // Defensive check to ensure pageT exists and has required properties
+  if (!pageT || !pageT.upcoming || !pageT.newsletter || !pageT.cta) {
+    return (
+      <main className="flex-1 bg-background">
+        <div className="flex items-center justify-center min-h-screen">
+          <div className="text-center">
+            <h1 className="text-2xl font-bold text-foreground">Loading...</h1>
+          </div>
+        </div>
+      </main>
+    )
+  }
 
   const resourceCategories = [
     {
