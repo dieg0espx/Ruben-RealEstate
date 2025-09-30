@@ -3,65 +3,22 @@
 import { Button } from "@/components/ui/button"
 import { Phone, Globe, Menu, X } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
 import useLanguageStore from "@/hooks/useLanguageStore"
-import { useState, useEffect } from "react"
+import { useState } from "react"
 
-export default function Header() {
+export default function PageHeader() {
   const { language, toggleLanguage, t } = useLanguageStore()
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const [activeSection, setActiveSection] = useState('')
-
-  // Smooth scroll function
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId)
-    if (element) {
-      const headerHeight = 80 // Approximate header height
-      const elementPosition = element.offsetTop - headerHeight
-      
-      window.scrollTo({
-        top: elementPosition,
-        behavior: 'smooth'
-      })
-    }
-    setIsMobileMenuOpen(false)
-  }
-
-  // Scroll to top function
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    })
-    setIsMobileMenuOpen(false)
-  }
-
-  // Track active section on scroll
-  useEffect(() => {
-    const handleScroll = () => {
-      const sections = ['about', 'services', 'properties', 'contact']
-      const scrollPosition = window.scrollY + 100
-
-      for (const section of sections) {
-        const element = document.getElementById(section)
-        if (element) {
-          const { offsetTop, offsetHeight } = element
-          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-            setActiveSection(section)
-            break
-          }
-        }
-      }
-    }
-
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
 
   const navItems = [
-    { id: 'about', label: t('nav.about') },
-    { id: 'services', label: t('nav.services') },
-    { id: 'properties', label: t('nav.properties') },
-    { id: 'contact', label: t('nav.contact') }
+    { href: '/', label: 'Landing' },
+    { href: '/home', label: 'Home' },
+    { href: '/about', label: 'About' },
+    { href: '/services', label: 'Services' },
+    { href: '/results', label: 'Results' },
+    { href: '/resources', label: 'Resources' },
+    { href: '/contact', label: 'Contact' }
   ]
 
   return (
@@ -72,7 +29,7 @@ export default function Header() {
           <div className="hidden lg:flex items-center justify-between w-full">
             {/* Logo */}
             <div className="flex items-center space-x-2 sm:space-x-3">
-              <button onClick={scrollToTop} className="focus:outline-none">
+              <Link href="/" className="focus:outline-none">
                 <Image
                   src="/logo/ruben real estate_Horizontal.png"
                   alt="Ruben Real Estate Logo"
@@ -81,23 +38,19 @@ export default function Header() {
                   className="h-12 sm:h-14 md:h-16 w-auto"
                   priority
                 />
-              </button>
+              </Link>
             </div>
 
             {/* Navigation Items - Centered */}
             <div className="flex items-center gap-6 xl:gap-8">
               {navItems.map((item) => (
-                <button
-                  key={item.id}
-                  onClick={() => scrollToSection(item.id)}
-                  className={`transition-colors text-sm xl:text-base ${
-                    activeSection === item.id
-                      ? 'text-coastal-teal font-semibold'
-                      : 'text-muted-foreground hover:text-foreground'
-                  }`}
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="transition-colors text-sm xl:text-base text-muted-foreground hover:text-foreground"
                 >
                   {item.label}
-                </button>
+                </Link>
               ))}
             </div>
             
@@ -129,7 +82,7 @@ export default function Header() {
           <div className="lg:hidden flex items-center justify-between w-full">
             {/* Logo */}
             <div className="flex items-center space-x-2 sm:space-x-3">
-              <button onClick={scrollToTop} className="focus:outline-none">
+              <Link href="/" className="focus:outline-none">
                 <Image
                   src="/logo/ruben real estate_Horizontal.png"
                   alt="Ruben Real Estate Logo"
@@ -138,7 +91,7 @@ export default function Header() {
                   className="h-12 sm:h-14 md:h-16 w-auto"
                   priority
                 />
-              </button>
+              </Link>
             </div>
             
             {/* Tablet Navigation */}
@@ -189,17 +142,14 @@ export default function Header() {
           <div className="md:hidden mt-4 pb-4 border-t border-border/40">
             <div className="flex flex-col space-y-3 pt-4">
               {navItems.map((item) => (
-                <button
-                  key={item.id}
-                  onClick={() => scrollToSection(item.id)}
-                  className={`text-left py-3 px-2 transition-colors text-base ${
-                    activeSection === item.id
-                      ? 'text-coastal-teal font-semibold bg-coastal-cream/10 rounded-lg'
-                      : 'text-muted-foreground hover:text-foreground hover:bg-coastal-cream/5 rounded-lg'
-                  }`}
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="text-left py-3 px-2 transition-colors text-base text-muted-foreground hover:text-foreground hover:bg-coastal-cream/5 rounded-lg"
                 >
                   {item.label}
-                </button>
+                </Link>
               ))}
               <div className="pt-4">
                 <Button 

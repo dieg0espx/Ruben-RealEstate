@@ -1,7 +1,7 @@
 'use client'
 
 import Image from "next/image"
-import { useLanguageStore } from "@/hooks/useLanguageStore"
+import useLanguageStore from "@/hooks/useLanguageStore"
 
 export default function Footer() {
   const { t } = useLanguageStore()

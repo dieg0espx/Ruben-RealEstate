@@ -1,6 +1,7 @@
-import Header from "@/components/sections/Header"
+"use client"
+
+import PageNavbar from "@/components/sections/PageNavbar"
 import Footer from "@/components/sections/Footer"
-import ContactSection from "@/components/sections/ContactSection"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
@@ -9,105 +10,208 @@ import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Phone, Mail, MapPin, Clock, MessageCircle, Calendar } from "lucide-react"
-import { useLanguageStore } from "@/hooks/useLanguageStore"
-import { useScrollAnimation } from "@/hooks/useScrollAnimation"
+import { useEffect, useState } from "react"
+import useLanguageStore from "@/hooks/useLanguageStore"
+import type { contactTranslations } from "@/translations/contact/en"
 
 export default function ContactPage() {
-  const { t } = useLanguageStore()
-  const { ref, isVisible } = useScrollAnimation()
+  const { getPage } = useLanguageStore()
+  const pageT = getPage('contact') as typeof contactTranslations
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    clientType: '',
+    message: '',
+    marketingConsent: false
+  })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
+  const [errorMessage, setErrorMessage] = useState('')
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value, type } = e.target
+    setFormData(prev => ({
+      ...prev,
+      [name]: type === 'checkbox' ? (e.target as HTMLInputElement).checked : value
+    }))
+  }
+
+  const handleSelectChange = (value: string) => {
+    setFormData(prev => ({
+      ...prev,
+      clientType: value
+    }))
+  }
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+    setSubmitStatus('idle')
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+
+      const result = await response.json()
+
+      if (response.ok) {
+        setSubmitStatus('success')
+        setFormData({
+          firstName: '',
+          lastName: '',
+          email: '',
+          phone: '',
+          clientType: '',
+          message: '',
+          marketingConsent: false
+        })
+      } else {
+        console.error('API Error:', result)
+        setErrorMessage(result.error || 'Failed to send message')
+        setSubmitStatus('error')
+        return
+      }
+    } catch (error) {
+      console.error('Form submission error:', error)
+      setErrorMessage(error instanceof Error ? error.message : 'An unexpected error occurred')
+      setSubmitStatus('error')
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
+
+  // Handle smooth scroll from other pages
+  useEffect(() => {
+    const handleScrollToSection = () => {
+      const hash = sessionStorage.getItem('scrollToHash')
+      if (hash) {
+        console.log('Contact page: Scrolling to hash:', hash)
+        sessionStorage.removeItem('scrollToHash')
+        
+        // Wait for page to fully load
+        setTimeout(() => {
+          const element = document.getElementById(hash)
+          if (element) {
+            console.log('Contact page: Found element, scrolling to:', hash)
+            const headerHeight = 80
+            const elementPosition = element.offsetTop - headerHeight
+            
+            // Scroll directly to the target section
+            window.scrollTo({
+              top: elementPosition,
+              behavior: 'smooth'
+            })
+          } else {
+            console.log('Contact page: Element not found:', hash)
+          }
+        }, 500) // Wait for page to load
+      }
+    }
+
+    handleScrollToSection()
+  }, [])
 
   const contactMethods = [
     {
       icon: <Phone className="w-8 h-8 text-coastal-teal" />,
-      title: "Phone",
-      details: "(619) 555-0123",
-      description: "Call anytime for immediate assistance",
-      action: "Call Now"
+      title: pageT.contactMethods.phone.title,
+      details: pageT.contactMethods.phone.details,
+      description: pageT.contactMethods.phone.description,
+      action: pageT.contactMethods.phone.action,
+      href: "tel:+15416021026"
     },
     {
       icon: <Mail className="w-8 h-8 text-coastal-sage" />,
-      title: "Email",
-      details: "ruben@rubenrealestate.com",
-      description: "Send detailed questions or documents",
-      action: "Send Email"
-    },
-    {
-      icon: <MessageCircle className="w-8 h-8 text-coastal-steel" />,
-      title: "Text Message",
-      details: "(619) 555-0123",
-      description: "Quick questions and updates",
-      action: "Text Now"
+      title: pageT.contactMethods.email.title,
+      details: pageT.contactMethods.email.details,
+      description: pageT.contactMethods.email.description,
+      action: pageT.contactMethods.email.action,
+      href: "mailto:ruben.o.banuelos@gmail.com"
     },
     {
       icon: <Calendar className="w-8 h-8 text-coastal-teal" />,
-      title: "Schedule Meeting",
-      details: "Online or In-Person",
-      description: "Book a consultation at your convenience",
-      action: "Schedule"
+      title: pageT.contactMethods.schedule.title,
+      details: pageT.contactMethods.schedule.details,
+      description: pageT.contactMethods.schedule.description,
+      action: pageT.contactMethods.schedule.action,
+      href: "#consultation-form"
     }
   ]
 
-  const officeHours = [
-    { day: "Monday - Friday", hours: "8:00 AM - 7:00 PM" },
-    { day: "Saturday", hours: "9:00 AM - 5:00 PM" },
-    { day: "Sunday", hours: "10:00 AM - 4:00 PM" }
-  ]
+  const officeHours = pageT.officeHours.schedule
 
   return (
-    <main className="flex-1 bg-background">
-      <Header />
-      
-      {/* Hero Section */}
-      <section className="relative py-20 lg:py-32 bg-gradient-to-br from-coastal-teal/10 via-white to-coastal-sage/10 overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/images/hero-bg.jpg')] bg-cover bg-center opacity-5"></div>
+    <>
+      <PageNavbar />
+      <main className="flex-1 bg-background">
+        {/* Hero Section */}
+      <section 
+        className="hero-section relative py-32 sm:py-40 md:py-48 lg:py-56 xl:py-64 overflow-hidden -mt-20 pt-64 sm:pt-80 md:pt-88 lg:pt-96 xl:pt-104"
+        style={{
+          backgroundImage: "url('/images/60-web-or-mls-Riviera_drone (6 of 12).JPG')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
+        {/* Dark gradient overlay for text contrast - matching home page */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/60 to-black/70"></div>
+        
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
-          <div className="text-center space-y-6">
-            <Badge className="bg-coastal-teal/20 text-coastal-slate border-coastal-teal px-6 py-3 text-lg font-medium">
-              Get In Touch
-            </Badge>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground font-lexend">
-              Let's Start Your Journey
+          <div className="text-center space-y-8">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white font-lexend drop-shadow-lg">
+              {pageT.hero.title}
             </h1>
-            <p className="text-xl sm:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-              Ready to buy, sell, or invest? I'm here to help you achieve your real estate goals 
-              with personalized service and expert guidance.
+            <p className="text-xl sm:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed drop-shadow-md">
+              {pageT.hero.subtitle}
             </p>
           </div>
         </div>
       </section>
 
       {/* Contact Methods Section */}
-      <section ref={ref} className="py-16 sm:py-20 lg:py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="text-center space-y-4 mb-12">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground font-lexend">
-              How Would You Like to Connect?
+      <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center space-y-4 mb-8 sm:mb-12">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground font-lexend leading-tight">
+              {pageT.contactMethods.title}
             </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Choose the communication method that works best for you
+            <p className="text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto px-4">
+              {pageT.contactMethods.subtitle}
             </p>
           </div>
           
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 lg:gap-8">
             {contactMethods.map((method, index) => (
-              <Card key={index} className="group hover:shadow-xl transition-all duration-300 border-0 bg-gradient-to-br from-coastal-cream/40 to-white hover:from-coastal-teal/5 hover:to-coastal-sage/5">
-                <CardContent className="p-8 text-center space-y-4">
+              <Card key={index} className="group hover:shadow-xl transition-all duration-300 border-0 bg-gradient-to-br from-coastal-cream/40 to-white hover:from-coastal-teal/5 hover:to-coastal-sage/5 transform hover:-translate-y-1">
+                <CardContent className="p-3 sm:p-6 lg:p-8 text-center space-y-3 sm:space-y-6">
                   <div className="flex justify-center">
-                    {method.icon}
+                    <div className="w-10 h-10 sm:w-16 sm:h-16 bg-gradient-to-br from-coastal-teal/10 to-coastal-sage/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                      {method.icon}
+                    </div>
                   </div>
-                  <div className="space-y-2">
-                    <h3 className="text-xl font-bold text-foreground group-hover:text-coastal-teal transition-colors">
+                  <div className="space-y-1 sm:space-y-3">
+                    <h3 className="text-base sm:text-xl font-bold text-foreground group-hover:text-coastal-teal transition-colors">
                       {method.title}
                     </h3>
-                    <p className="text-lg font-semibold text-coastal-teal">
+                    <p className="text-sm sm:text-lg font-semibold text-coastal-teal break-words">
                       {method.details}
                     </p>
-                    <p className="text-sm text-muted-foreground">
+                    <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
                       {method.description}
                     </p>
                   </div>
-                  <Button className="w-full bg-coastal-teal hover:bg-coastal-teal/90 text-white font-semibold">
-                    {method.action}
+                  <Button asChild className="w-full text-white font-semibold hover:bg-white hover:text-coastal-sage transition-all duration-300 text-xs sm:text-base h-8 sm:h-10" style={{ backgroundColor: '#5F7D6D' }}>
+                    <a href={method.href}>
+                      {method.action}
+                    </a>
                   </Button>
                 </CardContent>
               </Card>
@@ -117,89 +221,157 @@ export default function ContactPage() {
       </section>
 
       {/* Lead Form Section */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-coastal-cream/40 via-white to-coastal-sage/30">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6">
-          <div className="text-center space-y-4 mb-12">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground font-lexend">
-              Tell Me About Your Goals
+      <section 
+        id="consultation-form" 
+        className="py-12 sm:py-16 md:py-20 lg:py-24 relative overflow-hidden"
+        style={{
+          backgroundImage: "url('/images/65-web-or-mls-Riviera_drone (12 of 12).JPG')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
+        {/* Dark gradient overlay for text contrast */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/60 to-black/70"></div>
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center space-y-4 mb-8 sm:mb-12">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white font-lexend drop-shadow-lg leading-tight">
+              {pageT.form.title}
             </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Fill out this form and I'll get back to you within 24 hours with a personalized response
+            <p className="text-base sm:text-lg text-white/90 max-w-3xl mx-auto drop-shadow-md px-4">
+              {pageT.form.subtitle}
             </p>
           </div>
           
           <Card className="border-0 bg-white/80 backdrop-blur-sm shadow-2xl">
-            <CardHeader>
-              <CardTitle className="text-2xl font-bold text-center text-foreground">
-                Get Your Free Consultation
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="p-8">
-              <form className="space-y-6">
-                <div className="grid sm:grid-cols-2 gap-6">
+            <CardContent className="p-4 sm:p-6 lg:p-8">
+              <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+                {submitStatus === 'success' && (
+                  <div className="p-4 bg-green-50 border border-green-200 rounded-lg">
+                    <p className="text-green-800 text-sm">{pageT.form.successMessage}</p>
+                  </div>
+                )}
+                
+                {submitStatus === 'error' && (
+                  <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
+                    <p className="text-red-800 text-sm">
+                      {errorMessage || pageT.form.errorMessage}
+                    </p>
+                  </div>
+                )}
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                   <div className="space-y-2">
-                    <Label htmlFor="firstName">First Name *</Label>
-                    <Input id="firstName" placeholder="Your first name" required />
+                    <Label htmlFor="firstName" className="text-sm font-medium">{pageT.form.firstName}</Label>
+                    <Input 
+                      id="firstName" 
+                      name="firstName"
+                      value={formData.firstName}
+                      onChange={handleInputChange}
+                      placeholder={pageT.form.firstNamePlaceholder} 
+                      required 
+                      className="h-10" 
+                    />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="lastName">Last Name *</Label>
-                    <Input id="lastName" placeholder="Your last name" required />
+                    <Label htmlFor="lastName" className="text-sm font-medium">{pageT.form.lastName}</Label>
+                    <Input 
+                      id="lastName" 
+                      name="lastName"
+                      value={formData.lastName}
+                      onChange={handleInputChange}
+                      placeholder={pageT.form.lastNamePlaceholder} 
+                      required 
+                      className="h-10" 
+                    />
                   </div>
                 </div>
                 
-                <div className="grid sm:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                   <div className="space-y-2">
-                    <Label htmlFor="email">Email *</Label>
-                    <Input id="email" type="email" placeholder="your@email.com" required />
+                    <Label htmlFor="email" className="text-sm font-medium">{pageT.form.email}</Label>
+                    <Input 
+                      id="email" 
+                      name="email"
+                      type="email" 
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      placeholder={pageT.form.emailPlaceholder} 
+                      required 
+                      className="h-10" 
+                    />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="phone">Phone Number</Label>
-                    <Input id="phone" type="tel" placeholder="(619) 555-0123" />
+                    <Label htmlFor="phone" className="text-sm font-medium">{pageT.form.phone}</Label>
+                    <Input 
+                      id="phone" 
+                      name="phone"
+                      type="tel" 
+                      value={formData.phone}
+                      onChange={handleInputChange}
+                      placeholder={pageT.form.phonePlaceholder} 
+                      className="h-10" 
+                    />
                   </div>
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="clientType">I am a... *</Label>
-                  <Select>
-                    <SelectTrigger>
-                      <SelectValue placeholder="Select your situation" />
+                  <Label htmlFor="clientType" className="text-sm font-medium">{pageT.form.clientType}</Label>
+                  <Select value={formData.clientType} onValueChange={handleSelectChange}>
+                    <SelectTrigger className="h-10">
+                      <SelectValue placeholder={pageT.form.clientTypePlaceholder} />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="veteran">Veteran looking to buy/sell</SelectItem>
-                      <SelectItem value="investor">Real Estate Investor</SelectItem>
-                      <SelectItem value="family">Growing Family</SelectItem>
-                      <SelectItem value="first-time">First-Time Buyer</SelectItem>
-                      <SelectItem value="other">Other</SelectItem>
+                      <SelectItem value="veteran">{pageT.form.veteran}</SelectItem>
+                      <SelectItem value="investor">{pageT.form.investor}</SelectItem>
+                      <SelectItem value="family">{pageT.form.family}</SelectItem>
+                      <SelectItem value="first-time">{pageT.form.firstTime}</SelectItem>
+                      <SelectItem value="other">{pageT.form.other}</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="timeline">When are you looking to buy/sell? *</Label>
-                  <Select>
-                    <SelectTrigger>
-                      <SelectValue placeholder="Select your timeline" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="immediately">Immediately (0-30 days)</SelectItem>
-                      <SelectItem value="soon">Soon (1-3 months)</SelectItem>
-                      <SelectItem value="planning">Planning ahead (3-6 months)</SelectItem>
-                      <SelectItem value="exploring">Just exploring (6+ months)</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="message">Tell me about your goals and needs</Label>
+                  <Label htmlFor="message" className="text-sm font-medium">{pageT.form.message}</Label>
                   <Textarea 
                     id="message" 
-                    placeholder="Describe what you're looking for, your budget range, preferred areas, or any specific requirements..."
+                    name="message"
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    placeholder={pageT.form.messagePlaceholder}
                     rows={4}
+                    className="resize-none"
                   />
                 </div>
 
-                <Button type="submit" size="lg" className="w-full bg-coastal-teal hover:bg-coastal-teal/90 text-white font-semibold">
-                  Send My Information
+                <div className="space-y-3">
+                  <div className="flex items-start gap-3">
+                    <input 
+                      id="marketingConsent" 
+                      name="marketingConsent" 
+                      type="checkbox" 
+                      checked={formData.marketingConsent}
+                      onChange={handleInputChange}
+                      required 
+                      className="mt-1 h-4 w-4 border-input rounded flex-shrink-0" 
+                    />
+                    <label htmlFor="marketingConsent" className="text-xs text-muted-foreground leading-relaxed">
+                      {pageT.form.marketingConsent} <a href="/privacy" className="underline">{pageT.form.privacyPolicy}</a> and <a href="/terms" className="underline">{pageT.form.termsOfUse}</a>.
+                    </label>
+                  </div>
+                  <p className="text-xs text-muted-foreground">
+                    {pageT.form.dataProtection}
+                  </p>
+                </div>
+
+                <Button 
+                  type="submit" 
+                  size="lg" 
+                  disabled={isSubmitting}
+                  className="w-full text-white font-semibold hover:bg-white hover:text-coastal-sage transition-all duration-300 h-12 text-base disabled:opacity-50" 
+                  style={{ backgroundColor: '#5F7D6D' }}
+                >
+                  {isSubmitting ? pageT.form.submitting : pageT.form.submit}
                 </Button>
               </form>
             </CardContent>
@@ -208,77 +380,81 @@ export default function ContactPage() {
       </section>
 
       {/* Office Hours & Location */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="grid lg:grid-cols-2 gap-12">
-            <div className="space-y-6">
-              <h2 className="text-3xl sm:text-4xl font-bold text-foreground font-lexend">
-                Office Hours & Location
-              </h2>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                I'm available to meet with you at your convenience, whether in-person or virtually.
-              </p>
-              
-              <div className="space-y-4">
-                <div className="flex items-center space-x-4">
-                  <Clock className="w-6 h-6 text-coastal-teal" />
-                  <div>
-                    <h3 className="font-semibold text-foreground">Office Hours</h3>
-                    <div className="space-y-1 text-muted-foreground">
-                      {officeHours.map((schedule, index) => (
-                        <div key={index} className="flex justify-between">
-                          <span>{schedule.day}</span>
-                          <span>{schedule.hours}</span>
-                        </div>
-                      ))}
+      <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
+            <div className="lg:col-span-2">
+              <div className="space-y-4 sm:space-y-6">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground font-lexend leading-tight">
+                  {pageT.officeHours.title}
+                </h2>
+                <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
+                  {pageT.officeHours.subtitle}
+                </p>
+                
+                <div className="space-y-4 sm:space-y-6">
+                  <div className="flex items-start space-x-3 sm:space-x-4">
+                    <Clock className="w-5 h-5 sm:w-6 sm:h-6 text-coastal-teal flex-shrink-0 mt-1" />
+                    <div className="flex-1">
+                      <h3 className="font-semibold text-foreground text-base sm:text-lg">{pageT.officeHours.hoursTitle}</h3>
+                      <div className="space-y-1 text-muted-foreground text-sm sm:text-base">
+                        {officeHours.map((schedule, index) => (
+                          <div key={index} className="flex flex-col sm:flex-row sm:justify-between gap-1 sm:gap-4">
+                            <span className="font-medium">{schedule.day}</span>
+                            <span>{schedule.hours}</span>
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   </div>
-                </div>
-                
-                <div className="flex items-center space-x-4">
-                  <MapPin className="w-6 h-6 text-coastal-sage" />
-                  <div>
-                    <h3 className="font-semibold text-foreground">Service Area</h3>
-                    <p className="text-muted-foreground">
-                      San Diego County and surrounding areas
-                    </p>
+                  
+                  <div className="flex items-start space-x-3 sm:space-x-4">
+                    <MapPin className="w-5 h-5 sm:w-6 sm:h-6 text-coastal-sage flex-shrink-0 mt-1" />
+                    <div className="flex-1">
+                      <h3 className="font-semibold text-foreground text-base sm:text-lg">{pageT.officeHours.serviceAreaTitle}</h3>
+                      <p className="text-muted-foreground text-sm sm:text-base">
+                        {pageT.officeHours.serviceAreaDescription}
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
             
-            <div className="space-y-6">
-              <h3 className="text-2xl font-bold text-foreground">
-                Why Choose Me?
-              </h3>
-              <div className="space-y-4">
-                <div className="flex items-start space-x-3">
-                  <div className="w-6 h-6 bg-coastal-teal/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <div className="w-2 h-2 bg-coastal-teal rounded-full"></div>
+            <div className="lg:col-span-1">
+              <div className="space-y-4 sm:space-y-6">
+                <h3 className="text-xl sm:text-2xl font-bold text-foreground">
+                  {pageT.whyChoose.title}
+                </h3>
+                <div className="space-y-3 sm:space-y-4">
+                  <div className="flex items-start space-x-3">
+                    <div className="w-5 h-5 sm:w-6 sm:h-6 bg-coastal-teal/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <div className="w-2 h-2 bg-coastal-teal rounded-full"></div>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-foreground text-sm sm:text-base">{pageT.whyChoose.healthcare.title}</h4>
+                      <p className="text-muted-foreground text-xs sm:text-sm">{pageT.whyChoose.healthcare.description}</p>
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="font-semibold text-foreground">Healthcare Background</h4>
-                    <p className="text-muted-foreground">Brings empathy and attention to detail to every transaction</p>
+                  
+                  <div className="flex items-start space-x-3">
+                    <div className="w-5 h-5 sm:w-6 sm:h-6 bg-coastal-sage/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <div className="w-2 h-2 bg-coastal-sage rounded-full"></div>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-foreground text-sm sm:text-base">{pageT.whyChoose.vaExpert.title}</h4>
+                      <p className="text-muted-foreground text-xs sm:text-sm">{pageT.whyChoose.vaExpert.description}</p>
+                    </div>
                   </div>
-                </div>
-                
-                <div className="flex items-start space-x-3">
-                  <div className="w-6 h-6 bg-coastal-sage/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <div className="w-2 h-2 bg-coastal-sage rounded-full"></div>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-foreground">VA Loan Expertise</h4>
-                    <p className="text-muted-foreground">Specialized knowledge to help veterans maximize their benefits</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start space-x-3">
-                  <div className="w-6 h-6 bg-coastal-steel/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <div className="w-2 h-2 bg-coastal-steel rounded-full"></div>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-foreground">NARPM Certified</h4>
-                    <p className="text-muted-foreground">Professional property management for investors</p>
+                  
+                  <div className="flex items-start space-x-3">
+                    <div className="w-5 h-5 sm:w-6 sm:h-6 bg-coastal-steel/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <div className="w-2 h-2 bg-coastal-steel rounded-full"></div>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-foreground text-sm sm:text-base">{pageT.whyChoose.narpm.title}</h4>
+                      <p className="text-muted-foreground text-xs sm:text-sm">{pageT.whyChoose.narpm.description}</p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -287,10 +463,9 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Contact Section */}
-      <ContactSection />
 
-      <Footer />
-    </main>
+        <Footer />
+      </main>
+    </>
   )
 }

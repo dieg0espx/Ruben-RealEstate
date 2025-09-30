@@ -4,8 +4,8 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Shield, TrendingUp, Heart, CheckCircle, Play } from "lucide-react"
-import { useLanguageStore } from "@/hooks/useLanguageStore"
-import { useScrollAnimation } from "@/hooks/useScrollAnimation"
+import useLanguageStore from "@/hooks/useLanguageStore"
+import useScrollAnimation from "@/hooks/useScrollAnimation"
 import { useEffect, useRef } from "react"
 
 const serviceData = [
