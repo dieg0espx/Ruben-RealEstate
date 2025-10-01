@@ -1,6 +1,7 @@
 'use client'
 
 import Image from "next/image"
+import Link from "next/link"
 import useLanguageStore from "@/hooks/useLanguageStore"
 
 export default function Footer() {
@@ -66,25 +67,31 @@ export default function Footer() {
           <div className="space-y-4">
             <h3 className="font-semibold text-white text-sm sm:text-base">Quick Links</h3>
             <ul className="space-y-2 text-white/80 text-sm sm:text-base">
-              <li><a href="#about" className="hover:text-white transition-colors">About</a></li>
-              <li><a href="#services" className="hover:text-white transition-colors">Services</a></li>
-              <li><a href="#properties" className="hover:text-white transition-colors">Properties</a></li>
-              <li><a href="#contact" className="hover:text-white transition-colors">Contact</a></li>
+              <li><Link href="/about" className="hover:text-white transition-colors">About</Link></li>
+              <li><Link href="/services" className="hover:text-white transition-colors">Services</Link></li>
+              <li><Link href="/results" className="hover:text-white transition-colors">Results</Link></li>
+              <li><Link href="/contact" className="hover:text-white transition-colors">Contact</Link></li>
+              <li><Link href="/resources" className="hover:text-white transition-colors">Resources</Link></li>
             </ul>
           </div>
           
           <div className="space-y-4">
             <h3 className="font-semibold text-white text-sm sm:text-base">{t('footer.contact_title')}</h3>
             <div className="space-y-2 text-white/80 text-sm sm:text-base">
-              <div>(541) 602-1026</div>
-              <div className="break-all">ruben.o.banuelos@gmail.com</div>
+              <div><a href="tel:+15416021026" className="hover:text-white transition-colors">(541) 602-1026</a></div>
+              <div className="break-all"><a href="mailto:ruben.o.banuelos@gmail.com" className="hover:text-white transition-colors">ruben.o.banuelos@gmail.com</a></div>
               <div>DRE# 02153497</div>
             </div>
           </div>
         </div>
         
         <div className="border-t border-white/20 mt-6 sm:mt-8 pt-6 sm:pt-8 text-center text-white/80 animate-fade-in-up animation-delay-200">
-          <p className="text-sm sm:text-base">{t('footer.copyright')}</p>
+          <p className="text-sm sm:text-base mb-4">{t('footer.copyright')}</p>
+          <div className="flex flex-wrap justify-center gap-4 text-xs sm:text-sm">
+            <Link href="/privacy" className="hover:text-white transition-colors">{t('legal.link.privacy')}</Link>
+            <span className="text-white/40">|</span>
+            <Link href="/terms" className="hover:text-white transition-colors">{t('legal.link.terms')}</Link>
+          </div>
         </div>
       </div>
     </footer>
