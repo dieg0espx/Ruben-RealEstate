@@ -181,9 +181,10 @@ export default function ResultsPage() {
         {/* Hero Section */}
       <section className="hero-section relative py-32 sm:py-40 md:py-48 lg:py-56 xl:py-64 overflow-hidden -mt-20 pt-64 sm:pt-80 md:pt-88 lg:pt-96 xl:pt-104">
         <div 
-          className="absolute inset-0 bg-cover bg-center"
+          className="absolute inset-0 bg-cover bg-center bg-fixed"
           style={{
-            backgroundImage: "url('/images/55-web-or-mls-Riviera (54 of 55).JPG')"
+            backgroundImage: "url('/images/55-web-or-mls-Riviera (54 of 55).JPG')",
+            backgroundAttachment: "fixed"
           }}
         ></div>
         <div className="absolute inset-0 bg-black/70"></div>
@@ -199,21 +200,37 @@ export default function ResultsPage() {
         </div>
       </section>
 
+      {/* Portfolio Section */}
+      <PortfolioSection />
+
       {/* Success Metrics Section */}
-      <section ref={ref} className="py-12 sm:py-16 md:py-20 lg:py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section ref={ref} className="py-12 sm:py-16 md:py-20 lg:py-24 relative overflow-hidden">
+        {/* Background Image with Parallax */}
+        <div className="absolute inset-0">
+          <div 
+            className="w-full h-full bg-cover bg-center bg-fixed"
+            style={{
+              backgroundImage: "url('/images/54-web-or-mls-Riviera (53 of 55).JPG')",
+              backgroundAttachment: "fixed"
+            }}
+          ></div>
+        </div>
+        {/* Black Gradient Overlay */}
+        <div className="absolute inset-0 bg-black/70"></div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center space-y-4 mb-8 sm:mb-12">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground font-lexend leading-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white font-lexend leading-tight">
               {pageT.metrics.title}
             </h2>
-            <p className="text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto px-4">
+            <p className="text-base sm:text-lg text-white/90 max-w-3xl mx-auto px-4">
               {pageT.metrics.subtitle}
             </p>
           </div>
           
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
             {successMetrics.map((metric, index) => (
-              <Card key={index} className="group hover:shadow-lg transition-all duration-300 border-0 bg-gradient-to-br from-coastal-cream/40 to-white hover:from-coastal-teal/5 hover:to-coastal-sage/5">
+              <Card key={index} className="group hover:shadow-lg transition-all duration-300 border-0 bg-white/90 backdrop-blur-sm hover:bg-white/95">
                 <CardContent className="p-3 sm:p-4 text-center space-y-2">
                   <div className="flex justify-center">
                     {metric.icon}
@@ -237,10 +254,6 @@ export default function ResultsPage() {
       </section>
 
 
-      {/* Portfolio Section */}
-      <PortfolioSection />
-
-
       {/* Video Section */}
       <section className="relative py-12 sm:py-16 md:py-20 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -259,7 +272,7 @@ export default function ResultsPage() {
               className="w-full h-full object-cover"
               controls
               preload="metadata"
-              poster="/images/1-web-or-mls-royal (6 of 47).JPG"
+              poster="/images/57-web-or-mls-Riviera_drone (3 of 12).JPG"
               muted
               loop
             >
@@ -275,12 +288,13 @@ export default function ResultsPage() {
 
       {/* Testimonials Section */}
       <section id="trusted-by-community" className="py-12 sm:py-16 md:py-20 lg:py-24 relative overflow-hidden">
-        {/* Background Image */}
+        {/* Background Image with Parallax */}
         <div className="absolute inset-0">
           <div 
-            className="w-full h-full bg-cover bg-center"
+            className="w-full h-full bg-cover bg-center bg-fixed"
             style={{
-              backgroundImage: "url('/images/7-web-or-mls-royal (27 of 47).JPG')"
+              backgroundImage: "url('/images/5-web-or-mls-royal (25 of 47).JPG')",
+              backgroundAttachment: "fixed"
             }}
           ></div>
         </div>

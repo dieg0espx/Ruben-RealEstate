@@ -8,7 +8,7 @@ export const homeTranslations = {
   },
   whyChoose: {
     title: "¿Por Qué Elegir a Ruben?",
-    subtitle: "Ventajas únicas que me distinguen de los agentes inmobiliarios tradicionales",
+    subtitle: "Ventajas únicas que me distinguen de\nlos agentes inmobiliarios tradicionales",
     vaExpert: {
       title: "Experto en Préstamos VA",
       description: "Conocimiento especializado para maximizar tus beneficios de veterano"

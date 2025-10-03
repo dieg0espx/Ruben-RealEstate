@@ -8,7 +8,7 @@ export const homeTranslations = {
   },
   whyChoose: {
     title: "Why Choose Ruben?",
-    subtitle: "Unique advantages that set me apart from traditional real estate agents",
+    subtitle: "Unique advantages that set me apart from\ntraditional real estate agents",
     vaExpert: {
       title: "VA Loan Expert",
       description: "Specialized knowledge to maximize your veteran benefits"

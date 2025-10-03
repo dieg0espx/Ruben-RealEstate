@@ -22,25 +22,25 @@ const areas = [
   },
   {
     name: "Escondido", 
-    image: "/images/1-web-or-mls-Venice (20 of 53).JPG",
+    image: "/images/40-web-or-mls-Venice (38 of 53).JPG",
     description: "Historic charm meets modern amenities",
     translationKey: "service_areas.escondido.description"
   },
   {
     name: "Vista",
-    image: "/images/1-web-or-mls-Riviera_drone (9 of 12).JPG", 
+    image: "/images/54-web-or-mls-Riviera (53 of 55).JPG", 
     description: "Family-friendly with great parks",
     translationKey: "service_areas.vista.description"
   },
   {
     name: "Carlsbad",
-    image: "/images/2-web-or-mls-royal (22 of 47).JPG",
+    image: "/images/4-web-or-mls-Encenitas blvd (3 of 28).JPG",
     description: "Coastal living at its finest",
     translationKey: "service_areas.carlsbad.description"
   },
   {
     name: "Oceanside",
-    image: "/images/62-web-or-mls-Riviera_drone (8 of 12).JPG",
+    image: "/images/5-web-or-mls-Encenitas blvd (4 of 28).JPG",
     description: "Beach community with character",
     translationKey: "service_areas.oceanside.description"
   }

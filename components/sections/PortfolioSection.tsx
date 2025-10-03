@@ -21,7 +21,7 @@ const portfolioItems = [
   },
   {
     id: 3,
-    src: "/images/2-web-or-mls-royal (22 of 47).JPG",
+    src: "/images/4-web-or-mls-Encenitas blvd (3 of 28).JPG",
     caption: "Luxury Home – Carlsbad",
     category: "Luxury"
   },
@@ -45,7 +45,7 @@ const portfolioItems = [
   },
   {
     id: 7,
-    src: "/images/41-web-or-mls-Venice (39 of 53).JPG",
+    src: "/images/5-web-or-mls-royal (25 of 47).JPG",
     caption: "Custom Build – San Marcos",
     category: "Residential"
   },
@@ -57,7 +57,7 @@ const portfolioItems = [
   },
   {
     id: 9,
-    src: "/images/49-web-or-mls-Riviera (48 of 55).JPG",
+    src: "/images/58-web-or-mls-Riviera_drone (4 of 12).JPG",
     caption: "ADU Addition – Oceanside",
     category: "ADU"
   },

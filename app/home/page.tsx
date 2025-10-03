@@ -28,22 +28,22 @@ const getAreas = (pageT: typeof homeTranslations) => [
   },
   {
     name: pageT.areas.escondido.name,
-    image: "/images/1-web-or-mls-Venice (20 of 53).JPG",
+    image: "/images/66-web-or-mls-Riviera_drone (1 of 12).JPG",
     description: pageT.areas.escondido.description
   },
   {
     name: pageT.areas.vista.name,
-    image: "/images/1-web-or-mls-Riviera_drone (9 of 12).JPG",
+    image: "/images/54-web-or-mls-Riviera (53 of 55).JPG",
     description: pageT.areas.vista.description
   },
   {
     name: pageT.areas.carlsbad.name,
-    image: "/images/2-web-or-mls-royal (22 of 47).JPG",
+    image: "/images/4-web-or-mls-Encenitas blvd (3 of 28).JPG",
     description: pageT.areas.carlsbad.description
   },
   {
     name: pageT.areas.oceanside.name,
-    image: "/images/62-web-or-mls-Riviera_drone (8 of 12).JPG",
+    image: "/images/49-web-or-mls-Riviera (48 of 55).JPG",
     description: pageT.areas.oceanside.description
   }
 ]
@@ -172,17 +172,17 @@ export default function HomePage() {
 
   const quickValueProps = [
     {
-      icon: <Shield className="w-8 h-8 text-coastal-teal" />,
+      icon: <img src="/icons/home/elementos-03.png" alt="VA Expert Icon" className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12" />,
       title: pageT.whyChoose.vaExpert.title,
       description: pageT.whyChoose.vaExpert.description
     },
     {
-      icon: <TrendingUp className="w-8 h-8 text-coastal-sage" />,
+      icon: <img src="/icons/home/elementos-04.png" alt="Investment Focus Icon" className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12" />,
       title: pageT.whyChoose.investmentFocus.title,
       description: pageT.whyChoose.investmentFocus.description
     },
     {
-      icon: <Home className="w-8 h-8 text-coastal-steel" />,
+      icon: <img src="/icons/home/elementos-05.png" alt="Family First Icon" className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12" />,
       title: pageT.whyChoose.familyFirst.title,
       description: pageT.whyChoose.familyFirst.description
     }
@@ -232,7 +232,7 @@ export default function HomePage() {
             <source src="https://res.cloudinary.com/dku1gnuat/video/upload/v1758299891/HeroPageVideo_wd7fp5.mp4" type="video/mp4" />
             {/* Fallback image if video doesn't load */}
             <img
-              src="/images/61-web-or-mls-Riviera_drone (7 of 12).JPG"
+              src="/images/56-web-or-mls-Riviera (55 of 55).JPG"
               alt="San Diego Real Estate"
               className="absolute inset-0 w-full h-full object-cover"
             />
@@ -266,20 +266,52 @@ export default function HomePage() {
       <FeaturesSection />
 
       {/* Quick Value Props */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-coastal-cream/40 via-white to-coastal-sage/30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="text-center space-y-4 mb-12">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground font-lexend">
+      <section className="py-16 sm:py-20 lg:py-24 relative overflow-hidden">
+        {/* Background Image with Parallax */}
+        <div className="absolute inset-0">
+          <div 
+            className="w-full h-full bg-cover bg-center bg-fixed"
+            style={{
+              backgroundImage: "url('/images/38-web-or-mls-Venice (36 of 53).JPG')",
+              backgroundAttachment: "fixed"
+            }}
+          ></div>
+        </div>
+        {/* Black Gradient Overlay */}
+        <div className="absolute inset-0 bg-black/70"></div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+          <div className="text-center mb-12 pt-0">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white font-lexend mb-6">
               {pageT.whyChoose.title}
             </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              {pageT.whyChoose.subtitle}
-            </p>
+            <div className="relative">
+              <div className="flex items-center justify-center gap-40 sm:gap-48 lg:gap-56 absolute top-0 left-0 right-0 z-10 -translate-y-6">
+                <img 
+                  src="/icons/home/elementos_Mesa de trabajo 1.png" 
+                  alt="Decorative element"
+                  className="h-8 sm:h-10 lg:h-12 w-auto"
+                />
+                <img 
+                  src="/icons/home/elementos-02.png" 
+                  alt="Decorative element"
+                  className="h-8 sm:h-10 lg:h-12 w-auto"
+                />
+              </div>
+              <p className="text-lg text-white/90 max-w-3xl mx-auto relative z-20 mt-4">
+                {pageT.whyChoose.subtitle.split('\n').map((line, index) => (
+                  <span key={index}>
+                    {line}
+                    {index < pageT.whyChoose.subtitle.split('\n').length - 1 && <br />}
+                  </span>
+                ))}
+              </p>
+            </div>
           </div>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
             {quickValueProps.map((prop, index) => (
-              <Card key={index} className="group hover:shadow-xl transition-all duration-300 border-0 bg-gradient-to-br from-coastal-cream/20 to-coastal-sage/10 hover:from-coastal-teal/5 hover:to-coastal-sage/5 h-full">
+              <Card key={index} className="group hover:shadow-xl transition-all duration-300 border-0 bg-white/90 backdrop-blur-sm hover:bg-white/95 h-full">
                 <CardContent className="p-4 sm:p-6 lg:p-8 text-center space-y-2 sm:space-y-3 lg:space-y-4 flex flex-col h-full">
                   <div className="flex justify-center mb-1 sm:mb-2">
                     <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-16 lg:h-16 flex items-center justify-center">
@@ -306,9 +338,26 @@ export default function HomePage() {
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground font-lexend">
               {pageT.experience.title}
             </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              {pageT.experience.subtitle}
-            </p>
+            <div className="relative flex items-center justify-center max-w-lg mx-auto">
+              {/* Top-left decorative element */}
+              <img 
+                src="/icons/home/elementos-08.png" 
+                alt="Decorative element" 
+                className="absolute -top-2 -left-2 w-5 h-5 object-contain z-10"
+              />
+              
+              {/* Subtitle text */}
+              <p className="text-lg text-muted-foreground">
+                {pageT.experience.subtitle}
+              </p>
+              
+              {/* Bottom-right decorative element */}
+              <img 
+                src="/icons/home/elementos-09.png" 
+                alt="Decorative element" 
+                className="absolute -bottom-2 -right-2 w-5 h-5 object-contain z-10"
+              />
+            </div>
           </div>
           
           <div className="relative h-[400px] sm:h-[500px] lg:h-[650px] rounded-2xl overflow-hidden shadow-2xl">
@@ -431,8 +480,14 @@ export default function HomePage() {
       </section>
 
       {/* Mini About */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+      <section className="py-16 sm:py-20 lg:py-24 bg-white relative">
+        {/* Background decorative element */}
+        <img 
+          src="/icons/home/elementos-07.png" 
+          alt="Decorative element" 
+          className="absolute bottom-0 -left-8 sm:-left-12 lg:-left-16 w-80 sm:w-96 lg:w-[28rem] h-auto object-contain opacity-40 z-0"
+        />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div className="relative order-2 lg:order-1">
               <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
@@ -445,9 +500,23 @@ export default function HomePage() {
               </div>
             </div>
             <div className="space-y-6 order-1 lg:order-2">
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground font-lexend">
-                {pageT.about.title}
-              </h2>
+              <div className="relative">
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground font-lexend mb-1 sm:mb-2 lg:mb-3">
+                  {pageT.about.title}
+                </h2>
+                <div className="flex items-center justify-start gap-16 sm:gap-20 lg:gap-24 relative z-10 -ml-2 sm:-ml-3 lg:-ml-4">
+                  <img 
+                    src="/icons/home/elementos_Mesa de trabajo 1.png" 
+                    alt="Decorative element"
+                    className="h-6 sm:h-7 lg:h-8 w-auto"
+                  />
+                  <img 
+                    src="/icons/home/elementos-02.png" 
+                    alt="Decorative element"
+                    className="h-6 sm:h-7 lg:h-8 w-auto"
+                  />
+                </div>
+              </div>
               <p className="text-lg text-muted-foreground leading-relaxed">
                 {pageT.about.description}
               </p>
@@ -462,12 +531,13 @@ export default function HomePage() {
 
       {/* Testimonials Preview */}
       <section className="py-16 sm:py-20 lg:py-24 relative overflow-hidden">
-        {/* Background Image */}
+        {/* Background Image with Parallax */}
         <div className="absolute inset-0">
           <div 
-            className="w-full h-full bg-cover bg-center"
+            className="w-full h-full bg-cover bg-center bg-fixed"
             style={{
-              backgroundImage: "url('/images/7-web-or-mls-royal (27 of 47).JPG')"
+              backgroundImage: "url('/images/5-web-or-mls-royal (25 of 47).JPG')",
+              backgroundAttachment: "fixed"
             }}
           ></div>
         </div>
@@ -517,9 +587,16 @@ export default function HomePage() {
       {/* Strong Final CTA */}
       <section className="py-16 sm:py-20 lg:py-24 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center space-y-6 sm:space-y-8">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground font-lexend leading-tight">
-            {pageT.finalCta.title}
-          </h2>
+          <div className="relative mb-4">
+            <img 
+              src="/icons/home/elementos-06.png" 
+              alt="Decorative element" 
+              className="absolute -top-12 left-8 sm:left-12 lg:left-16 w-12 sm:w-16 lg:w-20 h-auto object-contain z-10"
+            />
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground font-lexend leading-tight">
+              {pageT.finalCta.title}
+            </h2>
+          </div>
           <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto px-2">
             {pageT.finalCta.subtitle}
           </p>
