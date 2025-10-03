@@ -80,9 +80,10 @@ export default function AboutPage() {
         {/* Hero Section */}
       <section className="hero-section relative py-32 sm:py-40 md:py-48 lg:py-56 xl:py-64 overflow-hidden -mt-20 pt-64 sm:pt-80 md:pt-88 lg:pt-96 xl:pt-104">
         <div 
-          className="absolute inset-0 bg-cover bg-center"
+          className="absolute inset-0 bg-cover bg-center bg-fixed"
           style={{
-            backgroundImage: "url('/images/41-web-or-mls-Venice (39 of 53).JPG')"
+            backgroundImage: "url('/images/5-web-or-mls-royal (25 of 47).JPG')",
+            backgroundAttachment: "fixed"
           }}
         ></div>
         <div className="absolute inset-0 bg-black/70"></div>
@@ -105,12 +106,13 @@ export default function AboutPage() {
 
       {/* Credentials Section */}
       <section className="py-12 sm:py-16 md:py-20 lg:py-24 relative overflow-hidden">
-        {/* Background Image */}
+        {/* Background Image with Parallax */}
         <div className="absolute inset-0">
           <div 
-            className="w-full h-full bg-cover bg-center"
+            className="w-full h-full bg-cover bg-center bg-fixed"
             style={{
-              backgroundImage: "url('/images/6-web-or-mls-royal (26 of 47).JPG')"
+              backgroundImage: "url('/images/5-web-or-mls-royal (25 of 47).JPG')",
+              backgroundAttachment: "fixed"
             }}
           ></div>
         </div>

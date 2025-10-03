@@ -37,7 +37,7 @@ export default function HeroSection() {
           <source src="https://res.cloudinary.com/dku1gnuat/video/upload/v1758299891/HeroPageVideo_wd7fp5.mp4" type="video/mp4" />
           {/* Fallback image if video doesn't load */}
           <Image
-            src="/images/61-web-or-mls-Riviera_drone (7 of 12).JPG"
+            src="/images/56-web-or-mls-Riviera (55 of 55).JPG"
             alt="San Diego Real Estate"
             fill
             className="object-cover"

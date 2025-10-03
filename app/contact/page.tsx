@@ -158,7 +158,8 @@ export default function ContactPage() {
           backgroundImage: "url('/images/60-web-or-mls-Riviera_drone (6 of 12).JPG')",
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat'
+          backgroundRepeat: 'no-repeat',
+          backgroundAttachment: 'fixed'
         }}
       >
         {/* Dark gradient overlay for text contrast - matching home page */}
@@ -228,7 +229,8 @@ export default function ContactPage() {
           backgroundImage: "url('/images/65-web-or-mls-Riviera_drone (12 of 12).JPG')",
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat'
+          backgroundRepeat: 'no-repeat',
+          backgroundAttachment: 'fixed'
         }}
       >
         {/* Dark gradient overlay for text contrast */}
