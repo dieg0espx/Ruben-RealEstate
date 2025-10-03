@@ -16,25 +16,25 @@ const getTimelineData = (t: (key: string) => string): TimelineItem[] => [
   {
     title: t('about.step1.title'),
     description: t('about.step1.description'),
-    icon: <GraduationCap className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 xl:w-9 xl:h-9" />,
+    icon: <img src="/icons/about/about elements_Mesa de trabajo 1.png" alt="Step 1" className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 xl:w-9 xl:h-9" />,
     color: "text-coastal-sage"
   },
   {
     title: t('about.step2.title'),
     description: t('about.step2.description'),
-    icon: <Heart className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 xl:w-9 xl:h-9" />,
+    icon: <img src="/icons/about/about elements-08.png" alt="Step 2" className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 xl:w-9 xl:h-9" />,
     color: "text-coastal-sage"
   },
   {
     title: t('about.step3.title'),
     description: t('about.step3.description'),
-    icon: <Home className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 xl:w-9 xl:h-9" />,
+    icon: <img src="/icons/about/about elements-03.png" alt="Step 3" className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 xl:w-9 xl:h-9" />,
     color: "text-coastal-sage"
   },
   {
     title: t('about.step4.title'),
     description: t('about.step4.description'),
-    icon: <Users className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 xl:w-9 xl:h-9" />,
+    icon: <img src="/icons/about/about elements-04.png" alt="Step 4" className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 xl:w-9 xl:h-9" />,
     color: "text-coastal-sage"
   }
 ]
@@ -47,8 +47,14 @@ export default function TimelineSection() {
   return (
     <section ref={ref} className="py-16 sm:py-20 lg:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="text-center space-y-4 mb-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground font-lexend">
+        <div className="text-center space-y-4 mb-16 relative">
+          {/* Decorative element overlaying the title */}
+          <img 
+            src="/icons/about/about elements-07.png" 
+            alt="Decorative element" 
+            className="absolute -top-8 sm:-top-10 lg:-top-12 left-4 sm:left-6 lg:left-32 w-20 sm:w-24 lg:w-28 h-auto object-contain z-0 opacity-80"
+          />
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground font-lexend relative z-10">
             {t('about.title')}
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
@@ -124,11 +130,19 @@ export default function TimelineSection() {
               </div>
             </div>
             
-            {/* Badge overlay on image - Bottom Right */}
+            {/* Rising Star Badge overlay on image - Right Bottom */}
             <div className="absolute bottom-2 right-2 sm:bottom-6 sm:right-6">
-              <div className="bg-secondary/90 backdrop-blur-sm px-2 py-2 sm:px-6 sm:py-4 rounded-lg sm:rounded-xl shadow-xl">
-                <div className="text-xs sm:text-lg font-bold text-white">{t('about.imageOverlay.risingStar')}</div>
-                <div className="text-xs sm:text-sm text-white/80">{t('about.imageOverlay.teamFearless')}</div>
+              <div className="relative px-2 py-2 sm:px-6 sm:py-4 rounded-lg sm:rounded-xl shadow-xl" style={{ backgroundColor: '#c9af8f' }}>
+                <div className="text-xs sm:text-lg font-bold text-black">{t('about.imageOverlay.risingStar')}</div>
+                <div className="text-xs sm:text-sm text-black">{t('about.imageOverlay.teamFearless')}</div>
+                {/* Star icon overlay */}
+                <div className="absolute -top-2" style={{ left: '65%', transform: 'translateX(-50%)' }}>
+                  <img 
+                    src="/icons/about/about elements-04.png" 
+                    alt="Star icon" 
+                    className="w-8 h-8 sm:w-10 sm:h-10 drop-shadow-lg"
+                  />
+                </div>
               </div>
             </div>
           </div>

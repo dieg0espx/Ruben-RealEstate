@@ -50,22 +50,22 @@ export default function AboutPage() {
 
   const credentials = [
     {
-      icon: <GraduationCap className="w-8 h-8 text-coastal-teal" />,
+      icon: <img src="/icons/about/about elements-12.png" alt="Doctor of Physical Therapy" className="w-16 h-auto" />,
       title: pageT.credentialItems.dpt.title,
       description: pageT.credentialItems.dpt.description
     },
     {
-      icon: <Award className="w-8 h-8 text-coastal-teal" />,
+      icon: <img src="/icons/about/about elements-11.png" alt="Rising Star Award" className="w-16 h-auto" />,
       title: pageT.credentialItems.award.title,
       description: pageT.credentialItems.award.description
     },
     {
-      icon: <Users className="w-8 h-8 text-coastal-teal" />,
+      icon: <Users className="w-8 h-8" style={{ color: '#5F7D6D' }} />,
       title: pageT.credentialItems.narpm.title,
       description: pageT.credentialItems.narpm.description
     },
     {
-      icon: <Shield className="w-8 h-8 text-coastal-teal" />,
+      icon: <Shield className="w-8 h-8" style={{ color: '#5F7D6D' }} />,
       title: pageT.credentialItems.broker.title,
       description: pageT.credentialItems.broker.description
     }
@@ -131,17 +131,17 @@ export default function AboutPage() {
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
             {credentials.map((credential, index) => (
-              <Card key={index} className="group hover:shadow-xl transition-all duration-300 border-0 bg-white/90 backdrop-blur-sm hover:bg-white/95">
-                <CardContent className="p-3 sm:p-4 lg:p-5 text-center space-y-2 sm:space-y-3">
-                  <div className="flex justify-center">
-                    <div className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 text-coastal-teal">
+              <Card key={index} className="group hover:shadow-xl transition-all duration-300 border-0 bg-white/90 backdrop-blur-sm hover:bg-white/95 h-full">
+                <CardContent className="p-2 sm:p-4 lg:p-5 text-center space-y-1 sm:space-y-3 flex flex-col h-full">
+                  <div className="flex justify-center min-h-[3rem] sm:min-h-[4rem] items-center">
+                    <div className={`flex items-center justify-center ${index === 0 || index === 1 ? 'w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16' : 'w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8'} text-coastal-teal`}>
                       {credential.icon}
                     </div>
                   </div>
-                  <h3 className="text-sm sm:text-base lg:text-lg font-bold text-foreground group-hover:text-coastal-teal transition-colors whitespace-pre-line leading-tight">
+                  <h3 className="text-xs sm:text-base lg:text-lg font-bold text-foreground group-hover:text-coastal-teal transition-colors whitespace-pre-line leading-tight">
                     {credential.title}
                   </h3>
-                  <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+                  <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed flex-grow">
                     {credential.description}
                   </p>
                 </CardContent>
@@ -156,7 +156,13 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-start lg:items-center">
             <div className="space-y-4 sm:space-y-5">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-coastal-charcoal font-lexend leading-tight">
+              {/* Decorative element before title */}
+              <img 
+                src="/icons/about/about elements-02.png" 
+                alt="Decorative element" 
+                className="w-32 h-auto mb-0 relative z-10"
+              />
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-coastal-charcoal font-lexend leading-tight -mt-6">
                 {pageT.values.title}
               </h2>
               <p className="text-sm sm:text-base md:text-lg text-coastal-slate leading-relaxed">
@@ -175,7 +181,7 @@ export default function AboutPage() {
               <Card className="p-3 sm:p-4 md:p-5 bg-gradient-to-br from-secondary/10 to-coastal-teal/10 border-0 shadow-lg hover:shadow-xl transition-all duration-300">
                 <div className="space-y-2 sm:space-y-3">
                   <div className="flex items-center space-x-2 sm:space-x-3">
-                    <Heart className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-secondary flex-shrink-0" />
+                    <img src="/icons/about/about elements-05.png" alt="Family First" className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 flex-shrink-0" />
                     <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-coastal-charcoal leading-tight">{pageT.values.familyFirst.title}</h3>
                   </div>
                   <p className="text-xs sm:text-sm md:text-base text-coastal-slate leading-relaxed">
@@ -200,28 +206,30 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-gradient-to-br from-coastal-cream/40 via-white to-coastal-sage/30">
+      {/* Strong Final CTA */}
+      <section className="py-16 sm:py-20 lg:py-24 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center space-y-6 sm:space-y-8">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground font-lexend leading-tight">
-            {pageT.cta.title}
-          </h2>
-          <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed px-2">
+          <div className="relative mb-4">
+            <img 
+              src="/icons/home/elementos-06.png" 
+              alt="Decorative element" 
+              className="absolute -top-12 left-8 sm:left-12 lg:left-16 w-12 sm:w-16 lg:w-20 h-auto object-contain z-10"
+            />
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground font-lexend leading-tight">
+              {pageT.cta.title}
+            </h2>
+          </div>
+          <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto px-2">
             {pageT.cta.subtitle}
           </p>
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center max-w-2xl mx-auto">
-            <Button asChild size="lg" className="bg-coastal-teal hover:bg-[#5F7D6D] hover:text-white text-coastal-cream text-sm sm:text-base md:text-lg px-4 sm:px-6 md:px-8 py-3 sm:py-4 transition-all duration-300 w-full sm:w-auto">
-              <a href="tel:+15416021026">
-                <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-                {pageT.cta.callButton}
-              </a>
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4">
+            <Button size="lg" className="bg-coastal-teal hover:bg-[#5F7D6D] hover:text-white text-coastal-cream text-sm sm:text-base lg:text-lg px-4 sm:px-6 lg:px-8 py-2 sm:py-3 lg:py-4 transition-all duration-300 w-full sm:w-auto" onClick={() => window.open('tel:+15416021026', '_self')}>
+              <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+              {pageT.cta.callButton}
             </Button>
-            <Button asChild size="lg" className="bg-coastal-sage hover:bg-[#5F7D6D] hover:text-white text-coastal-cream text-sm sm:text-base md:text-lg px-4 sm:px-6 md:px-8 py-3 sm:py-4 transition-all duration-300 w-full sm:w-auto">
-              <a href="mailto:ruben.o.banuelos@gmail.com">
-                <Mail className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-                <span className="hidden sm:inline">{pageT.cta.emailButtonFull}</span>
-                <span className="sm:hidden">{pageT.cta.emailButton}</span>
-              </a>
+            <Button size="lg" className="bg-coastal-sage hover:bg-[#5F7D6D] hover:text-white text-coastal-cream text-sm sm:text-base lg:text-lg px-4 sm:px-6 lg:px-8 py-2 sm:py-3 lg:py-4 transition-all duration-300 w-full sm:w-auto" onClick={() => window.open('mailto:ruben.o.banuelos@gmail.com', '_self')}>
+              <Mail className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+              {pageT.cta.emailButtonFull}
             </Button>
           </div>
           <p className="text-xs sm:text-sm text-muted-foreground">
