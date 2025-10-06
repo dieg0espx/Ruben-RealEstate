@@ -189,34 +189,45 @@ export default function ContactPage() {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 lg:gap-8">
-            {contactMethods.map((method, index) => (
-              <Card key={index} className="group hover:shadow-xl transition-all duration-300 border-0 bg-gradient-to-br from-coastal-cream/40 to-white hover:from-coastal-teal/5 hover:to-coastal-sage/5 transform hover:-translate-y-1">
-                <CardContent className="p-3 sm:p-6 lg:p-8 text-center space-y-3 sm:space-y-6">
-                  <div className="flex justify-center">
-                    <div className="w-10 h-10 sm:w-16 sm:h-16 bg-gradient-to-br from-coastal-teal/10 to-coastal-sage/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                      {method.icon}
+          <div className="relative">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 lg:gap-8">
+              {contactMethods.map((method, index) => (
+                <Card key={index} className="group hover:shadow-xl transition-all duration-300 border-0 bg-gradient-to-br from-coastal-cream/40 to-white hover:from-coastal-teal/5 hover:to-coastal-sage/5 transform hover:-translate-y-1">
+                  <CardContent className="p-3 sm:p-6 lg:p-8 text-center space-y-3 sm:space-y-6">
+                    <div className="flex justify-center">
+                      <div className="w-10 h-10 sm:w-16 sm:h-16 bg-gradient-to-br from-coastal-teal/10 to-coastal-sage/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                        {method.icon}
+                      </div>
                     </div>
-                  </div>
-                  <div className="space-y-1 sm:space-y-3">
-                    <h3 className="text-base sm:text-xl font-bold text-foreground group-hover:text-coastal-teal transition-colors">
-                      {method.title}
-                    </h3>
-                    <p className="text-sm sm:text-lg font-semibold text-coastal-teal break-words">
-                      {method.details}
-                    </p>
-                    <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-                      {method.description}
-                    </p>
-                  </div>
-                  <Button asChild className="w-full text-white font-semibold hover:bg-white hover:text-coastal-sage transition-all duration-300 text-xs sm:text-base h-8 sm:h-10" style={{ backgroundColor: '#5F7D6D' }}>
-                    <a href={method.href}>
-                      {method.action}
-                    </a>
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
+                    <div className="space-y-1 sm:space-y-3">
+                      <h3 className="text-base sm:text-xl font-bold text-foreground group-hover:text-coastal-teal transition-colors">
+                        {method.title}
+                      </h3>
+                      <p className="text-sm sm:text-lg font-semibold text-coastal-teal break-words">
+                        {method.details}
+                      </p>
+                      <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+                        {method.description}
+                      </p>
+                    </div>
+                    <Button asChild className="w-full text-white font-semibold hover:bg-white hover:text-coastal-sage transition-all duration-300 text-xs sm:text-base h-8 sm:h-10" style={{ backgroundColor: '#5F7D6D' }}>
+                      <a href={method.href}>
+                        {method.action}
+                      </a>
+                    </Button>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+            
+            {/* Contact Element Image - Bottom Left Corner */}
+            <div className="absolute -bottom-16 -left-8 sm:-bottom-20 sm:-left-16 lg:-bottom-32 lg:-left-80">
+              <img 
+                src="/icons/contact/contact elements-01.png" 
+                alt="Contact Element" 
+                className="w-32 h-auto sm:w-48 lg:w-80 opacity-70"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -382,7 +393,7 @@ export default function ContactPage() {
       </section>
 
       {/* Office Hours & Location */}
-      <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-white">
+      <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-white relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
             <div className="lg:col-span-2">
@@ -462,6 +473,15 @@ export default function ContactPage() {
               </div>
             </div>
           </div>
+        </div>
+        
+        {/* Contact Element Image - Bottom Right */}
+        <div className="absolute -bottom-8 -right-4 sm:-bottom-12 sm:-right-8 lg:-bottom-8 lg:-right-8">
+          <img 
+            src="/icons/contact/contact elements-02.png" 
+            alt="Contact Element" 
+            className="w-32 h-auto sm:w-48 lg:w-80 opacity-70"
+          />
         </div>
       </section>
 

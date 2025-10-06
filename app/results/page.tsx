@@ -84,25 +84,25 @@ export default function ResultsPage() {
 
   const successMetrics = [
     {
-      icon: <Home className="w-6 h-6 text-coastal-teal" />,
+      icon: <img src="/icons/results/results elements-01.png" alt="Homes sold" className="w-12 h-auto sm:w-14 md:w-16" />,
       title: pageT.metrics.homesSold.title,
       value: pageT.metrics.homesSold.value,
       description: pageT.metrics.homesSold.description
     },
     {
-      icon: <TrendingUp className="w-6 h-6 text-coastal-sage" />,
+      icon: <img src="/icons/results/results elements-02.png" alt="Average sale price" className="w-12 h-auto sm:w-14 md:w-16" />,
       title: pageT.metrics.salePrice.title,
       value: pageT.metrics.salePrice.value,
       description: pageT.metrics.salePrice.description
     },
     {
-      icon: <Shield className="w-6 h-6 text-coastal-steel" />,
+      icon: <img src="/icons/results/results elements-03.png" alt="Veteran clients" className="w-12 h-auto sm:w-14 md:w-16" />,
       title: pageT.metrics.veteranClients.title,
       value: pageT.metrics.veteranClients.value,
       description: pageT.metrics.veteranClients.description
     },
     {
-      icon: <Star className="w-6 h-6 text-coastal-teal" />,
+      icon: <img src="/icons/results/results elements-04.png" alt="Rating" className="w-12 h-auto sm:w-14 md:w-16" />,
       title: pageT.metrics.rating.title,
       value: pageT.metrics.rating.value,
       description: pageT.metrics.rating.description
@@ -256,14 +256,29 @@ export default function ResultsPage() {
 
       {/* Video Section */}
       <section className="relative py-12 sm:py-16 md:py-20 lg:py-24 bg-white">
+        <img 
+          src="/icons/results/results elements-06.png" 
+          alt="" aria-hidden="true"
+          className="absolute bottom-0 -right-8 sm:-right-12 md:-right-16 lg:-right-20 xl:-right-24 w-48 sm:w-64 md:w-80 lg:w-96 xl:w-[28rem] select-none pointer-events-none z-10"
+        />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center space-y-4 mb-8 sm:mb-12">
+          <div className="text-center space-y-4 mb-8 sm:mb-12 relative">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground font-lexend leading-tight">
               {pageT.process.title}
             </h2>
-            <p className="text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto px-4">
+            <div className="relative flex items-center justify-center max-w-lg mx-auto">
+              <img 
+                src="/icons/home/elementos-08.png" 
+                alt="" aria-hidden="true"
+                className="absolute -top-2 -left-2 w-5 h-5 object-contain z-10 select-none pointer-events-none"/>
+              <p className="text-base sm:text-lg text-muted-foreground px-4 relative z-10">
               {pageT.process.subtitle}
-            </p>
+              </p>
+              <img 
+                src="/icons/home/elementos-09.png" 
+                alt="" aria-hidden="true"
+                className="absolute -bottom-2 -right-2 w-5 h-5 object-contain z-10 select-none pointer-events-none"/>
+            </div>
           </div>
           
           <div className="relative w-full aspect-video rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl">
@@ -377,30 +392,33 @@ export default function ResultsPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-gradient-to-br from-coastal-cream/40 via-white to-coastal-sage/30">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6 sm:space-y-8">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground font-lexend leading-tight">
-            {pageT.cta.title}
-          </h2>
-          <p className="text-base sm:text-lg lg:text-xl text-muted-foreground leading-relaxed px-4">
+      {/* CTA Section - match Services page style */}
+      <section className="py-16 sm:py-20 lg:py-24 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center space-y-6 sm:space-y-8">
+          <div className="relative mb-4">
+            <img 
+              src="/icons/home/elementos-06.png" 
+              alt="Decorative element" 
+              className="absolute -top-12 left-8 sm:left-12 lg:left-16 w-12 sm:w-16 lg:w-20 h-auto object-contain z-10"
+            />
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground font-lexend leading-tight">
+              {pageT.cta.title}
+            </h2>
+          </div>
+          <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto px-2">
             {pageT.cta.subtitle}
           </p>
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
-            <Button asChild size="lg" className="w-full sm:w-auto bg-coastal-teal hover:bg-[#5F7D6D] hover:text-white text-coastal-cream text-sm sm:text-base lg:text-lg px-4 sm:px-6 lg:px-8 py-3 sm:py-4 transition-all duration-300">
-              <a href="tel:+15416021026">
-                <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-                <span className="truncate">{pageT.cta.callButton}</span>
-              </a>
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4">
+            <Button size="lg" className="bg-coastal-teal hover:bg-[#5F7D6D] hover:text-white text-coastal-cream text-sm sm:text-base lg:text-lg px-4 sm:px-6 lg:px-8 py-2 sm:py-3 lg:py-4 transition-all duration-300 w-full sm:w-auto" onClick={() => window.open('tel:+15416021026', '_self')}>
+              <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+              {pageT.cta.callButton}
             </Button>
-            <Button asChild size="lg" className="w-full sm:w-auto bg-coastal-sage hover:bg-[#5F7D6D] hover:text-white text-coastal-cream text-sm sm:text-base lg:text-lg px-4 sm:px-6 lg:px-8 py-3 sm:py-4 transition-all duration-300">
-              <a href="mailto:ruben.o.banuelos@gmail.com">
-                <Mail className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-                <span className="truncate">{pageT.cta.emailButton}</span>
-              </a>
+            <Button size="lg" className="bg-coastal-sage hover:bg-[#5F7D6D] hover:text-white text-coastal-cream text-sm sm:text-base lg:text-lg px-4 sm:px-6 lg:px-8 py-2 sm:py-3 lg:py-4 transition-all duration-300 w-full sm:w-auto" onClick={() => window.open('mailto:ruben.o.banuelos@gmail.com', '_self')}>
+              <Mail className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+              {pageT.cta.emailButton}
             </Button>
           </div>
-          <p className="text-xs sm:text-sm text-muted-foreground px-4">
+          <p className="text-xs sm:text-sm text-muted-foreground">
             {pageT.cta.disclaimer}
           </p>
         </div>
