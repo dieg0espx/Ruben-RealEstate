@@ -105,7 +105,13 @@ export default function PortfolioSection() {
 
   return (
     <>
-      <section id="properties" className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-coastal-cream/40 via-white to-coastal-sage/30 relative overflow-hidden">
+      <section id="properties" className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-coastal-cream/40 via-white to-coastal-sage/30 relative overflow-visible">
+        <img
+          src="/icons/results/results elements-07.png"
+          alt=""
+          aria-hidden="true"
+          className="pointer-events-none select-none absolute z-10 top-2 sm:top-6 left-[-4rem] sm:left-[-6rem] w-48 sm:w-64 md:w-80 lg:w-96"
+        />
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center space-y-4 mb-12 sm:mb-16">
             <Badge className="bg-coastal-sage/20 text-coastal-slate border-coastal-sage animate-fade-in-up">

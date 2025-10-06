@@ -5,7 +5,7 @@ import Footer from "@/components/sections/Footer"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Shield, TrendingUp, Home, Star, CheckCircle, ArrowRight, MapPin, Heart, Building, Award, Phone, Mail } from "lucide-react"
+import { Star, CheckCircle, ArrowRight, MapPin, Phone, Mail } from "lucide-react"
 import useLanguageStore from "@/hooks/useLanguageStore"
 import useScrollAnimation from "@/hooks/useScrollAnimation"
 import Image from "next/image"
@@ -50,7 +50,7 @@ export default function ServicesPage() {
 
   const clientTypes = [
     {
-      icon: <Shield className="w-12 h-12" style={{color: '#5F7D6D'}} />,
+      icon: <img src="/icons/services/services elements-01.png" alt="Veterans Icon" className="w-12 h-12" />,
       title: pageT.clientTypes.veterans.title,
       subtitle: pageT.clientTypes.veterans.subtitle,
       description: pageT.clientTypes.veterans.description,
@@ -60,7 +60,7 @@ export default function ServicesPage() {
       successImage: "/images/63-web-or-mls-Riviera_drone (10 of 12).JPG"
     },
     {
-      icon: <TrendingUp className="w-12 h-12" style={{color: '#5F7D6D'}} />,
+      icon: <img src="/icons/services/services elements-02.png" alt="Investors Icon" className="w-12 h-12" />,
       title: pageT.clientTypes.investors.title,
       subtitle: pageT.clientTypes.investors.subtitle,
       description: pageT.clientTypes.investors.description,
@@ -70,7 +70,7 @@ export default function ServicesPage() {
       successImage: "/images/53-web-or-mls-Riviera (52 of 55).JPG"
     },
     {
-      icon: <Home className="w-12 h-12" style={{color: '#5F7D6D'}} />,
+      icon: <img src="/icons/services/services elements-03.png" alt="Growing Families Icon" className="w-12 h-12" />,
       title: pageT.clientTypes.families.title,
       subtitle: pageT.clientTypes.families.subtitle,
       description: pageT.clientTypes.families.description,
@@ -83,22 +83,22 @@ export default function ServicesPage() {
 
   const competitiveAdvantages = [
     {
-      icon: <Heart className="w-8 h-8" style={{color: '#5F7D6D'}} />,
+      icon: <img src="/icons/services/services elements-07.png" alt="" aria-hidden="true" className="w-10 h-auto sm:w-12 md:w-14" />,
       title: pageT.competitiveAdvantages.dualExpertise.title,
       description: pageT.competitiveAdvantages.dualExpertise.description
     },
     {
-      icon: <Shield className="w-8 h-8" style={{color: '#5F7D6D'}} />,
+      icon: <img src="/icons/services/services elements-08.png" alt="" aria-hidden="true" className="w-10 h-auto sm:w-12 md:w-14" />,
       title: pageT.competitiveAdvantages.vaSpecialist.title,
       description: pageT.competitiveAdvantages.vaSpecialist.description
     },
     {
-      icon: <Building className="w-8 h-8" style={{color: '#5F7D6D'}} />,
+      icon: <img src="/icons/services/services elements-09.png" alt="" aria-hidden="true" className="w-10 h-auto sm:w-12 md:w-14" />,
       title: pageT.competitiveAdvantages.aduDevelopment.title,
       description: pageT.competitiveAdvantages.aduDevelopment.description
     },
     {
-      icon: <Award className="w-8 h-8" style={{color: '#5F7D6D'}} />,
+      icon: <img src="/icons/services/services elements-03.png" alt="" aria-hidden="true" className="w-10 h-auto sm:w-12 md:w-14" />,
       title: pageT.competitiveAdvantages.propertyManagement.title,
       description: pageT.competitiveAdvantages.propertyManagement.description
     }
@@ -179,7 +179,7 @@ export default function ServicesPage() {
 
                 </div>
                 
-                <div className={`${index % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}`}>
+                <div className={`relative ${index % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}`}>
                   <div className="relative h-[250px] sm:h-[400px] md:h-[500px] lg:h-[585px] rounded-lg overflow-hidden group hover:shadow-2xl transition-all duration-500">
                     <img
                       src={client.successImage}
@@ -187,6 +187,22 @@ export default function ServicesPage() {
                       className="w-full h-full object-cover"
                     />
                   </div>
+                  {index === 0 && (
+                    <img
+                      src="/icons/services/services elements-06.png"
+                      alt=""
+                      aria-hidden="true"
+                      className="pointer-events-none select-none absolute z-20 -right-24 sm:-right-32 bottom-[-48px] sm:bottom-[-64px] w-56 sm:w-72 md:w-80 lg:w-96"
+                    />
+                  )}
+                  {index === 1 && (
+                    <img
+                      src="/icons/services/services elements-05.png"
+                      alt=""
+                      aria-hidden="true"
+                      className="pointer-events-none select-none absolute z-30 -left-40 sm:-left-56 md:-left-72 lg:-left-[20rem] bottom-[-48px] sm:bottom-[-64px] w-56 sm:w-72 md:w-80 lg:w-96"
+                    />
+                  )}
                 </div>
               </div>
             ))}
@@ -219,17 +235,22 @@ export default function ServicesPage() {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 lg:gap-8">
             {competitiveAdvantages.map((advantage, index) => (
-              <Card key={index} className="group hover:shadow-xl transition-all duration-300 border-0 bg-white/90 backdrop-blur-sm hover:bg-white/95">
-                <CardContent className="p-3 sm:p-6 lg:p-8 text-center space-y-2 sm:space-y-4">
-                  <div className="flex justify-center">
+              <Card
+                key={index}
+                className="relative overflow-visible group border-0 bg-white/90 backdrop-blur-sm hover:bg-white hover:shadow-2xl transition-all duration-300 rounded-xl"
+              >
+                <div className="absolute -top-7 sm:-top-8 left-1/2 -translate-x-1/2 w-14 h-14 sm:w-20 sm:h-20 rounded-full bg-white shadow-xl flex items-center justify-center">
+                  <div className="flex items-center justify-center">
                     {advantage.icon}
                   </div>
+                </div>
+                <CardContent className="pt-10 sm:pt-14 p-3 sm:p-6 lg:p-8 text-center space-y-2 sm:space-y-4">
                   <h3 className="text-base sm:text-xl font-bold text-foreground group-hover:text-coastal-teal transition-colors leading-tight">
                     {advantage.title}
                   </h3>
-                  <p className="text-xs sm:text-base text-muted-foreground leading-relaxed line-clamp-3 sm:line-clamp-none">
+                  <p className="text-xs sm:text-base text-muted-foreground leading-relaxed line-clamp-4 sm:line-clamp-none">
                     {advantage.description}
                   </p>
                 </CardContent>
@@ -240,7 +261,13 @@ export default function ServicesPage() {
       </section>
 
       {/* Service Areas Section */}
-      <section id="explore-service-areas" className="py-12 sm:py-16 md:py-20 lg:py-24 bg-gradient-to-br from-coastal-cream/30 to-white">
+      <section id="explore-service-areas" className="relative py-12 sm:py-16 md:py-20 lg:py-24 bg-gradient-to-br from-coastal-cream/30 to-white overflow-visible">
+        <img
+          src="/icons/services/services elements-05.png"
+          alt=""
+          aria-hidden="true"
+          className="pointer-events-none select-none absolute z-10 top-0 right-[-4rem] sm:-right-24 w-40 sm:w-56 md:w-72 lg:w-96"
+        />
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center space-y-3 sm:space-y-4 mb-12 sm:mb-16">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-coastal-sage font-lexend leading-tight">
@@ -325,28 +352,30 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-gradient-to-br from-coastal-cream/40 via-white to-coastal-sage/30">
+      {/* CTA Section - match About page style */}
+      <section className="py-16 sm:py-20 lg:py-24 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center space-y-6 sm:space-y-8">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground font-lexend leading-tight">
-            {pageT.cta.title}
-          </h2>
-          <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed px-2">
+          <div className="relative mb-4">
+            <img 
+              src="/icons/home/elementos-06.png" 
+              alt="Decorative element" 
+              className="absolute -top-12 left-8 sm:left-12 lg:left-16 w-12 sm:w-16 lg:w-20 h-auto object-contain z-10"
+            />
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground font-lexend leading-tight">
+              {pageT.cta.title}
+            </h2>
+          </div>
+          <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto px-2">
             {pageT.cta.subtitle}
           </p>
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center max-w-2xl mx-auto">
-            <Button asChild size="lg" className="bg-coastal-teal hover:bg-[#5F7D6D] hover:text-white text-coastal-cream text-sm sm:text-base md:text-lg px-4 sm:px-6 md:px-8 py-3 sm:py-4 transition-all duration-300 w-full sm:w-auto">
-              <a href="tel:+15416021026">
-                <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-                {pageT.cta.callButton}
-              </a>
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4">
+            <Button size="lg" className="bg-coastal-teal hover:bg-[#5F7D6D] hover:text-white text-coastal-cream text-sm sm:text-base lg:text-lg px-4 sm:px-6 lg:px-8 py-2 sm:py-3 lg:py-4 transition-all duration-300 w-full sm:w-auto" onClick={() => window.open('tel:+15416021026', '_self')}>
+              <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+              {pageT.cta.callButton}
             </Button>
-            <Button asChild size="lg" className="bg-coastal-sage hover:bg-[#5F7D6D] hover:text-white text-coastal-cream text-sm sm:text-base md:text-lg px-4 sm:px-6 md:px-8 py-3 sm:py-4 transition-all duration-300 w-full sm:w-auto">
-              <a href="mailto:ruben.o.banuelos@gmail.com">
-                <Mail className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-                <span className="hidden sm:inline">{pageT.cta.emailButtonFull}</span>
-                <span className="sm:hidden">{pageT.cta.emailButton}</span>
-              </a>
+            <Button size="lg" className="bg-coastal-sage hover:bg-[#5F7D6D] hover:text-white text-coastal-cream text-sm sm:text-base lg:text-lg px-4 sm:px-6 lg:px-8 py-2 sm:py-3 lg:py-4 transition-all duration-300 w-full sm:w-auto" onClick={() => window.open('mailto:ruben.o.banuelos@gmail.com', '_self')}>
+              <Mail className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+              {pageT.cta.emailButtonFull}
             </Button>
           </div>
           <p className="text-xs sm:text-sm text-muted-foreground">
