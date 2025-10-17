@@ -9,6 +9,7 @@ import { Star, CheckCircle, ArrowRight, MapPin, Phone, Mail } from "lucide-react
 import useLanguageStore from "@/hooks/useLanguageStore"
 import useScrollAnimation from "@/hooks/useScrollAnimation"
 import Image from "next/image"
+import Link from "next/link"
 import { useEffect } from "react"
 import type { servicesTranslations } from "@/translations/services/en"
 
@@ -282,71 +283,115 @@ export default function ServicesPage() {
             {[
               {
                 name: pageT.serviceAreas.areas.sanMarcos.name,
+                slug: 'san-marcos',
                 image: '/images/3-web-or-mls-Encenitas blvd (2 of 28).JPG',
                 description: pageT.serviceAreas.areas.sanMarcos.description,
                 highlights: pageT.serviceAreas.areas.sanMarcos.highlights
               },
               {
                 name: pageT.serviceAreas.areas.escondido.name,
+                slug: 'escondido',
                 image: '/images/41-web-or-mls-Venice (39 of 53).JPG',
                 description: pageT.serviceAreas.areas.escondido.description,
                 highlights: pageT.serviceAreas.areas.escondido.highlights
               },
               {
                 name: pageT.serviceAreas.areas.vista.name,
+                slug: 'vista',
                 image: '/images/51-web-or-mls-Riviera (50 of 55).JPG',
                 description: pageT.serviceAreas.areas.vista.description,
                 highlights: pageT.serviceAreas.areas.vista.highlights
               },
               {
                 name: pageT.serviceAreas.areas.carlsbad.name,
+                slug: 'carlsbad',
                 image: '/images/40-web-or-mls-Venice (38 of 53).JPG',
                 description: pageT.serviceAreas.areas.carlsbad.description,
                 highlights: pageT.serviceAreas.areas.carlsbad.highlights
               },
               {
                 name: pageT.serviceAreas.areas.oceanside.name,
+                slug: 'oceanside',
                 image: '/images/7-web-or-mls-royal (27 of 47).JPG',
                 description: pageT.serviceAreas.areas.oceanside.description,
                 highlights: pageT.serviceAreas.areas.oceanside.highlights
               },
               {
                 name: pageT.serviceAreas.areas.other.name,
+                slug: null,
                 image: '/images/57-web-or-mls-Riviera_drone (3 of 12).JPG',
                 description: pageT.serviceAreas.areas.other.description,
                 highlights: pageT.serviceAreas.areas.other.highlights
               }
             ].map((area, index) => (
-              <Card key={index} className="group hover:shadow-2xl transition-all duration-500 border-0 overflow-hidden relative p-0 bg-white">
-                <div className="relative h-48 sm:h-56 md:h-64 overflow-hidden">
-                  <img
-                    src={area.image}
-                    alt={`${area.name} real estate`}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-                  <div className="absolute bottom-1 sm:bottom-2 left-3 sm:left-4 right-3 sm:right-4">
-                    <h3 className="text-xl sm:text-2xl font-bold text-white mb-0 group-hover:text-coastal-cream transition-colors leading-tight">
-                      {area.name}
-                    </h3>
+              area.slug ? (
+                <Link key={index} href={`/service-areas/${area.slug}`}>
+                  <Card className="group hover:shadow-2xl transition-all duration-500 border-0 overflow-hidden relative p-0 bg-white cursor-pointer h-full">
+                    <div className="relative h-48 sm:h-56 md:h-64 overflow-hidden">
+                      <img
+                        src={area.image}
+                        alt={`${area.name} real estate`}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                      <div className="absolute bottom-1 sm:bottom-2 left-3 sm:left-4 right-3 sm:right-4">
+                        <h3 className="text-xl sm:text-2xl font-bold text-white mb-0 group-hover:text-coastal-cream transition-colors leading-tight">
+                          {area.name}
+                        </h3>
+                      </div>
+                    </div>
+                    <CardContent className="px-4 sm:px-6 pb-4 sm:pb-6 pt-0">
+                      <div className="space-y-1 sm:space-y-1">
+                        <p className="text-muted-foreground text-xs sm:text-sm leading-relaxed">
+                          {area.description}
+                        </p>
+                        <ul className="space-y-1.5 sm:space-y-2">
+                          {area.highlights.map((highlight, highlightIndex) => (
+                            <li key={highlightIndex} className="flex items-center space-x-2">
+                              <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 text-coastal-teal flex-shrink-0" />
+                              <span className="text-muted-foreground text-xs sm:text-sm">{highlight}</span>
+                            </li>
+                          ))}
+                        </ul>
+                        <div className="pt-2 flex items-center text-coastal-teal font-semibold text-sm group-hover:text-coastal-sage transition-colors">
+                          Learn More <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </Link>
+              ) : (
+                <Card key={index} className="group hover:shadow-2xl transition-all duration-500 border-0 overflow-hidden relative p-0 bg-white h-full">
+                  <div className="relative h-48 sm:h-56 md:h-64 overflow-hidden">
+                    <img
+                      src={area.image}
+                      alt={`${area.name} real estate`}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                    <div className="absolute bottom-1 sm:bottom-2 left-3 sm:left-4 right-3 sm:right-4">
+                      <h3 className="text-xl sm:text-2xl font-bold text-white mb-0 group-hover:text-coastal-cream transition-colors leading-tight">
+                        {area.name}
+                      </h3>
+                    </div>
                   </div>
-                </div>
-                <CardContent className="px-4 sm:px-6 pb-4 sm:pb-6 pt-0">
-                  <div className="space-y-1 sm:space-y-1">
-                    <p className="text-muted-foreground text-xs sm:text-sm leading-relaxed">
-                      {area.description}
-                    </p>
-                    <ul className="space-y-1.5 sm:space-y-2">
-                      {area.highlights.map((highlight, highlightIndex) => (
-                        <li key={highlightIndex} className="flex items-center space-x-2">
-                          <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 text-coastal-teal flex-shrink-0" />
-                          <span className="text-muted-foreground text-xs sm:text-sm">{highlight}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </CardContent>
-              </Card>
+                  <CardContent className="px-4 sm:px-6 pb-4 sm:pb-6 pt-0">
+                    <div className="space-y-1 sm:space-y-1">
+                      <p className="text-muted-foreground text-xs sm:text-sm leading-relaxed">
+                        {area.description}
+                      </p>
+                      <ul className="space-y-1.5 sm:space-y-2">
+                        {area.highlights.map((highlight, highlightIndex) => (
+                          <li key={highlightIndex} className="flex items-center space-x-2">
+                            <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 text-coastal-teal flex-shrink-0" />
+                            <span className="text-muted-foreground text-xs sm:text-sm">{highlight}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </CardContent>
+                </Card>
+              )
             ))}
           </div>
         </div>

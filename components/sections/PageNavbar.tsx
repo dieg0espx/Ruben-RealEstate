@@ -17,6 +17,7 @@ export default function PageNavbar() {
     { href: '/home', label: t('nav.home') },
     { href: '/about', label: t('nav.about') },
     { href: '/services', label: t('nav.services') },
+    { href: '/service-areas', label: language === 'en' ? 'Service Areas' : 'Áreas de Servicio' },
     { href: '/results', label: t('nav.results') },
     { href: '/contact', label: t('nav.contact') }
   ]
