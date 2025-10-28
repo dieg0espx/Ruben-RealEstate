@@ -63,6 +63,7 @@ export default function RootLayout({
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         <meta name="theme-color" content="#ffffff" />
+        <meta name="google-site-verification" content="9AI8dhMD6CN_wMEbylAnXbLL_d6oTdFKaXNsN_UnCc4" />
       </head>
       <body className={`${poppins.variable} font-sans antialiased`} suppressHydrationWarning>
         <div className="min-h-screen flex flex-col max-w-screen overflow-x-hidden">
