@@ -130,11 +130,11 @@ export default function ServicesPage() {
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4">
               <Button size="lg" variant="green" className="text-sm sm:text-base lg:text-lg px-6 sm:px-8 py-3 sm:py-4" onClick={() => window.open('tel:+15416021026', '_self')}>
                 <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-                {pageT.cta.callButton}
+                Discuss Your Real Estate Goals
               </Button>
               <Button size="lg" variant="whiteOnDark" className="text-sm sm:text-base lg:text-lg px-6 sm:px-8 py-3 sm:py-4" onClick={() => window.location.href = '/contact'}>
                 <Mail className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-                {pageT.cta.emailButtonFull}
+                Get a Free Consultation
               </Button>
             </div>
           </div>

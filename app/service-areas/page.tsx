@@ -140,7 +140,7 @@ export default function ServiceAreasHubPage() {
                   onClick={() => window.location.href = '/contact'}
                 >
                   <Mail className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-                  {language === 'en' ? 'Schedule Consultation' : 'Programar Consulta'}
+                  {language === 'en' ? 'Get Local Help' : 'Obtén Ayuda Local'}
                 </Button>
               </div>
             </div>
