@@ -1,11 +1,10 @@
 'use client'
-
 import PageNavbar from "@/components/sections/PageNavbar"
 import Footer from "@/components/sections/Footer"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Star, CheckCircle, ArrowRight, MapPin, Phone, Mail } from "lucide-react"
+import { Star, CheckCircle, ArrowRight, MapPin, Phone, Mail, CalendarDays } from "lucide-react"
 import useLanguageStore from "@/hooks/useLanguageStore"
 import useScrollAnimation from "@/hooks/useScrollAnimation"
 import Image from "next/image"
@@ -121,12 +120,22 @@ export default function ServicesPage() {
         <div className="absolute inset-0 bg-black/70"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
           <div className="text-center space-y-4 sm:space-y-6">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white font-lexend leading-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white font-lexend leading-tight">
               {pageT.hero.title}
             </h1>
             <p className="text-lg sm:text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed px-2">
               {pageT.hero.subtitle}
             </p>
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4">
+              <Button size="lg" variant="green" className="text-sm sm:text-base lg:text-lg px-6 sm:px-8 py-3 sm:py-4" onClick={() => window.open('tel:+15416021026', '_self')}>
+                <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+                Discuss Your Real Estate Goals
+              </Button>
+              <Button size="lg" variant="whiteOnDark" className="text-sm sm:text-base lg:text-lg px-6 sm:px-8 py-3 sm:py-4" onClick={() => window.location.href = '/contact'}>
+                <CalendarDays className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+                Get a Free Consultation
+              </Button>
+            </div>
           </div>
         </div>
       </section>
@@ -414,11 +423,11 @@ export default function ServicesPage() {
             {pageT.cta.subtitle}
           </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4">
-            <Button size="lg" className="bg-coastal-teal hover:bg-[#5F7D6D] hover:text-white text-coastal-cream text-sm sm:text-base lg:text-lg px-4 sm:px-6 lg:px-8 py-2 sm:py-3 lg:py-4 transition-all duration-300 w-full sm:w-auto" onClick={() => window.open('tel:+15416021026', '_self')}>
+            <Button size="lg" variant="green" className="text-sm sm:text-base lg:text-lg px-4 sm:px-6 lg:px-8 py-2 sm:py-3 lg:py-4 transition-all duration-300 w-full sm:w-auto" onClick={() => window.open('tel:+15416021026', '_self')}>
               <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
               {pageT.cta.callButton}
             </Button>
-            <Button size="lg" className="bg-coastal-sage hover:bg-[#5F7D6D] hover:text-white text-coastal-cream text-sm sm:text-base lg:text-lg px-4 sm:px-6 lg:px-8 py-2 sm:py-3 lg:py-4 transition-all duration-300 w-full sm:w-auto" onClick={() => window.open('mailto:ruben.o.banuelos@gmail.com', '_self')}>
+            <Button size="lg" variant="blackOnLight" className="text-sm sm:text-base lg:text-lg px-4 sm:px-6 lg:px-8 py-2 sm:py-3 lg:py-4 transition-all duration-300 w-full sm:w-auto" onClick={() => window.open('mailto:ruben.o.banuelos@gmail.com', '_self')}>
               <Mail className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
               {pageT.cta.emailButtonFull}
             </Button>

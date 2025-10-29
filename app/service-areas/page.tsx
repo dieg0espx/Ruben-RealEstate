@@ -108,7 +108,7 @@ export default function ServiceAreasHubPage() {
           <div 
             className="absolute inset-0 bg-cover bg-center bg-fixed"
             style={{
-              backgroundImage: "url('/images/57-web-or-mls-Riviera_drone (3 of 12).JPG')",
+              backgroundImage: "url('/images/64-web-or-mls-Riviera_drone (11 of 12).JPG')",
               backgroundAttachment: "fixed"
             }}
           ></div>
@@ -123,6 +123,26 @@ export default function ServiceAreasHubPage() {
                   ? 'Ruben Banuelos serves families, veterans, and investors across North San Diego County with expert real estate and property management services'
                   : 'Ruben Banuelos sirve a familias, veteranos e inversionistas en todo el Norte de San Diego con servicios expertos de bienes raíces y administración de propiedades'}
               </p>
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4">
+                <Button 
+                  size="lg"
+                  variant="green"
+                  className="text-sm sm:text-base lg:text-lg px-6 sm:px-8 py-3 sm:py-4"
+                  onClick={() => window.open('tel:+15416021026', '_self')}
+                >
+                  <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+                  (541) 602-1026
+                </Button>
+                <Button 
+                  size="lg"
+                  variant="whiteOnDark"
+                  className="text-sm sm:text-base lg:text-lg px-6 sm:px-8 py-3 sm:py-4"
+                  onClick={() => window.location.href = '/contact'}
+                >
+                  <MapPin className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+                  {language === 'en' ? 'Get Local Help' : 'Obtén Ayuda Local'}
+                </Button>
+              </div>
             </div>
           </div>
         </section>
@@ -138,35 +158,98 @@ export default function ServiceAreasHubPage() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-              {serviceAreas.map((area, index) => (
-                <Link key={index} href={`/service-areas/${area.slug}`}>
-                  <Card className="group hover:shadow-2xl transition-all duration-500 border-0 overflow-hidden h-full cursor-pointer p-0">
-                    <div className="relative h-56 overflow-hidden">
-                      <img
-                        src={area.image}
-                        alt={`${area.name} real estate`}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
-                      <div className="absolute bottom-4 left-4 right-4">
-                        <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-coastal-cream transition-colors">
-                          {area.name}
+            <div className="space-y-6 lg:space-y-8">
+              {/* Row 1: Large card (San Marcos) */}
+              <Link href={`/service-areas/${serviceAreas[0].slug}`}>
+                <Card className="group hover:shadow-2xl transition-all duration-500 border-0 overflow-hidden cursor-pointer p-0 h-[400px] lg:h-[500px]">
+                  <div className="relative w-full h-full overflow-hidden">
+                    <img
+                      src={serviceAreas[0].image}
+                      alt={`${serviceAreas[0].name} real estate`}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent"></div>
+                    <div className="absolute bottom-6 left-6 right-6">
+                      <div className="flex flex-col">
+                        <h3 className="text-3xl lg:text-4xl font-bold text-white mb-3 group-hover:text-coastal-cream transition-colors">
+                          {serviceAreas[0].name}
                         </h3>
-                        <p className="text-white/90 text-sm">
-                          {area.description}
+                        <p className="text-white/90 text-base lg:text-lg leading-relaxed mb-4">
+                          {serviceAreas[0].description}
                         </p>
+                        <div className="flex items-center text-coastal-cream font-semibold text-sm group-hover:text-white transition-colors">
+                          {language === 'en' ? 'Learn More' : 'Saber Más'}
+                          <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                        </div>
                       </div>
                     </div>
-                    <CardContent className="p-6 pt-0">
-                      <div className="flex items-center text-coastal-teal font-semibold text-sm group-hover:text-coastal-sage transition-colors">
-                        {language === 'en' ? 'Learn More' : 'Saber Más'}
-                        <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </Card>
+              </Link>
+
+              {/* Row 2: Two small cards side by side (Oceanside & Escondido) */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mt-12 lg:mt-16">
+                {serviceAreas.slice(1, 3).map((area, index) => (
+                  <Link key={index} href={`/service-areas/${area.slug}`}>
+                    <Card className="group hover:shadow-2xl transition-all duration-500 border-0 overflow-hidden cursor-pointer p-0 h-[300px] lg:h-[350px]">
+                      <div className="relative w-full h-full overflow-hidden">
+                        <img
+                          src={area.image}
+                          alt={`${area.name} real estate`}
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent"></div>
+                        <div className="absolute bottom-6 left-6 right-6">
+                          <div className="flex flex-col">
+                            <h3 className="text-2xl lg:text-3xl font-bold text-white mb-3 group-hover:text-coastal-cream transition-colors">
+                              {area.name}
+                            </h3>
+                            <p className="text-white/90 text-sm lg:text-base leading-relaxed mb-4">
+                              {area.description}
+                            </p>
+                            <div className="flex items-center text-coastal-cream font-semibold text-sm group-hover:text-white transition-colors">
+                              {language === 'en' ? 'Learn More' : 'Saber Más'}
+                              <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                            </div>
+                          </div>
+                        </div>
                       </div>
-                    </CardContent>
-                  </Card>
-                </Link>
-              ))}
+                    </Card>
+                  </Link>
+                ))}
+              </div>
+
+              {/* Row 3: Two small cards side by side (Vista & Carlsbad) */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+                {serviceAreas.slice(3).map((area, index) => (
+                  <Link key={index} href={`/service-areas/${area.slug}`}>
+                    <Card className="group hover:shadow-2xl transition-all duration-500 border-0 overflow-hidden cursor-pointer p-0 h-[300px] lg:h-[350px]">
+                      <div className="relative w-full h-full overflow-hidden">
+                        <img
+                          src={area.image}
+                          alt={`${area.name} real estate`}
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent"></div>
+                        <div className="absolute bottom-6 left-6 right-6">
+                          <div className="flex flex-col">
+                            <h3 className="text-2xl lg:text-3xl font-bold text-white mb-3 group-hover:text-coastal-cream transition-colors">
+                              {area.name}
+                            </h3>
+                            <p className="text-white/90 text-sm lg:text-base leading-relaxed mb-4">
+                              {area.description}
+                            </p>
+                            <div className="flex items-center text-coastal-cream font-semibold text-sm group-hover:text-white transition-colors">
+                              {language === 'en' ? 'Learn More' : 'Saber Más'}
+                              <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </Card>
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
         </section>
@@ -211,16 +294,18 @@ export default function ServiceAreasHubPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
-                size="lg" 
-                className="bg-[#5F7D6D] hover:bg-[#4d6558] hover:scale-105 text-white text-lg px-8 py-6 shadow-lg hover:shadow-xl transition-all duration-300"
+                size="lg"
+                variant="green"
+                className="hover:scale-105 text-lg px-8 py-6 shadow-lg hover:shadow-xl transition-all duration-300"
                 onClick={() => window.open('tel:+15416021026', '_self')}
               >
                 <Phone className="w-5 h-5 mr-2" />
                 (541) 602-1026
               </Button>
               <Button 
-                size="lg" 
-                className="bg-[#5F7D6D] hover:bg-[#4d6558] hover:scale-105 text-white text-lg px-8 py-6 shadow-lg hover:shadow-xl transition-all duration-300"
+                size="lg"
+                variant="green"
+                className="hover:scale-105 text-lg px-8 py-6 shadow-lg hover:shadow-xl transition-all duration-300"
                 onClick={() => window.location.href = '/contact'}
               >
                 <Mail className="w-5 h-5 mr-2" />

@@ -1,5 +1,6 @@
 "use client"
 
+import type { Metadata } from 'next'
 import PageNavbar from "@/components/sections/PageNavbar"
 import Footer from "@/components/sections/Footer"
 import FeaturesSection from "@/components/sections/FeaturesSection"
@@ -250,11 +251,11 @@ export default function HomePage() {
               {pageT.hero.subtitle}
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4">
-              <Button size="lg" className="bg-coastal-teal/20 hover:bg-coastal-teal hover:text-white backdrop-blur-sm text-white text-sm sm:text-base lg:text-lg px-4 sm:px-6 lg:px-8 py-2 sm:py-3 lg:py-4 transition-all duration-300 w-full sm:w-auto" onClick={() => scrollToSection('/contact#consultation-form')}>
+              <Button size="lg" variant="whiteOnDark" className="text-sm sm:text-base lg:text-lg px-4 sm:px-6 lg:px-8 py-2 sm:py-3 lg:py-4 transition-all duration-300 w-full sm:w-auto" onClick={() => scrollToSection('/contact#consultation-form')}>
                 {isScrolling ? pageT.hero.navigating : pageT.hero.scheduleCall}
                 <ArrowRight className={`w-4 h-4 sm:w-5 sm:h-5 ml-2 transition-transform ${isScrolling ? 'animate-pulse' : ''}`} />
               </Button>
-              <Button size="lg" className="bg-coastal-sage/20 hover:bg-coastal-sage hover:text-white backdrop-blur-sm text-white text-sm sm:text-base lg:text-lg px-4 sm:px-6 lg:px-8 py-2 sm:py-3 lg:py-4 transition-all duration-300 w-full sm:w-auto" onClick={() => window.open('tel:+15416021026', '_self')}>
+              <Button size="lg" variant="green" className="text-sm sm:text-base lg:text-lg px-4 sm:px-6 lg:px-8 py-2 sm:py-3 lg:py-4 transition-all duration-300 w-full sm:w-auto" onClick={() => window.open('tel:+15416021026', '_self')}>
 {pageT.hero.callButton}
               </Button>
             </div>
@@ -468,8 +469,9 @@ export default function HomePage() {
           {/* CTA Button */}
           <div className="text-center mt-8 sm:mt-12">
             <Button
-              size="lg" 
-              className="bg-coastal-teal hover:bg-[#5F7D6D] hover:text-white text-coastal-cream text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 transition-all duration-300"
+              size="lg"
+              variant="blackOnLight"
+              className="text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 transition-all duration-300"
               onClick={() => scrollToSection('/services#explore-service-areas')}
             >
               {pageT.serviceAreas.exploreButton}
@@ -520,7 +522,7 @@ export default function HomePage() {
               <p className="text-lg text-muted-foreground leading-relaxed">
                 {pageT.about.description}
               </p>
-              <Button size="lg" className="bg-coastal-teal hover:bg-[#5F7D6D] hover:text-white text-coastal-cream text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 transition-all duration-300" onClick={() => scrollToSection('/about#my-journey')}>
+              <Button size="lg" variant="blackOnLight" className="text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 transition-all duration-300" onClick={() => scrollToSection('/about#my-journey')}>
                 {pageT.about.learnMoreButton}
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
@@ -576,7 +578,7 @@ export default function HomePage() {
           </div>
           
           <div className="text-center mt-8">
-            <Button size="lg" className="bg-white hover:bg-secondary hover:text-white text-coastal-teal text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 transition-all duration-300" onClick={() => scrollToSection('/results#trusted-by-community')}>
+            <Button size="lg" variant="whiteOnDark" className="text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 transition-all duration-300" onClick={() => scrollToSection('/results#trusted-by-community')}>
               {pageT.testimonials.viewAllButton}
               <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2" />
             </Button>
@@ -601,11 +603,11 @@ export default function HomePage() {
             {pageT.finalCta.subtitle}
           </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4">
-            <Button size="lg" className="bg-coastal-teal hover:bg-[#5F7D6D] hover:text-white text-coastal-cream text-sm sm:text-base lg:text-lg px-4 sm:px-6 lg:px-8 py-2 sm:py-3 lg:py-4 transition-all duration-300 w-full sm:w-auto" onClick={() => window.open('tel:+15416021026', '_self')}>
+            <Button size="lg" variant="green" className="text-sm sm:text-base lg:text-lg px-4 sm:px-6 lg:px-8 py-2 sm:py-3 lg:py-4 transition-all duration-300 w-full sm:w-auto" onClick={() => window.open('tel:+15416021026', '_self')}>
               <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
               {pageT.finalCta.callButton}
             </Button>
-            <Button size="lg" className="bg-coastal-sage hover:bg-[#5F7D6D] hover:text-white text-coastal-cream text-sm sm:text-base lg:text-lg px-4 sm:px-6 lg:px-8 py-2 sm:py-3 lg:py-4 transition-all duration-300 w-full sm:w-auto" onClick={() => window.open('mailto:ruben.o.banuelos@gmail.com', '_self')}>
+            <Button size="lg" variant="blackOnLight" className="text-sm sm:text-base lg:text-lg px-4 sm:px-6 lg:px-8 py-2 sm:py-3 lg:py-4 transition-all duration-300 w-full sm:w-auto" onClick={() => window.open('mailto:ruben.o.banuelos@gmail.com', '_self')}>
               <Mail className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
               {pageT.finalCta.emailButton}
             </Button>

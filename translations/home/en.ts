@@ -1,6 +1,6 @@
 export const homeTranslations = {
   hero: {
-    title: "Your North County Home Starts Here",
+    title: "Real Estate Experts in North County San Diego",
     subtitle: "Guiding veterans families and investors to their next chapter",
     scheduleCall: "Get Your Free Consultation",
     navigating: "Navigating...",

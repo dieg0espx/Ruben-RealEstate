@@ -152,7 +152,7 @@ export default function ServiceAreasMapSection() {
                       {t(areas[currentAreaIndex].translationKey)}
                     </p>
                     <span className="inline-flex items-center text-white font-semibold group-hover:text-coastal-cream transition-colors">
-                      Learn More <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                      {t('common.learn_more')} <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                     </span>
                   </div>
                 </div>
@@ -168,7 +168,7 @@ export default function ServiceAreasMapSection() {
               size="lg" 
               className="bg-coastal-sage hover:bg-[#5F7D6D] hover:text-white text-white text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 transition-all duration-300"
             >
-              View All Service Areas
+              {t('service_areas.view_all')}
               <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2" />
             </Button>
           </Link>

@@ -30,7 +30,7 @@ export default function PageNavbar() {
   }
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-[100] w-full border-b border-border/40 bg-white/95 backdrop-blur-md supports-[backdrop-filter]:bg-white/95">
+    <header className="fixed top-0 left-0 right-0 z-[1000] w-full border-b border-border/40 bg-white/95 backdrop-blur-md supports-[backdrop-filter]:bg-white/95">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-1 sm:py-2">
         <nav className="flex items-center justify-between w-full">
           {/* Desktop Navigation - Full Width Distribution */}
