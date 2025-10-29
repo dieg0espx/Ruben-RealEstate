@@ -5,7 +5,7 @@ import Footer from "@/components/sections/Footer"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Star, CheckCircle, ArrowRight, MapPin, Phone, Mail } from "lucide-react"
+import { Star, CheckCircle, ArrowRight, MapPin, Phone, Mail, CalendarDays } from "lucide-react"
 import useLanguageStore from "@/hooks/useLanguageStore"
 import useScrollAnimation from "@/hooks/useScrollAnimation"
 import Image from "next/image"
@@ -133,7 +133,7 @@ export default function ServicesPage() {
                 Discuss Your Real Estate Goals
               </Button>
               <Button size="lg" variant="whiteOnDark" className="text-sm sm:text-base lg:text-lg px-6 sm:px-8 py-3 sm:py-4" onClick={() => window.location.href = '/contact'}>
-                <Mail className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+                <CalendarDays className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
                 Get a Free Consultation
               </Button>
             </div>
