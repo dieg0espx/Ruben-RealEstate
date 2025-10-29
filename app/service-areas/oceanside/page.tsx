@@ -70,7 +70,7 @@ export default function OceansidePage() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
                 <Button 
                   size="lg"
-                  variant="whiteOnDark"
+                  variant="green"
                   className="text-lg px-8 py-6"
                   onClick={() => window.open('tel:+15416021026', '_self')}
                 >

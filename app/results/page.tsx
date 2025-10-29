@@ -196,6 +196,16 @@ export default function ResultsPage() {
             <p className="text-xl sm:text-2xl md:text-3xl text-white/90 max-w-5xl mx-auto leading-relaxed px-4">
               {pageT.hero.subtitle}
             </p>
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4">
+              <Button size="lg" variant="green" className="text-sm sm:text-base lg:text-lg px-6 sm:px-8 py-3 sm:py-4" onClick={() => window.open('tel:+15416021026', '_self')}>
+                <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+                {pageT.cta.callButton}
+              </Button>
+              <Button size="lg" variant="whiteOnDark" className="text-sm sm:text-base lg:text-lg px-6 sm:px-8 py-3 sm:py-4" onClick={() => window.location.href = '/contact'}>
+                <Mail className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+                {pageT.cta.emailButton}
+              </Button>
+            </div>
           </div>
         </div>
       </section>

@@ -98,5 +98,5 @@ export default function MapComponent({ currentAreaIndex, setCurrentAreaIndex }: 
     }
   }, [setCurrentAreaIndex])
 
-  return <div ref={mapRef} className="w-full h-full rounded-2xl" />
+  return <div ref={mapRef} className="w-full h-full rounded-2xl relative z-0" />
 }

@@ -12,11 +12,11 @@ const buttonVariants = cva(
         default:
           'bg-primary text-primary-foreground shadow-xs hover:bg-primary/90',
         green:
-          'bg-[#5F7D6D] text-white shadow-xs hover:bg-[#4d6558]',
+          'bg-[#5F7D6D] text-white shadow-lg hover:shadow-xl hover:scale-105 hover:bg-[#4d6558] duration-300',
         whiteOnDark:
-          'bg-white text-black shadow-xs hover:bg-gray-100',
+          'bg-white text-black shadow-lg hover:shadow-xl hover:scale-105 hover:bg-gray-100 duration-300',
         blackOnLight:
-          'bg-black text-white shadow-xs hover:bg-black/90',
+          'bg-black text-white shadow-lg hover:shadow-xl hover:scale-105 hover:bg-black/90 duration-300',
         destructive:
           'bg-destructive text-white shadow-xs hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60',
         outline:

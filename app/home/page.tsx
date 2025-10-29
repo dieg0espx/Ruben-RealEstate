@@ -254,7 +254,7 @@ export default function HomePage() {
                 {isScrolling ? pageT.hero.navigating : pageT.hero.scheduleCall}
                 <ArrowRight className={`w-4 h-4 sm:w-5 sm:h-5 ml-2 transition-transform ${isScrolling ? 'animate-pulse' : ''}`} />
               </Button>
-              <Button size="lg" variant="whiteOnDark" className="text-sm sm:text-base lg:text-lg px-4 sm:px-6 lg:px-8 py-2 sm:py-3 lg:py-4 transition-all duration-300 w-full sm:w-auto" onClick={() => window.open('tel:+15416021026', '_self')}>
+              <Button size="lg" variant="green" className="text-sm sm:text-base lg:text-lg px-4 sm:px-6 lg:px-8 py-2 sm:py-3 lg:py-4 transition-all duration-300 w-full sm:w-auto" onClick={() => window.open('tel:+15416021026', '_self')}>
 {pageT.hero.callButton}
               </Button>
             </div>

@@ -123,6 +123,26 @@ export default function ServiceAreasHubPage() {
                   ? 'Ruben Banuelos serves families, veterans, and investors across North San Diego County with expert real estate and property management services'
                   : 'Ruben Banuelos sirve a familias, veteranos e inversionistas en todo el Norte de San Diego con servicios expertos de bienes raíces y administración de propiedades'}
               </p>
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4">
+                <Button 
+                  size="lg"
+                  variant="green"
+                  className="text-sm sm:text-base lg:text-lg px-6 sm:px-8 py-3 sm:py-4"
+                  onClick={() => window.open('tel:+15416021026', '_self')}
+                >
+                  <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+                  (541) 602-1026
+                </Button>
+                <Button 
+                  size="lg"
+                  variant="whiteOnDark"
+                  className="text-sm sm:text-base lg:text-lg px-6 sm:px-8 py-3 sm:py-4"
+                  onClick={() => window.location.href = '/contact'}
+                >
+                  <Mail className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+                  {language === 'en' ? 'Schedule Consultation' : 'Programar Consulta'}
+                </Button>
+              </div>
             </div>
           </div>
         </section>
