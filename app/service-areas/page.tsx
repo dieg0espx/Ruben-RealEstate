@@ -139,7 +139,7 @@ export default function ServiceAreasHubPage() {
                   className="text-sm sm:text-base lg:text-lg px-6 sm:px-8 py-3 sm:py-4"
                   onClick={() => window.location.href = '/contact'}
                 >
-                  <Mail className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+                  <MapPin className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
                   {language === 'en' ? 'Get Local Help' : 'Obtén Ayuda Local'}
                 </Button>
               </div>

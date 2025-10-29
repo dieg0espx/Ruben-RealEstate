@@ -101,7 +101,7 @@ export default function AboutPage() {
                 Call Ruben
               </Button>
               <Button size="lg" variant="whiteOnDark" className="text-sm sm:text-base lg:text-lg px-6 sm:px-8 py-3 sm:py-4" onClick={() => window.location.href = '/about#my-journey'}>
-                <Mail className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+                <GraduationCap className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
                 Learn More About Ruben
               </Button>
             </div>

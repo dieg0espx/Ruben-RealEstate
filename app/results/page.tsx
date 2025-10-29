@@ -202,7 +202,7 @@ export default function ResultsPage() {
                 Call for Strategy Review
               </Button>
               <Button size="lg" variant="whiteOnDark" className="text-sm sm:text-base lg:text-lg px-6 sm:px-8 py-3 sm:py-4" onClick={() => { const el = document.getElementById('trusted-by-community'); if (el) { el.scrollIntoView({ behavior: 'smooth' }); } else { window.location.href = '/results#trusted-by-community'; } }}>
-                <Mail className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+                <Star className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
                 See Testimonials
               </Button>
             </div>
