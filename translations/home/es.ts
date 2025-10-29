@@ -1,6 +1,6 @@
 export const homeTranslations = {
   hero: {
-    title: "Tu Hogar en North County Comienza Aquí",
+    title: "Expertos en Bienes Raíces en North County San Diego",
     subtitle: "Guiando a veteranos, familias e inversionistas hacia su próximo capítulo",
     scheduleCall: "Obtén tu Consulta Gratuita",
     navigating: "Navegando...",

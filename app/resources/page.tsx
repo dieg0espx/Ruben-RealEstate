@@ -135,7 +135,7 @@ export default function ResourcesPage() {
             <Badge className="bg-coastal-teal/20 text-coastal-slate border-coastal-teal px-6 py-3 text-lg font-medium">
               {pageT.hero.badge}
             </Badge>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground font-lexend">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-foreground font-lexend leading-tight">
               {pageT.hero.title}
             </h1>
             <p className="text-xl sm:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">

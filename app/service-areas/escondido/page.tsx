@@ -7,8 +7,10 @@ import { Phone, Mail, CheckCircle } from "lucide-react"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import Link from "next/link"
 import Image from "next/image"
+import useLanguageStore from "@/hooks/useLanguageStore"
 
 export default function EscondidoPage() {
+  const { language } = useLanguageStore()
   const faqs = [
     {
       question: "Is Escondido a good place for real estate investment?",
@@ -62,10 +64,12 @@ export default function EscondidoPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
             <div className="text-center space-y-6">
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white font-lexend leading-tight">
-                Real Estate Services Escondido
+                {language === 'en' ? 'Real Estate Services Escondido' : 'Servicios Inmobiliarios en Escondido'}
               </h1>
               <p className="text-xl sm:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed">
-                Serving Escondido families, veterans, and investors with professional guidance, local expertise, and a commitment to lasting results.
+                {language === 'en'
+                  ? 'Serving Escondido families, veterans, and investors with professional guidance, local expertise, and a commitment to lasting results.'
+                  : 'Sirviendo a familias, veteranos e inversionistas en Escondido con guía profesional, experiencia local y compromiso con resultados duraderos.'}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
                 <Button 
@@ -75,7 +79,7 @@ export default function EscondidoPage() {
                   onClick={() => window.open('tel:+15416021026', '_self')}
                 >
                   <Phone className="w-5 h-5 mr-2" />
-                  Call (541) 602-1026
+                  {language === 'en' ? 'Call (541) 602-1026' : 'Llamar (541) 602-1026'}
                 </Button>
                 <Button 
                   size="lg"
@@ -84,7 +88,7 @@ export default function EscondidoPage() {
                   onClick={() => window.location.href = '/contact'}
                 >
                   <Mail className="w-5 h-5 mr-2" />
-                  Free Consultation
+                  {language === 'en' ? 'Free Consultation' : 'Consulta Gratuita'}
                 </Button>
               </div>
             </div>
@@ -95,7 +99,7 @@ export default function EscondidoPage() {
         <section className="py-16 sm:py-20 lg:py-24 bg-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-coastal-sage font-lexend mb-8">
-              Helping Families, Veterans, and Investors in Escondido
+              {language === 'en' ? 'Helping Families, Veterans, and Investors in Escondido' : 'Apoyando a Familias, Veteranos e Inversionistas en Escondido'}
             </h2>
             
             {/* Featured Image */}
@@ -118,10 +122,10 @@ export default function EscondidoPage() {
 
               <div className="my-8">
                 <Button 
-                  variant="blackOnLight"
+                  variant="green"
                   onClick={() => window.location.href = '/contact'}
                 >
-                  Start Your Escondido Home Search Today
+                  {language === 'en' ? 'Start Your Escondido Home Search Today' : 'Comienza Hoy Tu Búsqueda de Casa en Escondido'}
                 </Button>
               </div>
 
@@ -236,14 +240,22 @@ export default function EscondidoPage() {
         </section>
 
         {/* FAQ Section */}
-        <section className="py-16 sm:py-20 lg:py-24 bg-white">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6">
-            <h2 className="text-3xl sm:text-4xl font-bold text-coastal-sage font-lexend text-center mb-12">
-              Escondido Real Estate FAQ
+        <section className="py-16 sm:py-20 lg:py-24 relative overflow-hidden">
+          <div 
+            className="absolute inset-0 bg-cover bg-center bg-fixed"
+            style={{
+              backgroundImage: "url('/images/42-web-or-mls-Venice (40 of 53).JPG')",
+              backgroundAttachment: "fixed"
+            }}
+          ></div>
+          <div className="absolute inset-0 bg-black/60"></div>
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white font-lexend text-center mb-12">
+              {language === 'en' ? 'Escondido Real Estate FAQ' : 'Preguntas Frecuentes de Bienes Raíces en Escondido'}
             </h2>
             <Accordion type="single" collapsible className="space-y-4">
               {faqs.map((faq, index) => (
-                <AccordionItem key={index} value={`item-${index}`} className="border border-gray-200 rounded-lg px-6 py-2 last:border-b border-b-gray-200">
+                <AccordionItem key={index} value={`item-${index}`} className="border border-gray-200 rounded-lg px-6 py-2 last:border-b border-b-gray-200 bg-white/90 backdrop-blur-sm">
                   <AccordionTrigger className="text-left font-semibold text-coastal-sage hover:text-coastal-teal py-4">
                     {faq.question}
                   </AccordionTrigger>
@@ -260,7 +272,7 @@ export default function EscondidoPage() {
         <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-coastal-cream/30 to-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6">
             <h2 className="text-3xl sm:text-4xl font-bold text-coastal-sage font-lexend text-center mb-12">
-              Explore Escondido, California
+              {language === 'en' ? 'Explore Escondido, California' : 'Explora Escondido, California'}
             </h2>
             <div className="rounded-xl overflow-hidden shadow-2xl">
               <iframe
@@ -281,7 +293,7 @@ export default function EscondidoPage() {
         <section className="py-16 sm:py-20 lg:py-24 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6">
             <h2 className="text-3xl sm:text-4xl font-bold text-coastal-sage font-lexend text-center mb-8">
-              Nearby North County Service Areas
+              {language === 'en' ? 'Nearby North County Service Areas' : 'Áreas de Servicio Cercanas en North County'}
             </h2>
             <p className="text-center text-muted-foreground mb-12 max-w-3xl mx-auto">
               Ruben Real Estate San Diego also serves these neighboring communities in North San Diego County:
@@ -307,7 +319,7 @@ export default function EscondidoPage() {
                         <h3 className="text-xl font-bold text-white group-hover:text-coastal-cream transition-colors">
                           {area.name}
                         </h3>
-                        <p className="text-white/90 text-sm">View Services</p>
+                        <p className="text-white/90 text-sm">{language === 'en' ? 'View Services' : 'Ver Servicios'}</p>
                       </div>
                     </div>
                   </div>
@@ -321,7 +333,7 @@ export default function EscondidoPage() {
         <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-coastal-cream/30 to-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center space-y-8">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground font-lexend">
-              Ready to Get Started in Escondido?
+              {language === 'en' ? 'Ready to Get Started in Escondido?' : '¿Listo para Comenzar en Escondido?'}
             </h2>
             <p className="text-xl text-muted-foreground leading-relaxed">
               If you're looking to buy, sell, or invest in Escondido, Ruben Banuelos is ready to help you make your next move with confidence. His local expertise and client-first approach make the process seamless from start to finish.
@@ -346,7 +358,7 @@ export default function EscondidoPage() {
                 onClick={() => window.location.href = '/contact'}
               >
                 <Mail className="w-5 h-5 mr-2" />
-                Schedule Consultation
+                {language === 'en' ? 'Schedule Consultation' : 'Programar Consulta'}
               </Button>
             </div>
           </div>

@@ -1,11 +1,4 @@
 "use client"
-
-import type { Metadata } from 'next'
-
-export const metadata: Metadata = {
-  title: 'Contact Ruben Real Estate | North County San Diego Realtor',
-  description: 'Contact Ruben Real Estate for trusted guidance on buying, selling, or managing property in North County San Diego.',
-}
 import PageNavbar from "@/components/sections/PageNavbar"
 import Footer from "@/components/sections/Footer"
 import { Badge } from "@/components/ui/badge"
@@ -173,7 +166,7 @@ export default function ContactPage() {
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
           <div className="text-center space-y-8">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white font-lexend drop-shadow-lg">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white font-lexend leading-tight">
               {pageT.hero.title}
             </h1>
             <p className="text-xl sm:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed drop-shadow-md">
