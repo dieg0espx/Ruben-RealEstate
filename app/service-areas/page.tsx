@@ -108,7 +108,7 @@ export default function ServiceAreasHubPage() {
           <div 
             className="absolute inset-0 bg-cover bg-center bg-fixed"
             style={{
-              backgroundImage: "url('/images/57-web-or-mls-Riviera_drone (3 of 12).JPG')",
+              backgroundImage: "url('/images/64-web-or-mls-Riviera_drone (11 of 12).JPG')",
               backgroundAttachment: "fixed"
             }}
           ></div>
