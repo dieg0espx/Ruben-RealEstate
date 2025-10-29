@@ -173,6 +173,16 @@ export default function ContactPage() {
             <p className="text-xl sm:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed drop-shadow-md">
               {pageT.hero.subtitle}
             </p>
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4">
+              <Button size="lg" variant="green" className="text-sm sm:text-base lg:text-lg px-6 sm:px-8 py-3 sm:py-4" onClick={() => window.open('tel:+15416021026', '_self')}>
+                <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+                Call Now
+              </Button>
+              <Button size="lg" variant="whiteOnDark" className="text-sm sm:text-base lg:text-lg px-6 sm:px-8 py-3 sm:py-4" onClick={() => { const el = document.getElementById('consultation-form'); if (el) { const offset = 80; const top = el.getBoundingClientRect().top + window.scrollY - offset; window.scrollTo({ top, behavior: 'smooth' }); } else { window.location.href = '/contact#consultation-form'; } }}>
+                <Calendar className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+                Schedule Consultation
+              </Button>
+            </div>
           </div>
         </div>
       </section>
