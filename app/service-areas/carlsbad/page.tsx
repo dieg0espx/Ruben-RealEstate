@@ -69,16 +69,18 @@ export default function CarlsbadPage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
                 <Button 
-                  size="lg" 
-                  className="bg-coastal-teal hover:bg-[#5F7D6D] text-white text-lg px-8 py-6"
+                  size="lg"
+                  variant="whiteOnDark"
+                  className="text-lg px-8 py-6"
                   onClick={() => window.open('tel:+15416021026', '_self')}
                 >
                   <Phone className="w-5 h-5 mr-2" />
                   Call (541) 602-1026
                 </Button>
                 <Button 
-                  size="lg" 
-                  className="bg-white hover:bg-coastal-cream text-coastal-sage text-lg px-8 py-6"
+                  size="lg"
+                  variant="whiteOnDark"
+                  className="text-lg px-8 py-6"
                   onClick={() => window.location.href = '/contact'}
                 >
                   <Mail className="w-5 h-5 mr-2" />
@@ -116,7 +118,7 @@ export default function CarlsbadPage() {
 
               <div className="my-8">
                 <Button 
-                  className="bg-coastal-teal hover:bg-[#5F7D6D] text-white"
+                  variant="blackOnLight"
                   onClick={() => window.location.href = '/contact'}
                 >
                   Explore Carlsbad Luxury Homes Today
@@ -142,8 +144,7 @@ export default function CarlsbadPage() {
               <div className="my-8 bg-coastal-cream/20 p-6 rounded-lg border-l-4 border-[#5F7D6D]">
                 <p className="font-semibold text-[#5F7D6D] mb-2">Interested in Carlsbad luxury investment properties?</p>
                 <Button 
-                  variant="outline"
-                  className="border-[#5F7D6D] text-[#5F7D6D] hover:bg-[#5F7D6D] hover:text-white"
+                  variant="green"
                   onClick={() => window.open('tel:+15416021026', '_self')}
                 >
                   <Phone className="w-4 h-4 mr-2" />
@@ -215,7 +216,8 @@ export default function CarlsbadPage() {
             <div className="text-center">
               <Button 
                 size="lg"
-                className="bg-[#5F7D6D] hover:bg-[#4d6558] hover:scale-105 text-white transition-all duration-300 shadow-lg hover:shadow-xl"
+                variant="green"
+                className="hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
                 onClick={() => window.location.href = '/contact'}
               >
                 Work With a Carlsbad Real Estate Expert
@@ -320,16 +322,18 @@ export default function CarlsbadPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
-                size="lg" 
-                className="bg-[#5F7D6D] hover:bg-[#4d6558] hover:scale-105 text-white text-lg px-8 py-6 shadow-lg hover:shadow-xl transition-all duration-300"
+                size="lg"
+                variant="green"
+                className="text-lg px-8 py-6 shadow-lg hover:shadow-xl transition-all duration-300"
                 onClick={() => window.open('tel:+15416021026', '_self')}
               >
                 <Phone className="w-5 h-5 mr-2" />
                 (541) 602-1026
               </Button>
               <Button 
-                size="lg" 
-                className="bg-[#5F7D6D] hover:bg-[#4d6558] hover:scale-105 text-white text-lg px-8 py-6 shadow-lg hover:shadow-xl transition-all duration-300"
+                size="lg"
+                variant="blackOnLight"
+                className="text-lg px-8 py-6 shadow-lg hover:shadow-xl transition-all duration-300"
                 onClick={() => window.location.href = '/contact'}
               >
                 <Mail className="w-5 h-5 mr-2" />
