@@ -12,8 +12,8 @@ export default function PageHeader() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   const navItems = [
-    { href: '/', label: 'Landing' },
-    { href: '/home', label: 'Home' },
+    { href: '/landing', label: 'Landing' },
+    { href: '/', label: 'Home' },
     { href: '/about', label: 'About' },
     { href: '/services', label: 'Services' },
     { href: '/results', label: 'Results' },

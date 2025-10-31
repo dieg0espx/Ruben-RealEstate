@@ -14,7 +14,7 @@ export default function PageNavbar() {
   const pathname = usePathname()
 
   const navItems = [
-    { href: '/home', label: t('nav.home') },
+    { href: '/', label: t('nav.home') },
     { href: '/about', label: t('nav.about') },
     { href: '/services', label: t('nav.services') },
     { href: '/service-areas', label: language === 'en' ? 'Service Areas' : 'Áreas de Servicio' },
@@ -23,8 +23,8 @@ export default function PageNavbar() {
   ]
 
   const isActive = (href: string) => {
-    if (href === '/home') {
-      return pathname === '/' || pathname === '/home'
+    if (href === '/') {
+      return pathname === '/'
     }
     return pathname === href
   }
@@ -37,7 +37,7 @@ export default function PageNavbar() {
           <div className="hidden lg:flex items-center justify-between w-full">
             {/* Logo */}
             <div className="flex items-center space-x-2 sm:space-x-3">
-              <Link href="/home" className="focus:outline-none">
+              <Link href="/" className="focus:outline-none">
                 <Image
                   src="/logo/ruben real estate_Horizontal.png"
                   alt="Ruben Real Estate Logo"
@@ -94,7 +94,7 @@ export default function PageNavbar() {
           <div className="lg:hidden flex items-center justify-between w-full">
             {/* Logo */}
             <div className="flex items-center space-x-2 sm:space-x-3">
-              <Link href="/home" className="focus:outline-none">
+              <Link href="/" className="focus:outline-none">
                 <Image
                   src="/logo/ruben real estate_Horizontal.png"
                   alt="Ruben Real Estate Logo"
