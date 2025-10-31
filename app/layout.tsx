@@ -11,8 +11,8 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://rubenrealestate.com'),
-  title: 'Ruben Real Estate | San Diego Real Estate Expert',
-  description: 'Expert real estate services in San Diego County. Specializing in Veterans, Investors, and Growing Families. From healthcare to real estate - your trusted partner for home buying, selling, and investment opportunities.',
+  title: 'Buy, Sell & Invest in North County Real Estate | Ruben Real Estate',
+  description: 'Trusted North County experts helping families, veterans, and investors with local insight and proven results.',
   keywords: 'San Diego real estate, veteran real estate, investment properties, first time home buyers, property management, Ruben Banuelos',
   authors: [{ name: 'Ruben Banuelos' }],
   icons: {
