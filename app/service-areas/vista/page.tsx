@@ -114,10 +114,10 @@ export default function VistaPage() {
 
             <div className="prose prose-lg max-w-none space-y-6 text-muted-foreground leading-relaxed">
               <p>
-                At <Link href="/" className="text-coastal-teal underline">Ruben Real Estate San Diego</Link>, we proudly serve Vista, a growing North County community known for its family neighborhoods, thriving downtown, and strong rental market. Whether you're buying your first home, investing in property, or selling, <Link href="/about" className="text-coastal-teal underline">Ruben Banuelos</Link> offers expert guidance built on trust, care, and deep local knowledge.
+                At <Link href="/" className="text-coastal-teal underline"><strong>Ruben Real Estate San Diego</strong></Link>, we proudly serve <strong>Vista</strong>, a growing North County community known for its family neighborhoods, thriving downtown, and strong rental market. Whether you're buying your first home, investing in property, or selling, <Link href="/about" className="text-coastal-teal underline"><strong>Ruben Banuelos</strong></Link> offers expert guidance built on trust, care, and deep local knowledge.
               </p>
               <p>
-                With a background as a Doctor of Physical Therapy turned real estate broker, Ruben combines empathy and precision—helping every client make smart, confident real estate decisions.
+                With a background as a <strong>Doctor of Physical Therapy</strong> turned real estate broker, Ruben combines empathy and precision—helping every client make smart, confident real estate decisions.
               </p>
 
               <div className="my-8">
@@ -131,18 +131,18 @@ export default function VistaPage() {
 
               <h3 className="text-2xl font-bold text-coastal-sage mt-8 mb-4">VA Loan Expertise in Vista, CA</h3>
               <p>
-                Vista is home to many veterans and military families who can benefit from the VA loan program. Ruben specializes in helping service members and veterans use their benefits to achieve homeownership with ease.
+                <strong>Vista</strong> is home to many veterans and military families who can benefit from the <strong>VA loan</strong> program. Ruben specializes in helping service members and veterans use their benefits to achieve homeownership with ease.
               </p>
               <p>
-                He partners with trusted VA-approved lenders and simplifies the process from pre-approval to closing—securing zero-down loans, no PMI, and competitive rates. Whether you're looking near Shadowridge, Buena Creek, or Downtown Vista, Ruben helps you find the right property for your needs. His detail-oriented approach ensures a smooth, stress-free experience for every veteran and military family.
+                He partners with trusted <strong>VA-approved lenders</strong> and simplifies the process from pre-approval to closing—securing <strong>zero-down loans</strong>, <strong>no PMI</strong>, and competitive rates. Whether you're looking near <strong>Shadowridge</strong>, <strong>Buena Creek</strong>, or <strong>Downtown Vista</strong>, Ruben helps you find the right property for your needs. His detail-oriented approach ensures a smooth, stress-free experience for every veteran and military family.
               </p>
 
               <h3 className="text-2xl font-bold text-coastal-sage mt-8 mb-4">Investment Property Guidance in Vista</h3>
               <p>
-                Vista's strong rental demand and growing economy make it ideal for real estate investors. As both a broker and NARPM-certified property manager, Ruben provides investors with the insight and tools to build profitable portfolios.
+                <strong>Vista’s</strong> strong rental demand and growing economy make it ideal for real estate investors. As both a <strong>broker</strong> and <strong>NARPM-certified property manager</strong>, Ruben provides investors with the insight and tools to build profitable portfolios.
               </p>
               <p>
-                He helps clients identify high-performing properties, analyze returns, and manage rentals effectively. From duplexes near Vista Village to single-family homes around Melrose Drive, Ruben guides investors through every step—ensuring long-term financial growth and stability.
+                He helps clients identify high-performing properties, analyze returns, and manage rentals effectively. From duplexes near <strong>Vista Village</strong> to single-family homes around <strong>Melrose Drive</strong>, Ruben guides investors through every step—ensuring long-term financial growth and stability.
               </p>
 
               <div className="my-8 bg-coastal-cream/20 p-6 rounded-lg border-l-4 border-[#5F7D6D]">
@@ -166,15 +166,15 @@ export default function VistaPage() {
 
               <h3 className="text-2xl font-bold text-coastal-sage mt-8 mb-4">Property Management Services in Vista</h3>
               <p>
-                Managing rental properties in Vista requires experience and organization. Ruben Real Estate San Diego offers comprehensive property management services to help owners protect and grow their investments.
+                Managing rental properties in <strong>Vista</strong> requires experience and organization. <strong>Ruben Real Estate San Diego</strong> offers comprehensive property management services to help owners protect and grow their investments.
               </p>
               <p>
-                His team handles marketing, tenant placement, maintenance, rent collection, and inspections—so clients can enjoy passive income without the daily stress. As a NARPM member, Ruben upholds strict professional and ethical standards, ensuring every property is well-maintained and compliant with California regulations.
+                His team handles marketing, tenant placement, maintenance, rent collection, and inspections—so clients can enjoy passive income without the daily stress. As a <strong>NARPM member</strong>, Ruben upholds strict professional and ethical standards, ensuring every property is well-maintained and compliant with California regulations.
               </p>
 
               <h3 className="text-2xl font-bold text-coastal-sage mt-8 mb-4">Local Expertise and Community Insight</h3>
               <p>
-                As a North County local, Ruben understands Vista's evolving real estate landscape. From the revitalized Downtown Vista Village to newer developments near Shadowridge, he offers clients up-to-date insight on property values, neighborhood trends, and community growth.
+                As a <strong>North County local</strong>, Ruben understands Vista's evolving real estate landscape. From the revitalized <strong>Downtown Vista Village</strong> to newer developments near <strong>Shadowridge</strong>, he offers clients up-to-date insight on property values, neighborhood trends, and community growth.
               </p>
               <p>
                 Ruben's local focus allows him to guide buyers, sellers, and investors toward opportunities that match both their financial goals and lifestyle preferences.
@@ -191,7 +191,7 @@ export default function VistaPage() {
                 <strong>For Sellers:</strong> strategic pricing, high-quality marketing, and transparent communication to achieve top market value quickly and efficiently.
               </p>
               <p>
-                Ruben's commitment to service has earned him recognition as a Rising Star Award recipient at Team Fearless Realty, reflecting his dedication and results.
+                Ruben's commitment to service has earned him recognition as a <strong>Rising Star Award</strong> recipient at Team Fearless Realty, reflecting his dedication and results.
               </p>
             </div>
           </div>
@@ -330,7 +330,7 @@ export default function VistaPage() {
               If you're buying, selling, or investing in Vista, Ruben Banuelos is ready to help you make the right move. His experience, professionalism, and community focus ensure a smooth and rewarding real estate journey.
             </p>
             <p className="text-lg text-muted-foreground">
-              Reach out to Ruben Real Estate San Diego or simply <Link href="/contact" className="text-coastal-teal underline">contact</Link> the team today to schedule your free consultation.
+              Reach out to <strong>Ruben Real Estate San Diego</strong> or simply <Link href="/contact" className="text-coastal-teal underline">contact</Link> the team today to schedule your free consultation.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 

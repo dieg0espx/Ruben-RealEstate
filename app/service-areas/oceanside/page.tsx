@@ -114,10 +114,10 @@ export default function OceansidePage() {
 
             <div className="prose prose-lg max-w-none space-y-6 text-muted-foreground leading-relaxed">
               <p>
-                At <Link href="/" className="text-coastal-teal underline">Ruben Real Estate San Diego</Link>, we're proud to serve Oceanside, a vibrant coastal city with a strong military community, thriving rental market, and growing family neighborhoods. Whether you're buying your first home, investing in property, or selling in today's competitive market, <Link href="/about" className="text-coastal-teal underline">Ruben Banuelos</Link> provides expert guidance built on trust, empathy, and local experience.
+                At <Link href="/" className="text-coastal-teal underline"><strong>Ruben Real Estate San Diego</strong></Link>, we're proud to serve <strong>Oceanside</strong>, a vibrant coastal city with a strong military community, thriving rental market, and growing family neighborhoods. Whether you're buying your first home, investing in property, or selling in today's competitive market, <Link href="/about" className="text-coastal-teal underline"><strong>Ruben Banuelos</strong></Link> provides expert guidance built on trust, empathy, and local experience.
               </p>
               <p>
-                As a former Doctor of Physical Therapy turned licensed real estate broker, Ruben combines healthcare discipline with real estate expertise—ensuring every decision is handled with precision and care.
+                As a former <strong>Doctor of Physical Therapy</strong> turned licensed real estate broker, Ruben combines healthcare discipline with real estate expertise—ensuring every decision is handled with precision and care.
               </p>
 
               <div className="my-8">
@@ -132,24 +132,24 @@ export default function OceansidePage() {
 
               <h3 className="text-2xl font-bold text-coastal-sage mt-8 mb-4">VA Loan Expertise in Oceanside, CA</h3>
               <p>
-                Oceanside is home to many active-duty and retired service members from nearby Camp Pendleton, making VA loans one of the best options for local buyers. Ruben specializes in helping veterans and military families take full advantage of their benefits.
+                <strong>Oceanside</strong> is home to many active-duty and retired service members from nearby <strong>Camp Pendleton</strong>, making <strong>VA loans</strong> one of the best options for local buyers. Ruben specializes in helping veterans and military families take full advantage of their benefits.
               </p>
               <p>
-                He works closely with VA-approved lenders, streamlines pre-approval, and helps clients secure zero-down financing and no PMI options. With his experience, you'll confidently navigate every step—from eligibility to closing.
+                He works closely with <strong>VA-approved lenders</strong>, streamlines pre-approval, and helps clients secure <strong>zero-down financing</strong> and <strong>no PMI</strong> options. With his experience, you'll confidently navigate every step—from eligibility to closing.
               </p>
               <p>
-                Whether you're looking for a home near the beach, downtown Oceanside, or in family communities like Rancho Del Oro and Fire Mountain, Ruben makes sure you find a property that fits your lifestyle and long-term goals.
+                Whether you're looking for a home near the beach, downtown Oceanside, or in family communities like <strong>Rancho Del Oro</strong> and <strong>Fire Mountain</strong>, Ruben makes sure you find a property that fits your lifestyle and long-term goals.
               </p>
 
               <h3 className="text-2xl font-bold text-coastal-sage mt-8 mb-4">Investment Property Guidance in Oceanside</h3>
               <p>
-                Oceanside's mix of beachfront homes, short-term rentals, and residential neighborhoods creates strong opportunities for investors. Ruben helps clients identify profitable rental and investment properties that align with their financial objectives.
+                <strong>Oceanside’s</strong> mix of beachfront homes, short-term rentals, and residential neighborhoods creates strong opportunities for investors. Ruben helps clients identify profitable rental and investment properties that align with their financial objectives.
               </p>
               <p>
-                As both a broker and NARPM-certified property manager, Ruben provides detailed market analysis and hands-on management strategies for long-term success. He guides investors through cash flow projections, tenant placement, and portfolio expansion.
+                As both a <strong>broker</strong> and <strong>NARPM-certified property manager</strong>, Ruben provides detailed market analysis and hands-on management strategies for long-term success. He guides investors through cash flow projections, tenant placement, and portfolio expansion.
               </p>
               <p>
-                Whether acquiring vacation rentals near The Strand or duplexes close to MiraCosta College, Ruben ensures your Oceanside investments deliver consistent results and appreciation potential.
+                Whether acquiring vacation rentals near <strong>The Strand</strong> or duplexes close to <strong>MiraCosta College</strong>, Ruben ensures your Oceanside investments deliver consistent results and appreciation potential.
               </p>
 
               <div className="my-8 bg-coastal-cream/20 p-6 rounded-lg border-l-4 border-[#5F7D6D]">
@@ -165,23 +165,23 @@ export default function OceansidePage() {
 
               <h3 className="text-2xl font-bold text-coastal-sage mt-8 mb-4">Family-First Homebuying in Oceanside</h3>
               <p>
-                For families seeking the perfect balance of coastal living and community, Oceanside offers it all. Ruben helps families explore safe, welcoming neighborhoods close to quality schools, local parks, and ocean views.
+                For families seeking the perfect balance of coastal living and community, <strong>Oceanside</strong> offers it all. Ruben helps families explore safe, welcoming neighborhoods close to quality schools, local parks, and ocean views.
               </p>
               <p>
-                His family-first philosophy means each client receives personalized support—from home searches to closing day. Ruben understands the importance of finding a home that feels right both emotionally and financially. His communication, transparency, and calm approach make the process stress-free, even in a fast-moving market.
+                His <strong>family-first philosophy</strong> means each client receives personalized support—from home searches to closing day. Ruben understands the importance of finding a home that feels right both emotionally and financially. His communication, transparency, and calm approach make the process stress-free, even in a fast-moving market.
               </p>
 
               <h3 className="text-2xl font-bold text-coastal-sage mt-8 mb-4">Property Management in Oceanside, California</h3>
               <p>
-                Managing rental properties in Oceanside requires local expertise, especially with the area's short-term rental regulations and tenant laws. Ruben offers comprehensive property management services to help owners maintain their investments and maximize returns.
+                Managing rental properties in <strong>Oceanside</strong> requires local expertise, especially with the area's short-term rental regulations and tenant laws. Ruben offers <strong>comprehensive property management services</strong> to help owners maintain their investments and maximize returns.
               </p>
               <p>
-                From marketing and screening tenants to handling maintenance requests and inspections, his team manages every detail with professionalism and care. Ruben's NARPM certification ensures all properties meet California's legal and ethical standards, protecting both landlords and tenants.
+                From marketing and screening tenants to handling maintenance requests and inspections, his team manages every detail with professionalism and care. Ruben's <strong>NARPM certification</strong> ensures all properties meet California's legal and ethical standards, protecting both landlords and tenants.
               </p>
 
               <h3 className="text-2xl font-bold text-coastal-sage mt-8 mb-4">Local Expertise and Community Insight</h3>
               <p>
-                As a North County local, Ruben has a deep understanding of Oceanside's evolving market—from beachfront redevelopment to new residential growth. He helps buyers and investors make informed decisions based on neighborhood trends, market shifts, and local demand.
+                As a <strong>North County local</strong>, Ruben has a deep understanding of Oceanside's evolving market—from beachfront redevelopment to new residential growth. He helps buyers and investors make informed decisions based on neighborhood trends, market shifts, and local demand.
               </p>
               <p>
                 Ruben's focus on community and service reflects his belief that real estate is about more than transactions—it's about helping families and individuals build better lives through homeownership and smart investment.
@@ -198,7 +198,7 @@ export default function OceansidePage() {
                 <strong>For Sellers:</strong> professional marketing, accurate pricing, and seamless communication to help you achieve top value in your sale.
               </p>
               <p>
-                Recognized as a Rising Star at Team Fearless Realty, Ruben's consistent results and reputation for integrity make him one of North County's trusted real estate professionals.
+                Recognized as a <strong>Rising Star</strong> at Team Fearless Realty, Ruben's consistent results and reputation for integrity make him one of North County's trusted real estate professionals.
               </p>
             </div>
           </div>
@@ -212,15 +212,15 @@ export default function OceansidePage() {
             </h2>
             <div className="space-y-4 mb-8">
               {[
-                "Expertise in VA loans, investment properties, and property management",
-                "Background in healthcare, bringing empathy and precision to every deal",
-                "Deep knowledge of Oceanside's neighborhoods, schools, and market trends",
-                "NARPM-certified and licensed broker under the California Department of Real Estate",
-                "Commitment to helping veterans, families, and investors reach their goals"
-              ].map((point, index) => (
+                <span key="p1"><strong>Expertise</strong> in VA loans, investment properties, and property management</span>,
+                <span key="p2"><strong>Background in healthcare</strong>, bringing empathy and precision to every deal</span>,
+                <span key="p3"><strong>Deep knowledge</strong> of Oceanside's neighborhoods, schools, and market trends</span>,
+                <span key="p4"><strong>NARPM-certified</strong> and licensed broker under the California Department of Real Estate</span>,
+                <span key="p5"><strong>Commitment</strong> to helping veterans, families, and investors reach their goals</span>
+              ].map((content, index) => (
                 <div key={index} className="flex items-start space-x-4">
                   <CheckCircle className="w-6 h-6 text-coastal-teal flex-shrink-0 mt-1" />
-                  <p className="text-lg text-muted-foreground leading-relaxed">{point}</p>
+                  <p className="text-lg text-muted-foreground leading-relaxed">{content}</p>
                 </div>
               ))}
             </div>
@@ -336,7 +336,7 @@ export default function OceansidePage() {
               Whether you're buying, selling, or investing in Oceanside real estate, Ruben Banuelos is ready to help you take the next step with confidence. His proven process and local expertise make your experience seamless from start to finish.
             </p>
             <p className="text-lg text-muted-foreground">
-              Start your next chapter today—reach out to Ruben Real Estate San Diego or <Link href="/contact" className="text-coastal-teal underline">contact</Link> the team to schedule your free consultation.
+              Start your next chapter today—reach out to <strong>Ruben Real Estate San Diego</strong> or <Link href="/contact" className="text-coastal-teal underline">contact</Link> the team to schedule your free consultation.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 

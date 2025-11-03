@@ -114,10 +114,10 @@ export default function EscondidoPage() {
 
             <div className="prose prose-lg max-w-none space-y-6 text-muted-foreground leading-relaxed">
               <p>
-                At <Link href="/" className="text-coastal-teal underline">Ruben Real Estate San Diego</Link>, we're proud to serve Escondido, one of North County's most historic and diverse cities. From charming downtown neighborhoods to hillside estates, Escondido offers something for every lifestyle. Whether you're buying your first home, selling a property, or investing in local real estate, <Link href="/about" className="text-coastal-teal underline">Ruben Banuelos</Link> provides expert guidance built on integrity, care, and community knowledge.
+                At <Link href="/" className="text-coastal-teal underline"><strong>Ruben Real Estate San Diego</strong></Link>, we're proud to serve <strong>Escondido</strong>, one of North County's most historic and diverse cities. From charming downtown neighborhoods to hillside estates, Escondido offers something for every lifestyle. Whether you're buying your first home, selling a property, or investing in local real estate, <Link href="/about" className="text-coastal-teal underline"><strong>Ruben Banuelos</strong></Link> provides expert guidance built on integrity, care, and community knowledge.
               </p>
               <p>
-                With a background as a Doctor of Physical Therapy turned real estate broker, Ruben brings a calm, professional, and detail-oriented approach to every transaction—helping clients make confident and informed decisions.
+                With a background as a <strong>Doctor of Physical Therapy</strong> turned real estate broker, Ruben brings a calm, professional, and detail-oriented approach to every transaction—helping clients make confident and informed decisions.
               </p>
 
               <div className="my-8">
@@ -131,21 +131,21 @@ export default function EscondidoPage() {
 
               <h3 className="text-2xl font-bold text-coastal-sage mt-8 mb-4">VA Loan Expertise in Escondido, CA</h3>
               <p>
-                Escondido's central location makes it a great home base for military families stationed near Camp Pendleton or MCAS Miramar. Ruben specializes in helping veterans and active-duty buyers use their VA loan benefits effectively.
+                <strong>Escondido’s</strong> central location makes it a great home base for military families stationed near <strong>Camp Pendleton</strong> or <strong>MCAS Miramar</strong>. Ruben specializes in helping veterans and active-duty buyers use their <strong>VA loan</strong> benefits effectively.
               </p>
               <p>
-                He works with VA-approved lenders to streamline the process and secure zero-down financing, no PMI, and competitive rates. Ruben ensures that veterans understand every step—from eligibility and pre-approval to closing—while helping them find homes that fit their lifestyle and budget.
+                He works with <strong>VA-approved lenders</strong> to streamline the process and secure <strong>zero-down financing</strong>, <strong>no PMI</strong>, and competitive rates. Ruben ensures that veterans understand every step—from eligibility and pre-approval to closing—while helping them find homes that fit their lifestyle and budget.
               </p>
               <p>
-                From family neighborhoods near Felicita Park to modern communities in South Escondido, Ruben helps clients find the right property and ensures a smooth, stress-free buying experience.
+                From family neighborhoods near <strong>Felicita Park</strong> to modern communities in South Escondido, Ruben helps clients find the right property and ensures a smooth, stress-free buying experience.
               </p>
 
               <h3 className="text-2xl font-bold text-coastal-sage mt-8 mb-4">Investment Property Guidance in Escondido</h3>
               <p>
-                Escondido's strong rental market and diverse housing options make it a top destination for investors. Ruben helps clients identify high-performing properties with excellent potential for both cash flow and appreciation.
+                <strong>Escondido’s</strong> strong rental market and diverse housing options make it a top destination for investors. Ruben helps clients identify high-performing properties with excellent potential for both cash flow and appreciation.
               </p>
               <p>
-                As both a licensed broker and NARPM-certified property manager, he offers guidance on acquisition strategy, ROI analysis, and long-term management. Whether you're interested in multi-family units downtown or single-family rentals near San Pasqual Valley, Ruben provides the tools and insight to make confident investment decisions backed by real data and experience.
+                As both a <strong>licensed broker</strong> and <strong>NARPM-certified property manager</strong>, he offers guidance on acquisition strategy, ROI analysis, and long-term management. Whether you're interested in multi-family units downtown or single-family rentals near <strong>San Pasqual Valley</strong>, Ruben provides the tools and insight to make confident investment decisions backed by real data and experience.
               </p>
 
               <div className="my-8 bg-coastal-cream/20 p-6 rounded-lg border-l-4 border-[#5F7D6D]">
@@ -161,10 +161,10 @@ export default function EscondidoPage() {
 
               <h3 className="text-2xl font-bold text-coastal-sage mt-8 mb-4">Family-First Homebuying in Escondido</h3>
               <p>
-                Ruben's family-first approach is at the heart of every client relationship. He knows that buying a home is more than a transaction—it's about building a foundation for the future.
+                Ruben's <strong>family-first approach</strong> is at the heart of every client relationship. He knows that buying a home is more than a transaction—it's about building a foundation for the future.
               </p>
               <p>
-                Families in Escondido benefit from his neighborhood insight, from schools like Classical Academy High School to parks and local attractions such as the San Diego Zoo Safari Park. Ruben ensures every client finds a home that fits their needs, lifestyle, and long-term financial goals.
+                Families in Escondido benefit from his neighborhood insight, from schools like <strong>Classical Academy High School</strong> to parks and local attractions such as the <strong>San Diego Zoo Safari Park</strong>. Ruben ensures every client finds a home that fits their needs, lifestyle, and long-term financial goals.
               </p>
               <p>
                 His transparent communication, patience, and focus on client education help families navigate the process with confidence and peace of mind.
@@ -172,10 +172,10 @@ export default function EscondidoPage() {
 
               <h3 className="text-2xl font-bold text-coastal-sage mt-8 mb-4">Property Management Services in Escondido</h3>
               <p>
-                For property owners in Escondido, Ruben Real Estate San Diego offers complete property management services designed to protect and grow your investment.
+                For property owners in <strong>Escondido</strong>, <strong>Ruben Real Estate San Diego</strong> offers complete property management services designed to protect and grow your investment.
               </p>
               <p>
-                From marketing and tenant placement to rent collection and maintenance coordination, his team handles every detail with professionalism and care. With Ruben's NARPM membership, property owners can trust that management practices meet the highest ethical and operational standards.
+                From marketing and tenant placement to rent collection and maintenance coordination, his team handles every detail with professionalism and care. With Ruben's <strong>NARPM membership</strong>, property owners can trust that management practices meet the highest ethical and operational standards.
               </p>
               <p>
                 Whether managing a single-family home or a multi-unit property, Ruben's proactive approach helps ensure steady income and long-term tenant satisfaction.
@@ -183,7 +183,7 @@ export default function EscondidoPage() {
 
               <h3 className="text-2xl font-bold text-coastal-sage mt-8 mb-4">Local Expertise and Community Insight</h3>
               <p>
-                As a North County native, Ruben understands Escondido's unique mix of historic neighborhoods, new developments, and rural communities. He stays up to date on local zoning updates, housing trends, and new construction projects—giving clients the knowledge to buy, sell, or invest strategically.
+                As a <strong>North County native</strong>, Ruben understands Escondido's unique mix of historic neighborhoods, new developments, and rural communities. He stays up to date on local zoning updates, housing trends, and new construction projects—giving clients the knowledge to buy, sell, or invest strategically.
               </p>
               <p>
                 Ruben's community-driven approach reflects his belief that real estate should serve families and strengthen neighborhoods. His goal is to help each client build stability and wealth through property ownership in Escondido's evolving market.
@@ -200,7 +200,7 @@ export default function EscondidoPage() {
                 <strong>For Sellers:</strong> professional photography, strategic pricing, and marketing campaigns that drive maximum exposure and top value.
               </p>
               <p>
-                As a Rising Star Award recipient at Team Fearless Realty, Ruben's record of results and client satisfaction has made him one of the most trusted names in North County real estate.
+                As a <strong>Rising Star Award</strong> recipient at Team Fearless Realty, Ruben's record of results and client satisfaction has made him one of the most trusted names in North County real estate.
               </p>
             </div>
           </div>
@@ -214,15 +214,15 @@ export default function EscondidoPage() {
             </h2>
             <div className="space-y-4 mb-8">
               {[
-                "Specializes in VA loans, investment properties, and property management",
-                "Dual background in healthcare and real estate for empathy and precision",
-                "Deep understanding of Escondido's neighborhoods and market trends",
-                "Certified member of NARPM and licensed California broker",
-                "Commitment to serving families, veterans, and investors with care and integrity"
-              ].map((point, index) => (
+                <span key="p1"><strong>Specializes</strong> in VA loans, investment properties, and property management</span>,
+                <span key="p2"><strong>Dual background</strong> in healthcare and real estate for empathy and precision</span>,
+                <span key="p3"><strong>Deep understanding</strong> of Escondido's neighborhoods and market trends</span>,
+                <span key="p4"><strong>Certified member</strong> of NARPM and licensed California broker</span>,
+                <span key="p5"><strong>Commitment</strong> to serving families, veterans, and investors with care and integrity</span>
+              ].map((content, index) => (
                 <div key={index} className="flex items-start space-x-4">
                   <CheckCircle className="w-6 h-6 text-coastal-teal flex-shrink-0 mt-1" />
-                  <p className="text-lg text-muted-foreground leading-relaxed">{point}</p>
+                  <p className="text-lg text-muted-foreground leading-relaxed">{content}</p>
                 </div>
               ))}
             </div>
@@ -339,7 +339,7 @@ export default function EscondidoPage() {
               If you're looking to buy, sell, or invest in Escondido, Ruben Banuelos is ready to help you make your next move with confidence. His local expertise and client-first approach make the process seamless from start to finish.
             </p>
             <p className="text-lg text-muted-foreground">
-              Start today by reaching out to Ruben Real Estate San Diego or simply <Link href="/contact" className="text-coastal-teal underline">contact</Link> the team to schedule your free consultation.
+              Start today by reaching out to <strong>Ruben Real Estate San Diego</strong> or simply <Link href="/contact" className="text-coastal-teal underline">contact</Link> the team to schedule your free consultation.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
