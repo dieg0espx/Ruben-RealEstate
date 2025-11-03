@@ -1,4 +1,10 @@
 "use client"
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Proven Results | Ruben Real Estate North County San Diego',
+  description: 'See success stories and past property results from Ruben Real Estate. Explore our North County gallery and client accomplishments.',
+}
 import PageNavbar from "@/components/sections/PageNavbar"
 import Footer from "@/components/sections/Footer"
 import TestimonialsSection from "@/components/sections/TestimonialsSection"
