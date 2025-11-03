@@ -233,7 +233,7 @@ export default function HomePage() {
             {/* Fallback image if video doesn't load */}
             <img
               src="/images/56-web-or-mls-Riviera (55 of 55).JPG"
-              alt="San Diego Real Estate"
+              alt="San Diego North County real estate homes for sale | Ruben Banuelos realtor"
               className="absolute inset-0 w-full h-full object-cover"
             />
           </video>
@@ -494,7 +494,7 @@ export default function HomePage() {
               <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
                 <img 
                   src="/Fearless Headshot.jpg" 
-                  alt="Ruben Banuelos - Real Estate Professional"
+                  alt="Ruben Banuelos - San Diego real estate agent helping veterans, investors, and families"
                   className="w-full h-full object-cover"
                   style={{ objectPosition: 'center 38%' }}
                 />

@@ -1,6 +1,7 @@
 "use client"
 import PageNavbar from "@/components/sections/PageNavbar"
 import Footer from "@/components/sections/Footer"
+import Breadcrumbs from "@/components/sections/Breadcrumbs"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
@@ -146,9 +147,15 @@ export default function ContactPage() {
 
   const officeHours = pageT.officeHours.schedule
 
+  const breadcrumbItems = [
+    { name: 'Home', url: 'https://rubenrealestate.com' },
+    { name: 'Contact', url: 'https://rubenrealestate.com/contact' }
+  ]
+
   return (
     <>
       <PageNavbar />
+      <Breadcrumbs items={breadcrumbItems} />
       <main className="flex-1 bg-background">
         {/* Hero Section */}
       <section 
