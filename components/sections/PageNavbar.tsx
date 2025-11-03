@@ -14,7 +14,7 @@ export default function PageNavbar() {
   const pathname = usePathname()
 
   const navItems = [
-    { href: '/home', label: t('nav.home') },
+    { href: '/', label: t('nav.home') },
     { href: '/about', label: t('nav.about') },
     { href: '/services', label: t('nav.services') },
     { href: '/service-areas', label: language === 'en' ? 'Service Areas' : 'Áreas de Servicio' },
@@ -23,21 +23,21 @@ export default function PageNavbar() {
   ]
 
   const isActive = (href: string) => {
-    if (href === '/home') {
-      return pathname === '/' || pathname === '/home'
+    if (href === '/') {
+      return pathname === '/'
     }
     return pathname === href
   }
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-[100] w-full border-b border-border/40 bg-white/95 backdrop-blur-md supports-[backdrop-filter]:bg-white/95">
+    <header className="fixed top-0 left-0 right-0 z-[1000] w-full border-b border-border/40 bg-white/95 backdrop-blur-md supports-[backdrop-filter]:bg-white/95">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-1 sm:py-2">
         <nav className="flex items-center justify-between w-full">
           {/* Desktop Navigation - Full Width Distribution */}
           <div className="hidden lg:flex items-center justify-between w-full">
             {/* Logo */}
             <div className="flex items-center space-x-2 sm:space-x-3">
-              <Link href="/home" className="focus:outline-none">
+              <Link href="/" className="focus:outline-none">
                 <Image
                   src="/logo/ruben real estate_Horizontal.png"
                   alt="Ruben Real Estate Logo"
@@ -94,7 +94,7 @@ export default function PageNavbar() {
           <div className="lg:hidden flex items-center justify-between w-full">
             {/* Logo */}
             <div className="flex items-center space-x-2 sm:space-x-3">
-              <Link href="/home" className="focus:outline-none">
+              <Link href="/" className="focus:outline-none">
                 <Image
                   src="/logo/ruben real estate_Horizontal.png"
                   alt="Ruben Real Estate Logo"

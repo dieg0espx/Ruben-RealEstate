@@ -28,6 +28,8 @@ export default function useLanguageStore() {
 
   const translations = {
     en: {
+      'common.learn_more': 'Learn More',
+      'service_areas.view_all': 'View All Service Areas',
       'nav.home': 'Home',
       'nav.about': 'About',
       'nav.services': 'Services',
@@ -193,6 +195,8 @@ export default function useLanguageStore() {
       'legal.terms.contact.body': 'For questions about these Terms, contact us at ruben.o.banuelos@gmail.com or (541) 602-1026.',
     },
     es: {
+      'common.learn_more': 'Saber Más',
+      'service_areas.view_all': 'Ver Todas las Áreas de Servicio',
       'nav.home': 'Inicio',
       'nav.about': 'Acerca de',
       'nav.services': 'Servicios',

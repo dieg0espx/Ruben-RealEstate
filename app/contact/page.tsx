@@ -1,5 +1,4 @@
 "use client"
-
 import PageNavbar from "@/components/sections/PageNavbar"
 import Footer from "@/components/sections/Footer"
 import { Badge } from "@/components/ui/badge"
@@ -167,12 +166,22 @@ export default function ContactPage() {
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
           <div className="text-center space-y-8">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white font-lexend drop-shadow-lg">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white font-lexend leading-tight">
               {pageT.hero.title}
             </h1>
             <p className="text-xl sm:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed drop-shadow-md">
               {pageT.hero.subtitle}
             </p>
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4">
+              <Button size="lg" variant="green" className="text-sm sm:text-base lg:text-lg px-6 sm:px-8 py-3 sm:py-4" onClick={() => window.open('tel:+15416021026', '_self')}>
+                <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+                Call Now
+              </Button>
+              <Button size="lg" variant="whiteOnDark" className="text-sm sm:text-base lg:text-lg px-6 sm:px-8 py-3 sm:py-4" onClick={() => { const el = document.getElementById('consultation-form'); if (el) { const offset = 80; const top = el.getBoundingClientRect().top + window.scrollY - offset; window.scrollTo({ top, behavior: 'smooth' }); } else { window.location.href = '/contact#consultation-form'; } }}>
+                <Calendar className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+                Schedule Consultation
+              </Button>
+            </div>
           </div>
         </div>
       </section>
