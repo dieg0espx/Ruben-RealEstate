@@ -99,7 +99,7 @@ export default function CarlsbadPage() {
         <section className="py-16 sm:py-20 lg:py-24 bg-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-coastal-sage font-lexend mb-8">
-              {language === 'en' ? 'Helping Families, Veterans, and Investors in Carlsbad' : 'Apoyando a Familias, Veteranos e Inversionistas en Carlsbad'}
+              {language === 'en' ? 'Helping Families and Investors Build Their Future in Carlsbad' : 'Ayudando a Familias e Inversionistas a Construir su Futuro en Carlsbad'}
             </h2>
             
             {/* Featured Image */}
@@ -114,7 +114,7 @@ export default function CarlsbadPage() {
 
             <div className="prose prose-lg max-w-none space-y-6 text-muted-foreground leading-relaxed">
               <p>
-                At Ruben Real Estate San Diego, we proudly serve Carlsbad, one of North County's most desirable coastal cities. Known for its beaches, top-rated schools, and vibrant neighborhoods, Carlsbad offers an ideal mix of lifestyle and investment opportunity. Whether you're buying, selling, or investing, Ruben Banuelos provides expert guidance rooted in integrity, precision, and personal care.
+                At <Link href="/" className="text-coastal-teal underline">Ruben Real Estate San Diego</Link>, we proudly serve Carlsbad, one of North County's most desirable coastal cities. Known for its beaches, top-rated schools, and vibrant neighborhoods, Carlsbad offers an ideal mix of lifestyle and investment opportunity. Whether you're buying, selling, or investing, <Link href="/about" className="text-coastal-teal underline">Ruben Banuelos</Link> provides expert guidance rooted in integrity, precision, and personal care.
               </p>
               <p>
                 With a background as a Doctor of Physical Therapy turned licensed broker, Ruben applies the same attention to detail and communication skills that defined his medical career—ensuring every client feels informed and supported throughout the process.
@@ -172,7 +172,7 @@ export default function CarlsbadPage() {
                 From tenant placement and rent collection to repairs and compliance, Ruben's team handles all aspects of ownership with professionalism and transparency. His NARPM certification ensures every property meets high operational and ethical standards while maximizing owner returns and maintaining property value.
               </p>
 
-              <h3 className="text-2xl font-bold text-coastal-sage mt-8 mb-4">Local Carlsbad Expertise and Community Insight</h3>
+              <h3 className="text-2xl font-bold text-coastal-sage mt-8 mb-4">Local Expertise and Community Insight</h3>
               <p>
                 As a North County local, Ruben understands the unique dynamics that make Carlsbad one of Southern California's most sought-after markets. He tracks local developments, school district trends, and neighborhood values to help clients make informed decisions.
               </p>
@@ -201,7 +201,7 @@ export default function CarlsbadPage() {
         <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-coastal-cream/30 to-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6">
             <h2 className="text-3xl sm:text-4xl font-bold text-coastal-sage font-lexend mb-8 text-center">
-              Why Work With Ruben Real Estate San Diego in Carlsbad
+              Why Work With Ruben Real Estate San Diego
             </h2>
             <div className="space-y-4 mb-8">
               {[
@@ -330,7 +330,7 @@ export default function CarlsbadPage() {
               If you're planning to buy, sell, or invest in Carlsbad, Ruben Banuelos is ready to help you achieve your real estate goals. His disciplined, client-first approach and local expertise ensure a smooth and rewarding experience.
             </p>
             <p className="text-lg text-muted-foreground">
-              Reach out to Ruben Real Estate San Diego today or contact the team to schedule your free consultation.
+              Reach out to Ruben Real Estate San Diego today or <Link href="/contact" className="text-coastal-teal underline">contact</Link> the team to schedule your free consultation.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 

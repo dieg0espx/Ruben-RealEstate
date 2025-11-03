@@ -99,7 +99,7 @@ export default function EscondidoPage() {
         <section className="py-16 sm:py-20 lg:py-24 bg-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-coastal-sage font-lexend mb-8">
-              {language === 'en' ? 'Helping Families, Veterans, and Investors in Escondido' : 'Apoyando a Familias, Veteranos e Inversionistas en Escondido'}
+              {language === 'en' ? 'Helping Families and Investors Build Their Future in Escondido' : 'Ayudando a Familias e Inversionistas a Construir su Futuro en Escondido'}
             </h2>
             
             {/* Featured Image */}
@@ -114,7 +114,7 @@ export default function EscondidoPage() {
 
             <div className="prose prose-lg max-w-none space-y-6 text-muted-foreground leading-relaxed">
               <p>
-                At Ruben Real Estate San Diego, we're proud to serve Escondido, one of North County's most historic and diverse cities. From charming downtown neighborhoods to hillside estates, Escondido offers something for every lifestyle. Whether you're buying your first home, selling a property, or investing in local real estate, Ruben Banuelos provides expert guidance built on integrity, care, and community knowledge.
+                At <Link href="/" className="text-coastal-teal underline">Ruben Real Estate San Diego</Link>, we're proud to serve Escondido, one of North County's most historic and diverse cities. From charming downtown neighborhoods to hillside estates, Escondido offers something for every lifestyle. Whether you're buying your first home, selling a property, or investing in local real estate, <Link href="/about" className="text-coastal-teal underline">Ruben Banuelos</Link> provides expert guidance built on integrity, care, and community knowledge.
               </p>
               <p>
                 With a background as a Doctor of Physical Therapy turned real estate broker, Ruben brings a calm, professional, and detail-oriented approach to every transaction—helping clients make confident and informed decisions.
@@ -181,7 +181,7 @@ export default function EscondidoPage() {
                 Whether managing a single-family home or a multi-unit property, Ruben's proactive approach helps ensure steady income and long-term tenant satisfaction.
               </p>
 
-              <h3 className="text-2xl font-bold text-coastal-sage mt-8 mb-4">Local Escondido Expertise and Community Insight</h3>
+              <h3 className="text-2xl font-bold text-coastal-sage mt-8 mb-4">Local Expertise and Community Insight</h3>
               <p>
                 As a North County native, Ruben understands Escondido's unique mix of historic neighborhoods, new developments, and rural communities. He stays up to date on local zoning updates, housing trends, and new construction projects—giving clients the knowledge to buy, sell, or invest strategically.
               </p>
@@ -210,7 +210,7 @@ export default function EscondidoPage() {
         <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-coastal-cream/30 to-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6">
             <h2 className="text-3xl sm:text-4xl font-bold text-coastal-sage font-lexend mb-8 text-center">
-              Why Work With Ruben Real Estate San Diego in Escondido
+              Why Work With Ruben Real Estate San Diego
             </h2>
             <div className="space-y-4 mb-8">
               {[
@@ -339,7 +339,7 @@ export default function EscondidoPage() {
               If you're looking to buy, sell, or invest in Escondido, Ruben Banuelos is ready to help you make your next move with confidence. His local expertise and client-first approach make the process seamless from start to finish.
             </p>
             <p className="text-lg text-muted-foreground">
-              Start today by reaching out to Ruben Real Estate San Diego or simply contact the team to schedule your free consultation.
+              Start today by reaching out to Ruben Real Estate San Diego or simply <Link href="/contact" className="text-coastal-teal underline">contact</Link> the team to schedule your free consultation.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 

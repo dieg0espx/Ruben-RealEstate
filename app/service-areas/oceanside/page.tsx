@@ -99,7 +99,7 @@ export default function OceansidePage() {
         <section className="py-16 sm:py-20 lg:py-24 bg-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-coastal-sage font-lexend mb-8">
-              {language === 'en' ? 'Helping Families, Veterans, and Investors in Oceanside' : 'Apoyando a Familias, Veteranos e Inversionistas en Oceanside'}
+              {language === 'en' ? 'Helping Families and Investors Build Their Future in Oceanside' : 'Ayudando a Familias e Inversionistas a Construir su Futuro en Oceanside'}
             </h2>
             
             {/* Featured Image */}
@@ -114,7 +114,7 @@ export default function OceansidePage() {
 
             <div className="prose prose-lg max-w-none space-y-6 text-muted-foreground leading-relaxed">
               <p>
-                At Ruben Real Estate San Diego, we're proud to serve Oceanside, a vibrant coastal city with a strong military community, thriving rental market, and growing family neighborhoods. Whether you're buying your first home, investing in property, or selling in today's competitive market, Ruben Banuelos provides expert guidance built on trust, empathy, and local experience.
+                At <Link href="/" className="text-coastal-teal underline">Ruben Real Estate San Diego</Link>, we're proud to serve Oceanside, a vibrant coastal city with a strong military community, thriving rental market, and growing family neighborhoods. Whether you're buying your first home, investing in property, or selling in today's competitive market, <Link href="/about" className="text-coastal-teal underline">Ruben Banuelos</Link> provides expert guidance built on trust, empathy, and local experience.
               </p>
               <p>
                 As a former Doctor of Physical Therapy turned licensed real estate broker, Ruben combines healthcare discipline with real estate expertise—ensuring every decision is handled with precision and care.
@@ -179,7 +179,7 @@ export default function OceansidePage() {
                 From marketing and screening tenants to handling maintenance requests and inspections, his team manages every detail with professionalism and care. Ruben's NARPM certification ensures all properties meet California's legal and ethical standards, protecting both landlords and tenants.
               </p>
 
-              <h3 className="text-2xl font-bold text-coastal-sage mt-8 mb-4">Local Oceanside Expertise and Community Insight</h3>
+              <h3 className="text-2xl font-bold text-coastal-sage mt-8 mb-4">Local Expertise and Community Insight</h3>
               <p>
                 As a North County local, Ruben has a deep understanding of Oceanside's evolving market—from beachfront redevelopment to new residential growth. He helps buyers and investors make informed decisions based on neighborhood trends, market shifts, and local demand.
               </p>
@@ -208,7 +208,7 @@ export default function OceansidePage() {
         <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-coastal-cream/30 to-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6">
             <h2 className="text-3xl sm:text-4xl font-bold text-coastal-sage font-lexend mb-8 text-center">
-              Why Work With Ruben Real Estate San Diego in Oceanside
+              Why Work With Ruben Real Estate San Diego
             </h2>
             <div className="space-y-4 mb-8">
               {[
@@ -336,7 +336,7 @@ export default function OceansidePage() {
               Whether you're buying, selling, or investing in Oceanside real estate, Ruben Banuelos is ready to help you take the next step with confidence. His proven process and local expertise make your experience seamless from start to finish.
             </p>
             <p className="text-lg text-muted-foreground">
-              Start your next chapter today—reach out to Ruben Real Estate San Diego or contact the team to schedule your free consultation.
+              Start your next chapter today—reach out to Ruben Real Estate San Diego or <Link href="/contact" className="text-coastal-teal underline">contact</Link> the team to schedule your free consultation.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 

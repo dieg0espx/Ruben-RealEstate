@@ -99,7 +99,7 @@ export default function VistaPage() {
         <section className="py-16 sm:py-20 lg:py-24 bg-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-coastal-sage font-lexend mb-8">
-              {language === 'en' ? 'Helping Families, Veterans, and Investors in Vista' : 'Apoyando a Familias, Veteranos e Inversionistas en Vista'}
+              {language === 'en' ? 'Helping Families and Investors Build Their Future in Vista' : 'Ayudando a Familias e Inversionistas a Construir su Futuro en Vista'}
             </h2>
             
             {/* Featured Image */}
@@ -114,7 +114,7 @@ export default function VistaPage() {
 
             <div className="prose prose-lg max-w-none space-y-6 text-muted-foreground leading-relaxed">
               <p>
-                At Ruben Real Estate San Diego, we proudly serve Vista, a growing North County community known for its family neighborhoods, thriving downtown, and strong rental market. Whether you're buying your first home, investing in property, or selling, Ruben Banuelos offers expert guidance built on trust, care, and deep local knowledge.
+                At <Link href="/" className="text-coastal-teal underline">Ruben Real Estate San Diego</Link>, we proudly serve Vista, a growing North County community known for its family neighborhoods, thriving downtown, and strong rental market. Whether you're buying your first home, investing in property, or selling, <Link href="/about" className="text-coastal-teal underline">Ruben Banuelos</Link> offers expert guidance built on trust, care, and deep local knowledge.
               </p>
               <p>
                 With a background as a Doctor of Physical Therapy turned real estate broker, Ruben combines empathy and precision—helping every client make smart, confident real estate decisions.
@@ -172,7 +172,7 @@ export default function VistaPage() {
                 His team handles marketing, tenant placement, maintenance, rent collection, and inspections—so clients can enjoy passive income without the daily stress. As a NARPM member, Ruben upholds strict professional and ethical standards, ensuring every property is well-maintained and compliant with California regulations.
               </p>
 
-              <h3 className="text-2xl font-bold text-coastal-sage mt-8 mb-4">Local Vista Expertise and Community Insight</h3>
+              <h3 className="text-2xl font-bold text-coastal-sage mt-8 mb-4">Local Expertise and Community Insight</h3>
               <p>
                 As a North County local, Ruben understands Vista's evolving real estate landscape. From the revitalized Downtown Vista Village to newer developments near Shadowridge, he offers clients up-to-date insight on property values, neighborhood trends, and community growth.
               </p>
@@ -201,7 +201,7 @@ export default function VistaPage() {
         <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-coastal-cream/30 to-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6">
             <h2 className="text-3xl sm:text-4xl font-bold text-coastal-sage font-lexend mb-8 text-center">
-              Why Work With Ruben Real Estate San Diego in Vista
+              Why Work With Ruben Real Estate San Diego
             </h2>
             <div className="space-y-4 mb-8">
               {[
@@ -330,7 +330,7 @@ export default function VistaPage() {
               If you're buying, selling, or investing in Vista, Ruben Banuelos is ready to help you make the right move. His experience, professionalism, and community focus ensure a smooth and rewarding real estate journey.
             </p>
             <p className="text-lg text-muted-foreground">
-              Reach out to Ruben Real Estate San Diego or simply contact the team today to schedule your free consultation.
+              Reach out to Ruben Real Estate San Diego or simply <Link href="/contact" className="text-coastal-teal underline">contact</Link> the team today to schedule your free consultation.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
