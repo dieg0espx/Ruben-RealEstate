@@ -10,73 +10,73 @@ const portfolioItems = [
   {
     id: 1,
     src: "/images/2-web-or-mls-Encenitas blvd (1 of 28).JPG",
-    caption: "ADU Project – Vista",
+    caption: "ADU Project Vista California | Accessory Dwelling Unit construction",
     category: "ADU"
   },
   {
     id: 2,
     src: "/images/5-web-or-mls-Encenitas blvd (4 of 28).JPG",
-    caption: "Investment Property – San Marcos",
+    caption: "Investment Property San Marcos California | Real estate investment opportunity",
     category: "Investment"
   },
   {
     id: 3,
     src: "/images/4-web-or-mls-Encenitas blvd (3 of 28).JPG",
-    caption: "Luxury Home – Carlsbad",
+    caption: "Luxury Home Carlsbad California | Coastal luxury real estate property",
     category: "Luxury"
   },
   {
     id: 4,
     src: "/images/4-web-or-mls-royal (24 of 47).JPG",
-    caption: "Family Home – Oceanside",
+    caption: "Family Home Oceanside California | Beach community residential property",
     category: "Residential"
   },
   {
     id: 5,
     src: "/images/38-web-or-mls-Venice (36 of 53).JPG",
-    caption: "ADU Conversion – Escondido",
+    caption: "ADU Conversion Escondido California | Property ADU development",
     category: "ADU"
   },
   {
     id: 6,
     src: "/images/42-web-or-mls-Venice (40 of 53).JPG",
-    caption: "Investment Duplex – Vista",
+    caption: "Investment Duplex Vista California | Income property for sale",
     category: "Investment"
   },
   {
     id: 7,
     src: "/images/5-web-or-mls-royal (25 of 47).JPG",
-    caption: "Custom Build – San Marcos",
+    caption: "Custom Build San Marcos California | New construction home",
     category: "Residential"
   },
   {
     id: 8,
     src: "/images/2-web-or-mls-Venice (46 of 53).JPG",
-    caption: "Multi-Family – Carlsbad",
+    caption: "Multi-Family Property Carlsbad California | Investment real estate",
     category: "Investment"
   },
   {
     id: 9,
     src: "/images/58-web-or-mls-Riviera_drone (4 of 12).JPG",
-    caption: "ADU Addition – Oceanside",
+    caption: "ADU Addition Oceanside California | Property expansion project",
     category: "ADU"
   },
   {
     id: 10,
     src: "/images/52-web-or-mls-Riviera (51 of 55).JPG",
-    caption: "Rental Property – Escondido",
+    caption: "Rental Property Escondido California | Investment income property",
     category: "Investment"
   },
   {
     id: 11,
     src: "/images/56-web-or-mls-Riviera (55 of 55).JPG",
-    caption: "Family Residence – Vista",
+    caption: "Family Residence Vista California | North County San Diego home",
     category: "Residential"
   },
   {
     id: 12,
     src: "/images/1-web-or-mls-Venice (20 of 53).JPG",
-    caption: "Luxury Living – San Marcos",
+    caption: "Luxury Living San Marcos California | Premium real estate property",
     category: "Luxury"
   }
 ]

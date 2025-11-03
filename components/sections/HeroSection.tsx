@@ -38,7 +38,7 @@ export default function HeroSection() {
           {/* Fallback image if video doesn't load */}
           <Image
             src="/images/56-web-or-mls-Riviera (55 of 55).JPG"
-            alt="San Diego Real Estate"
+            alt="San Diego North County real estate homes for sale | Ruben Banuelos realtor"
             fill
             className="object-cover"
             priority

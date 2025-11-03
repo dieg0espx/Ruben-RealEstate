@@ -2,6 +2,7 @@
 
 import PageNavbar from "@/components/sections/PageNavbar"
 import Footer from "@/components/sections/Footer"
+import Breadcrumbs from "@/components/sections/Breadcrumbs"
 import TimelineSection from "@/components/sections/TimelineSection"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
@@ -73,9 +74,15 @@ export default function AboutPage() {
 
   const values = pageT.values.valuesList
 
+  const breadcrumbItems = [
+    { name: 'Home', url: 'https://rubenrealestate.com' },
+    { name: 'About', url: 'https://rubenrealestate.com/about' }
+  ]
+
   return (
     <>
       <PageNavbar />
+      <Breadcrumbs items={breadcrumbItems} />
       <main className="flex-1 bg-background">
         {/* Hero Section */}
       <section className="hero-section relative py-32 sm:py-40 md:py-48 lg:py-56 xl:py-64 overflow-hidden -mt-20 pt-64 sm:pt-80 md:pt-88 lg:pt-96 xl:pt-104">
