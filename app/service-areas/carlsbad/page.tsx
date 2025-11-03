@@ -114,10 +114,10 @@ export default function CarlsbadPage() {
 
             <div className="prose prose-lg max-w-none space-y-6 text-muted-foreground leading-relaxed">
               <p>
-                At <Link href="/" className="text-coastal-teal underline">Ruben Real Estate San Diego</Link>, we proudly serve Carlsbad, one of North County's most desirable coastal cities. Known for its beaches, top-rated schools, and vibrant neighborhoods, Carlsbad offers an ideal mix of lifestyle and investment opportunity. Whether you're buying, selling, or investing, <Link href="/about" className="text-coastal-teal underline">Ruben Banuelos</Link> provides expert guidance rooted in integrity, precision, and personal care.
+                At <Link href="/" className="text-coastal-teal underline"><strong>Ruben Real Estate San Diego</strong></Link>, we proudly serve <strong>Carlsbad</strong>, one of North County's most desirable coastal cities. Known for its beaches, top-rated schools, and vibrant neighborhoods, Carlsbad offers an ideal mix of lifestyle and investment opportunity. Whether you're buying, selling, or investing, <Link href="/about" className="text-coastal-teal underline"><strong>Ruben Banuelos</strong></Link> provides expert guidance rooted in integrity, precision, and personal care.
               </p>
               <p>
-                With a background as a Doctor of Physical Therapy turned licensed broker, Ruben applies the same attention to detail and communication skills that defined his medical career—ensuring every client feels informed and supported throughout the process.
+                With a background as a <strong>Doctor of Physical Therapy</strong> turned licensed broker, Ruben applies the same attention to detail and communication skills that defined his medical career—ensuring every client feels informed and supported throughout the process.
               </p>
 
               <div className="my-8">
@@ -131,18 +131,18 @@ export default function CarlsbadPage() {
 
               <h3 className="text-2xl font-bold text-coastal-sage mt-8 mb-4">VA Loan Expertise in Carlsbad, CA</h3>
               <p>
-                Carlsbad is home to many veterans and military families seeking stability and homeownership near Camp Pendleton and the coast. Ruben specializes in VA loan assistance, helping service members leverage their benefits with ease and confidence.
+                <strong>Carlsbad</strong> is home to many veterans and military families seeking stability and homeownership near <strong>Camp Pendleton</strong> and the coast. Ruben specializes in <strong>VA loan assistance</strong>, helping service members leverage their benefits with ease and confidence.
               </p>
               <p>
-                He works closely with trusted VA-approved lenders to streamline pre-approvals, secure zero-down financing, and eliminate PMI. With insight into neighborhoods like La Costa, Calavera Hills, and Bressi Ranch, Ruben helps veterans find homes that fit their lifestyle and budget while ensuring a stress-free transaction from start to finish.
+                He works closely with trusted <strong>VA-approved lenders</strong> to streamline pre-approvals, secure <strong>zero-down financing</strong>, and eliminate <strong>PMI</strong>. With insight into neighborhoods like <strong>La Costa</strong>, <strong>Calavera Hills</strong>, and <strong>Bressi Ranch</strong>, Ruben helps veterans find homes that fit their lifestyle and budget while ensuring a stress-free transaction from start to finish.
               </p>
 
               <h3 className="text-2xl font-bold text-coastal-sage mt-8 mb-4">Investment Property Guidance in Carlsbad</h3>
               <p>
-                As one of North County's strongest real estate markets, Carlsbad offers excellent opportunities for both long-term and short-term investors. Ruben provides clients with clear strategies to identify high-value properties, forecast returns, and manage rentals efficiently.
+                As one of North County's strongest real estate markets, <strong>Carlsbad</strong> offers excellent opportunities for both long-term and short-term investors. Ruben provides clients with clear strategies to identify high-value properties, forecast returns, and manage rentals efficiently.
               </p>
               <p>
-                As a NARPM-certified property manager, he guides investors through acquisition, tenant management, and ongoing maintenance. Whether it's a luxury condo near the beach or a family rental in Aviara, Ruben's data-driven approach helps clients make profitable and sustainable investments.
+                As a <strong>NARPM-certified property manager</strong>, he guides investors through acquisition, tenant management, and ongoing maintenance. Whether it's a luxury condo near the beach or a family rental in <strong>Aviara</strong>, Ruben's data-driven approach helps clients make profitable and sustainable investments.
               </p>
 
               <div className="my-8 bg-coastal-cream/20 p-6 rounded-lg border-l-4 border-[#5F7D6D]">
@@ -158,7 +158,7 @@ export default function CarlsbadPage() {
 
               <h3 className="text-2xl font-bold text-coastal-sage mt-8 mb-4">Family-First Homebuying in Carlsbad</h3>
               <p>
-                For families, Carlsbad offers a perfect blend of community and convenience—great schools, safe neighborhoods, and easy access to parks, beaches, and dining. Ruben's family-first philosophy ensures every client finds a home that fits both their lifestyle and long-term financial goals.
+                For families, <strong>Carlsbad</strong> offers a perfect blend of community and convenience—great schools, safe neighborhoods, and easy access to parks, beaches, and dining. Ruben's <strong>family-first philosophy</strong> ensures every client finds a home that fits both their lifestyle and long-term financial goals.
               </p>
               <p>
                 He takes the time to understand each family's priorities, provides honest advice, and keeps communication clear from offer to closing. With Ruben, families can navigate the competitive Carlsbad market confidently and efficiently.
@@ -166,18 +166,18 @@ export default function CarlsbadPage() {
 
               <h3 className="text-2xl font-bold text-coastal-sage mt-8 mb-4">Property Management in Carlsbad, California</h3>
               <p>
-                Owning rental property in Carlsbad can be highly rewarding—but it requires the right management. Ruben Real Estate San Diego offers full-service property management tailored to the coastal market.
+                Owning rental property in <strong>Carlsbad</strong> can be highly rewarding—but it requires the right management. <strong>Ruben Real Estate San Diego</strong> offers full-service property management tailored to the coastal market.
               </p>
               <p>
-                From tenant placement and rent collection to repairs and compliance, Ruben's team handles all aspects of ownership with professionalism and transparency. His NARPM certification ensures every property meets high operational and ethical standards while maximizing owner returns and maintaining property value.
+                From tenant placement and rent collection to repairs and compliance, Ruben's team handles all aspects of ownership with professionalism and transparency. His <strong>NARPM certification</strong> ensures every property meets high operational and ethical standards while maximizing owner returns and maintaining property value.
               </p>
 
               <h3 className="text-2xl font-bold text-coastal-sage mt-8 mb-4">Local Expertise and Community Insight</h3>
               <p>
-                As a North County local, Ruben understands the unique dynamics that make Carlsbad one of Southern California's most sought-after markets. He tracks local developments, school district trends, and neighborhood values to help clients make informed decisions.
+                As a <strong>North County local</strong>, Ruben understands the unique dynamics that make Carlsbad one of Southern California's most sought-after markets. He tracks local developments, school district trends, and neighborhood values to help clients make informed decisions.
               </p>
               <p>
-                Whether buying near Carlsbad Village, investing in La Costa Greens, or selling in Rancho Carrillo, Ruben's community insight ensures clients have every advantage in this competitive market.
+                Whether buying near <strong>Carlsbad Village</strong>, investing in <strong>La Costa Greens</strong>, or selling in <strong>Rancho Carrillo</strong>, Ruben's community insight ensures clients have every advantage in this competitive market.
               </p>
 
               <h3 className="text-2xl font-bold text-coastal-sage mt-8 mb-4">Buying and Selling Homes in Carlsbad</h3>
@@ -191,7 +191,7 @@ export default function CarlsbadPage() {
                 <strong>For Sellers:</strong> strategic pricing, professional marketing, and organized communication for a smooth, successful closing.
               </p>
               <p>
-                As a Rising Star Award recipient at Team Fearless Realty, Ruben has built a reputation for results and trust among clients across North County.
+                As a <strong>Rising Star Award</strong> recipient at Team Fearless Realty, Ruben has built a reputation for results and trust among clients across North County.
               </p>
             </div>
           </div>
@@ -205,15 +205,15 @@ export default function CarlsbadPage() {
             </h2>
             <div className="space-y-4 mb-8">
               {[
-                "Expertise in VA loans, investment properties, and property management",
-                "Healthcare and real estate background providing empathy and precision",
-                "Deep understanding of Carlsbad's coastal communities and market trends",
-                "NARPM-certified and licensed California broker",
-                "Dedicated to serving families, veterans, and investors with professionalism and care"
-              ].map((point, index) => (
+                <span key="p1"><strong>Expertise</strong> in VA loans, investment properties, and property management</span>,
+                <span key="p2"><strong>Healthcare and real estate background</strong> providing empathy and precision</span>,
+                <span key="p3"><strong>Deep understanding</strong> of Carlsbad's coastal communities and market trends</span>,
+                <span key="p4"><strong>NARPM-certified</strong> and licensed California broker</span>,
+                <span key="p5"><strong>Dedicated</strong> to serving families, veterans, and investors with professionalism and care</span>
+              ].map((content, index) => (
                 <div key={index} className="flex items-start space-x-4">
                   <CheckCircle className="w-6 h-6 text-coastal-teal flex-shrink-0 mt-1" />
-                  <p className="text-lg text-muted-foreground leading-relaxed">{point}</p>
+                  <p className="text-lg text-muted-foreground leading-relaxed">{content}</p>
                 </div>
               ))}
             </div>
@@ -330,7 +330,7 @@ export default function CarlsbadPage() {
               If you're planning to buy, sell, or invest in Carlsbad, Ruben Banuelos is ready to help you achieve your real estate goals. His disciplined, client-first approach and local expertise ensure a smooth and rewarding experience.
             </p>
             <p className="text-lg text-muted-foreground">
-              Reach out to Ruben Real Estate San Diego today or <Link href="/contact" className="text-coastal-teal underline">contact</Link> the team to schedule your free consultation.
+              Reach out to <strong>Ruben Real Estate San Diego</strong> today or <Link href="/contact" className="text-coastal-teal underline">contact</Link> the team to schedule your free consultation.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
