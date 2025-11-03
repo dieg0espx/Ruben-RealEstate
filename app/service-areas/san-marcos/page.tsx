@@ -114,7 +114,7 @@ export default function SanMarcosPage() {
 
             <div className="prose prose-lg max-w-none space-y-6 text-muted-foreground leading-relaxed">
               <p>
-                At Ruben Real Estate San Diego, we proudly serve San Marcos, one of North County's fastest-growing and most family-friendly communities. Whether you're a first-time buyer, veteran, or investor, Ruben Banuelos brings discipline, empathy, and expertise to every transaction. A former Doctor of Physical Therapy, Ruben applies the same care and precision from healthcare to real estate—helping clients make confident decisions that build lasting financial stability.
+                At <Link href="/" className="text-coastal-teal underline">Ruben Real Estate San Diego</Link>, we proudly serve San Marcos, one of North County's fastest-growing and most family-friendly communities. Whether you're a first-time buyer, veteran, or investor, <Link href="/about" className="text-coastal-teal underline">Ruben Banuelos</Link> brings discipline, empathy, and expertise to every transaction. A former Doctor of Physical Therapy, Ruben applies the same care and precision from healthcare to real estate—helping clients make confident decisions that build lasting financial stability.
               </p>
 
               <div className="my-8">
@@ -169,7 +169,7 @@ export default function SanMarcosPage() {
                 From tenant placement and maintenance coordination to rent collection and inspections, Ruben's team handles the details with integrity and professionalism. His NARPM membership ensures every property is managed to high ethical and operational standards, keeping owners protected and tenants satisfied.
               </p>
 
-              <h3 className="text-2xl font-bold text-coastal-sage mt-8 mb-4">Local San Marcos Expertise and Community Insight</h3>
+              <h3 className="text-2xl font-bold text-coastal-sage mt-8 mb-4">Local Expertise and Community Insight</h3>
               <p>
                 As a longtime North County resident, Ruben knows San Marcos inside and out. He stays informed on housing trends, school districts, and new developments near the 78 corridor, offering clients the local insight that drives smarter buying and selling decisions.
               </p>
@@ -198,7 +198,7 @@ export default function SanMarcosPage() {
         <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-coastal-cream/30 to-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6">
             <h2 className="text-3xl sm:text-4xl font-bold text-coastal-sage font-lexend mb-8 text-center">
-              Why Work With Ruben Real Estate San Diego in San Marcos
+              Why Work With Ruben Real Estate San Diego
             </h2>
             <div className="space-y-4 mb-8">
               {[
@@ -327,7 +327,7 @@ export default function SanMarcosPage() {
               If you're buying, selling, or investing in San Marcos, Ruben Banuelos is here to help. His hands-on approach, attention to detail, and deep community connections ensure exceptional results.
             </p>
             <p className="text-lg text-muted-foreground">
-              Start your real estate journey today—reach out to Ruben Real Estate San Diego to schedule your free consultation or simply contact the team to get started.
+              Start your real estate journey today—reach out to Ruben Real Estate San Diego to schedule your free consultation or simply <Link href="/contact" className="text-coastal-teal underline">contact</Link> the team to get started.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
