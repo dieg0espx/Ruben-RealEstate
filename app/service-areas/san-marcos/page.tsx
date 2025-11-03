@@ -114,7 +114,7 @@ export default function SanMarcosPage() {
 
             <div className="prose prose-lg max-w-none space-y-6 text-muted-foreground leading-relaxed">
               <p>
-                At <Link href="/" className="text-coastal-teal underline">Ruben Real Estate San Diego</Link>, we proudly serve San Marcos, one of North County's fastest-growing and most family-friendly communities. Whether you're a first-time buyer, veteran, or investor, <Link href="/about" className="text-coastal-teal underline">Ruben Banuelos</Link> brings discipline, empathy, and expertise to every transaction. A former Doctor of Physical Therapy, Ruben applies the same care and precision from healthcare to real estate—helping clients make confident decisions that build lasting financial stability.
+                At <Link href="/" className="text-coastal-teal underline"><strong>Ruben Real Estate San Diego</strong></Link>, we proudly serve <strong>San Marcos</strong>, one of North County's fastest-growing and most family-friendly communities. Whether you're a first-time buyer, veteran, or investor, <Link href="/about" className="text-coastal-teal underline"><strong>Ruben Banuelos</strong></Link> brings discipline, empathy, and expertise to every transaction. A former <strong>Doctor of Physical Therapy</strong>, Ruben applies the same care and precision from healthcare to real estate—helping clients make confident decisions that build lasting financial stability.
               </p>
 
               <div className="my-8">
@@ -128,15 +128,15 @@ export default function SanMarcosPage() {
 
               <h3 className="text-2xl font-bold text-coastal-sage mt-8 mb-4">VA Loan Expertise in San Marcos, CA</h3>
               <p>
-                Buying a home with a VA loan is one of the best benefits available to veterans and active-duty service members. Ruben specializes in guiding San Marcos military families through every step of the VA process. From confirming eligibility to partnering with trusted VA-approved lenders, he ensures clients maximize advantages like zero-down financing, no PMI, and competitive rates.
+                Buying a home with a <strong>VA loan</strong> is one of the best benefits available to veterans and active-duty service members. Ruben specializes in guiding San Marcos military families through every step of the VA process. From confirming eligibility to partnering with trusted VA-approved lenders, he ensures clients maximize advantages like <strong>zero-down financing, no PMI, and competitive rates.</strong>
               </p>
               <p>
-                With local knowledge of neighborhoods like San Elijo Hills, Twin Oaks Valley, and Discovery Hills, Ruben helps veterans find homes that fit their needs and budget. His background in service and attention to detail make the process smooth and stress-free from start to finish.
+                With local knowledge of neighborhoods like <strong>San Elijo Hills</strong>, <strong>Twin Oaks Valley</strong>, and <strong>Discovery Hills</strong>, Ruben helps veterans find homes that fit their needs and budget. His background in service and attention to detail make the process smooth and stress-free from start to finish.
               </p>
 
               <h3 className="text-2xl font-bold text-coastal-sage mt-8 mb-4">Investment Property Guidance in San Marcos</h3>
               <p>
-                San Marcos is a prime market for real estate investors, driven by demand from Cal State San Marcos and the expanding 78 corridor. As both a licensed broker and NARPM-certified property manager, Ruben identifies opportunities that balance cash flow, appreciation, and long-term stability.
+                San Marcos is a prime market for real estate investors, driven by demand from <strong>Cal State San Marcos</strong> and the expanding 78 corridor. As both a <strong>licensed broker</strong> and <strong>NARPM-certified property manager</strong>, Ruben identifies opportunities that balance cash flow, appreciation, and long-term stability.
               </p>
               <p>
                 He advises clients on analyzing rental potential, optimizing ROI, and managing properties efficiently. Whether acquiring multi-family units near the university or adding single-family rentals to a portfolio, Ruben provides the insight investors need to make data-driven decisions with confidence.
@@ -155,7 +155,7 @@ export default function SanMarcosPage() {
 
               <h3 className="text-2xl font-bold text-coastal-sage mt-8 mb-4">Family-First Homebuying in San Marcos</h3>
               <p>
-                Ruben's approach to real estate is rooted in family values. As a husband and father, he understands that buying or selling a home is more than a financial move—it's a life milestone. He helps families explore San Marcos neighborhoods based on schools, parks, and community amenities, ensuring every home aligns with both lifestyle and long-term goals.
+                Ruben's approach to real estate is rooted in <strong>family values</strong>. As a husband and father, he understands that buying or selling a home is more than a financial move—it's a life milestone. He helps families explore San Marcos neighborhoods based on schools, parks, and community amenities, ensuring every home aligns with both lifestyle and long-term goals.
               </p>
               <p>
                 With clear communication and patience, Ruben makes the process enjoyable and transparent, helping families achieve homeownership with confidence and peace of mind.
@@ -163,15 +163,15 @@ export default function SanMarcosPage() {
 
               <h3 className="text-2xl font-bold text-coastal-sage mt-8 mb-4">Property Management Services in San Marcos</h3>
               <p>
-                Managing a rental property can be complex. Ruben Real Estate San Diego offers comprehensive property management services for San Marcos owners seeking reliable oversight.
+                Managing a rental property can be complex. Ruben Real Estate San Diego offers <strong>comprehensive property management services</strong> for San Marcos owners seeking reliable oversight.
               </p>
               <p>
-                From tenant placement and maintenance coordination to rent collection and inspections, Ruben's team handles the details with integrity and professionalism. His NARPM membership ensures every property is managed to high ethical and operational standards, keeping owners protected and tenants satisfied.
+                From tenant placement and maintenance coordination to rent collection and inspections, Ruben's team handles the details with integrity and professionalism. His <strong>NARPM membership</strong> ensures every property is managed to high ethical and operational standards, keeping owners protected and tenants satisfied.
               </p>
 
               <h3 className="text-2xl font-bold text-coastal-sage mt-8 mb-4">Local Expertise and Community Insight</h3>
               <p>
-                As a longtime North County resident, Ruben knows San Marcos inside and out. He stays informed on housing trends, school districts, and new developments near the 78 corridor, offering clients the local insight that drives smarter buying and selling decisions.
+                As a longtime <strong>North County resident</strong>, Ruben knows San Marcos inside and out. He stays informed on housing trends, school districts, and new developments near the <strong>78 corridor</strong>, offering clients the local insight that drives smarter buying and selling decisions.
               </p>
               <p>
                 His deep community ties and background in service reflect his belief that real estate isn't just about properties—it's about people, neighborhoods, and long-term growth.
@@ -188,7 +188,7 @@ export default function SanMarcosPage() {
                 <strong>For Sellers:</strong> strategic pricing, professional marketing, and seamless transaction management.
               </p>
               <p>
-                As a Rising Star Award recipient at Team Fearless Realty, Ruben's reputation for integrity and results speaks for itself.
+                As a <strong>Rising Star Award</strong> recipient at Team Fearless Realty, Ruben's reputation for integrity and results speaks for itself.
               </p>
             </div>
           </div>
@@ -202,15 +202,15 @@ export default function SanMarcosPage() {
             </h2>
             <div className="space-y-4 mb-8">
               {[
-                "Dual background in healthcare and real estate for unmatched empathy and precision",
-                "Expertise in VA loans, investment properties, and property management",
-                "Commitment to families, veterans, and first-time buyers",
-                "NARPM-certified and DRE-licensed broker",
-                "Deep roots in the San Marcos and North County communities"
-              ].map((point, index) => (
+                <span key="p1"><strong>Dual background</strong> in healthcare and real estate for unmatched empathy and precision</span>,
+                <span key="p2"><strong>Expertise</strong> in VA loans, investment properties, and property management</span>,
+                <span key="p3"><strong>Commitment</strong> to families, veterans, and first-time buyers</span>,
+                <span key="p4"><strong>NARPM-certified</strong> and <strong>DRE-licensed broker</strong></span>,
+                <span key="p5"><strong>Deep roots</strong> in the San Marcos and North County communities</span>
+              ].map((content, index) => (
                 <div key={index} className="flex items-start space-x-4">
                   <CheckCircle className="w-6 h-6 text-coastal-teal flex-shrink-0 mt-1" />
-                  <p className="text-lg text-muted-foreground leading-relaxed">{point}</p>
+                  <p className="text-lg text-muted-foreground leading-relaxed">{content}</p>
                 </div>
               ))}
             </div>
