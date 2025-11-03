@@ -1,12 +1,5 @@
 "use client"
 
-import type { Metadata } from 'next'
-
-export const metadata: Metadata = {
-  title: 'Buy, Sell & Invest in North County Real Estate | Ruben Real Estate',
-  description: 'Trusted North County experts helping families, veterans, and investors with local insight and proven results.',
-}
-
 import PageNavbar from "@/components/sections/PageNavbar"
 import Footer from "@/components/sections/Footer"
 import FeaturesSection from "@/components/sections/FeaturesSection"
@@ -224,7 +217,7 @@ export default function HomePage() {
   return (
     <>
       <PageNavbar />
-      <main className="flex-1 bg-background">
+    <main className="flex-1 bg-background">
         {/* Hero Section */}
       <section className="hero-section relative py-32 sm:py-40 md:py-48 lg:py-56 xl:py-64 overflow-hidden -mt-20 pt-64 sm:pt-80 md:pt-88 lg:pt-96 xl:pt-104">
         <div className="absolute inset-0 z-0">
@@ -624,8 +617,8 @@ export default function HomePage() {
         </div>
       </section>
 
-        <Footer />
-      </main>
+      <Footer />
+    </main>
     </>
   )
 }
